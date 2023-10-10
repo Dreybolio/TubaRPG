@@ -5,6 +5,5 @@ using UnityEngine;
 public class BattleLocationReferencer : MonoBehaviour
 {
     public Transform[] heroSpawns;
-    public Transform[] heroFronts;
     public Transform[] enemySpawns;
 }
