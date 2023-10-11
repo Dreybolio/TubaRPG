@@ -42,14 +42,14 @@ public class Minigame_HoldLeft : MinigameBase
                     {
                         // Let go too early
                         indicators[3].sprite = sprIncorrect;
-                        OnComplete(false);
+                        OnComplete(0);
                         yield break;
                     }
                     else
                     {
                         // Let go on time
                         indicators[3].sprite = sprCorrect;
-                        OnComplete(true);
+                        OnComplete(1);
                         yield break;
                     }
                 }
@@ -62,6 +62,6 @@ public class Minigame_HoldLeft : MinigameBase
         }
         // Let go too late
         indicators[3].sprite = sprIncorrect;
-        OnComplete(false);
+        OnComplete(0);
     }
 }

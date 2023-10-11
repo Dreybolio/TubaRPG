@@ -221,6 +221,90 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: minigame_5
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 319
+        width: 879
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 296, y: 0, z: 291, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5125ac1cc2c4b4749b2576d1161efc37
+      internalID: -1075002303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minigame_6
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 210
+        width: 934
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 321, y: 0, z: 321, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 226065250ee584c4a81c7aa22477246a
+      internalID: 268981370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minigame_7
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 449
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 2, y: 2, z: 3, w: 2}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba06a6c15687afb4a9ac2fef11842910
+      internalID: -1024163479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fill
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b153f15eac3c604d91b3d055d3ea75d
+      internalID: 1929239110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -232,9 +316,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      fill: 1929239110
       minigame_4: 2051722426
       minigame_0: -963505094
       minigame_2: 185941356
+      minigame_6: 268981370
+      minigame_5: -1075002303
+      minigame_7: -1024163479
       minigame_1: -1496078486
       minigame_3: 1528385786
   spritePackingTag: 

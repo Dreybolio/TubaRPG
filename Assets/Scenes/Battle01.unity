@@ -3699,9 +3699,6 @@ MonoBehaviour:
   heroSpawns:
   - {fileID: 824475649}
   - {fileID: 1751044873}
-  heroFronts:
-  - {fileID: 0}
-  - {fileID: 0}
   enemySpawns:
   - {fileID: 50144578}
   - {fileID: 1448179170}

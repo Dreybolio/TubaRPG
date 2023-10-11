@@ -150,9 +150,8 @@ MonoBehaviour:
   isAlive: 1
   actionsRemaining: 0
   heroIndex: 0
-  minigameParent: {fileID: 0}
   attackMinigame: {fileID: 5988325687129428200, guid: 5174eeb62c9d4564a9aa5e56b7cb17ae, type: 3}
-  abilityOneMinigame: {fileID: 0}
+  abilityOneMinigame: {fileID: 78066196323939719, guid: fdc88c8f83736a2458dbab2a0735b9ef, type: 3}
   abilityTwoMinigame: {fileID: 0}
 --- !u!95 &8342694607309949597
 Animator:

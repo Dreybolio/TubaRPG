@@ -18,17 +18,17 @@ public enum MinigameButton
 public class MinigameBase : MonoBehaviour
 {
     [NonSerialized] public bool isComplete = false;
-    [NonSerialized] public bool success = false;
+    [NonSerialized] public int successLevel = 0;
 
     protected InputManager inputManager;
     protected void Awake()
     {
         inputManager = InputManager.Instance;
     }
-    protected void OnComplete(bool succeeded)
+    protected void OnComplete(int successLevel)
     {
         isComplete = true;
-        success = succeeded;
+        this.successLevel = successLevel;
     }
     public void StartMinigame()
     {

@@ -281,7 +281,7 @@
             "id": "2a47a824-dde1-4f87-8d12-a7b85ebed10d",
             "actions": [
                 {
-                    "name": "MiniGameDirectionalUp",
+                    "name": "MinigameDirectionalUp",
                     "type": "Button",
                     "id": "72daf899-78e7-4554-8c18-2e3db16e191e",
                     "expectedControlType": "Button",
@@ -290,7 +290,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "MiniGameDirectionalDown",
+                    "name": "MinigameDirectionalDown",
                     "type": "Button",
                     "id": "0736f02e-f66a-4598-936f-2af6e2833fe4",
                     "expectedControlType": "Button",
@@ -299,7 +299,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "MiniGameDirectionalLeft",
+                    "name": "MinigameDirectionalLeft",
                     "type": "Button",
                     "id": "7a29ee28-c0e2-4615-b869-80e60ccfe48f",
                     "expectedControlType": "Button",
@@ -308,7 +308,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "MiniGameDirectionalRight",
+                    "name": "MinigameDirectionalRight",
                     "type": "Button",
                     "id": "58aea0c3-f885-423d-841b-dd69d1ba7222",
                     "expectedControlType": "Button",
@@ -317,7 +317,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "MiniGameButton1",
+                    "name": "MinigameButtonA",
                     "type": "Button",
                     "id": "6a68c8f2-0574-414e-9ee6-d4ccdd7ce400",
                     "expectedControlType": "Button",
@@ -326,7 +326,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "MiniGameButton2",
+                    "name": "MinigameButtonB",
                     "type": "Button",
                     "id": "f5f6f44b-5e55-4451-aa33-6747bf65a9f7",
                     "expectedControlType": "Button",
@@ -335,7 +335,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "MiniGameButton3",
+                    "name": "MinigameButtonX",
                     "type": "Button",
                     "id": "9e4c595f-ed7c-41ee-8059-134189a3bf66",
                     "expectedControlType": "Button",
@@ -344,7 +344,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "MiniGameButton4",
+                    "name": "MinigameButtonY",
                     "type": "Button",
                     "id": "6e191321-d02c-43eb-b085-5510c23b4e14",
                     "expectedControlType": "Button",
@@ -361,7 +361,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "MiniGameButton3",
+                    "action": "MinigameButtonX",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -372,7 +372,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "MiniGameButton3",
+                    "action": "MinigameButtonX",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -383,7 +383,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "MiniGameButton4",
+                    "action": "MinigameButtonY",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -394,7 +394,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "MiniGameButton4",
+                    "action": "MinigameButtonY",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -405,7 +405,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "MiniGameButton1",
+                    "action": "MinigameButtonA",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -416,7 +416,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "MiniGameButton1",
+                    "action": "MinigameButtonA",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -427,7 +427,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "MiniGameButton2",
+                    "action": "MinigameButtonB",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -438,7 +438,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "MiniGameButton2",
+                    "action": "MinigameButtonB",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -449,7 +449,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "MiniGameDirectionalUp",
+                    "action": "MinigameDirectionalUp",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -460,7 +460,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "MiniGameDirectionalUp",
+                    "action": "MinigameDirectionalUp",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -471,7 +471,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "MiniGameDirectionalUp",
+                    "action": "MinigameDirectionalUp",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -482,7 +482,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "MiniGameDirectionalDown",
+                    "action": "MinigameDirectionalDown",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -493,7 +493,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "MiniGameDirectionalDown",
+                    "action": "MinigameDirectionalDown",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -504,7 +504,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "MiniGameDirectionalDown",
+                    "action": "MinigameDirectionalDown",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -515,7 +515,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "MiniGameDirectionalLeft",
+                    "action": "MinigameDirectionalLeft",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -526,7 +526,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "MiniGameDirectionalLeft",
+                    "action": "MinigameDirectionalLeft",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -537,7 +537,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "MiniGameDirectionalLeft",
+                    "action": "MinigameDirectionalLeft",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -548,7 +548,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "MiniGameDirectionalRight",
+                    "action": "MinigameDirectionalRight",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -559,7 +559,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "MiniGameDirectionalRight",
+                    "action": "MinigameDirectionalRight",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -570,7 +570,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "MiniGameDirectionalRight",
+                    "action": "MinigameDirectionalRight",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

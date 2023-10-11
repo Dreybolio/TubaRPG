@@ -303,7 +303,7 @@ public partial class @BattleControls : IInputActionCollection2, IDisposable
             ""id"": ""2a47a824-dde1-4f87-8d12-a7b85ebed10d"",
             ""actions"": [
                 {
-                    ""name"": ""MiniGameDirectionalUp"",
+                    ""name"": ""MinigameDirectionalUp"",
                     ""type"": ""Button"",
                     ""id"": ""72daf899-78e7-4554-8c18-2e3db16e191e"",
                     ""expectedControlType"": ""Button"",
@@ -312,7 +312,7 @@ public partial class @BattleControls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""MiniGameDirectionalDown"",
+                    ""name"": ""MinigameDirectionalDown"",
                     ""type"": ""Button"",
                     ""id"": ""0736f02e-f66a-4598-936f-2af6e2833fe4"",
                     ""expectedControlType"": ""Button"",
@@ -321,7 +321,7 @@ public partial class @BattleControls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""MiniGameDirectionalLeft"",
+                    ""name"": ""MinigameDirectionalLeft"",
                     ""type"": ""Button"",
                     ""id"": ""7a29ee28-c0e2-4615-b869-80e60ccfe48f"",
                     ""expectedControlType"": ""Button"",
@@ -330,7 +330,7 @@ public partial class @BattleControls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""MiniGameDirectionalRight"",
+                    ""name"": ""MinigameDirectionalRight"",
                     ""type"": ""Button"",
                     ""id"": ""58aea0c3-f885-423d-841b-dd69d1ba7222"",
                     ""expectedControlType"": ""Button"",
@@ -339,7 +339,7 @@ public partial class @BattleControls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""MiniGameButton1"",
+                    ""name"": ""MinigameButtonA"",
                     ""type"": ""Button"",
                     ""id"": ""6a68c8f2-0574-414e-9ee6-d4ccdd7ce400"",
                     ""expectedControlType"": ""Button"",
@@ -348,7 +348,7 @@ public partial class @BattleControls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""MiniGameButton2"",
+                    ""name"": ""MinigameButtonB"",
                     ""type"": ""Button"",
                     ""id"": ""f5f6f44b-5e55-4451-aa33-6747bf65a9f7"",
                     ""expectedControlType"": ""Button"",
@@ -357,7 +357,7 @@ public partial class @BattleControls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""MiniGameButton3"",
+                    ""name"": ""MinigameButtonX"",
                     ""type"": ""Button"",
                     ""id"": ""9e4c595f-ed7c-41ee-8059-134189a3bf66"",
                     ""expectedControlType"": ""Button"",
@@ -366,7 +366,7 @@ public partial class @BattleControls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""MiniGameButton4"",
+                    ""name"": ""MinigameButtonY"",
                     ""type"": ""Button"",
                     ""id"": ""6e191321-d02c-43eb-b085-5510c23b4e14"",
                     ""expectedControlType"": ""Button"",
@@ -383,7 +383,7 @@ public partial class @BattleControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""MiniGameButton3"",
+                    ""action"": ""MinigameButtonX"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -394,7 +394,7 @@ public partial class @BattleControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""MiniGameButton3"",
+                    ""action"": ""MinigameButtonX"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -405,7 +405,7 @@ public partial class @BattleControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""MiniGameButton4"",
+                    ""action"": ""MinigameButtonY"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -416,7 +416,7 @@ public partial class @BattleControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""MiniGameButton4"",
+                    ""action"": ""MinigameButtonY"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -427,7 +427,7 @@ public partial class @BattleControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""MiniGameButton1"",
+                    ""action"": ""MinigameButtonA"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -438,7 +438,7 @@ public partial class @BattleControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""MiniGameButton1"",
+                    ""action"": ""MinigameButtonA"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -449,7 +449,7 @@ public partial class @BattleControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""MiniGameButton2"",
+                    ""action"": ""MinigameButtonB"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -460,7 +460,7 @@ public partial class @BattleControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""MiniGameButton2"",
+                    ""action"": ""MinigameButtonB"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -471,7 +471,7 @@ public partial class @BattleControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""MiniGameDirectionalUp"",
+                    ""action"": ""MinigameDirectionalUp"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -482,7 +482,7 @@ public partial class @BattleControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""MiniGameDirectionalUp"",
+                    ""action"": ""MinigameDirectionalUp"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -493,7 +493,7 @@ public partial class @BattleControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""MiniGameDirectionalUp"",
+                    ""action"": ""MinigameDirectionalUp"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -504,7 +504,7 @@ public partial class @BattleControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""MiniGameDirectionalDown"",
+                    ""action"": ""MinigameDirectionalDown"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -515,7 +515,7 @@ public partial class @BattleControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""MiniGameDirectionalDown"",
+                    ""action"": ""MinigameDirectionalDown"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -526,7 +526,7 @@ public partial class @BattleControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""MiniGameDirectionalDown"",
+                    ""action"": ""MinigameDirectionalDown"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -537,7 +537,7 @@ public partial class @BattleControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""MiniGameDirectionalLeft"",
+                    ""action"": ""MinigameDirectionalLeft"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -548,7 +548,7 @@ public partial class @BattleControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""MiniGameDirectionalLeft"",
+                    ""action"": ""MinigameDirectionalLeft"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -559,7 +559,7 @@ public partial class @BattleControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""MiniGameDirectionalLeft"",
+                    ""action"": ""MinigameDirectionalLeft"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -570,7 +570,7 @@ public partial class @BattleControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""MiniGameDirectionalRight"",
+                    ""action"": ""MinigameDirectionalRight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -581,7 +581,7 @@ public partial class @BattleControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""MiniGameDirectionalRight"",
+                    ""action"": ""MinigameDirectionalRight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -592,7 +592,7 @@ public partial class @BattleControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""MiniGameDirectionalRight"",
+                    ""action"": ""MinigameDirectionalRight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -671,14 +671,14 @@ public partial class @BattleControls : IInputActionCollection2, IDisposable
         m_Menu_SwapHero = m_Menu.FindAction("SwapHero", throwIfNotFound: true);
         // Minigame
         m_Minigame = asset.FindActionMap("Minigame", throwIfNotFound: true);
-        m_Minigame_MiniGameDirectionalUp = m_Minigame.FindAction("MiniGameDirectionalUp", throwIfNotFound: true);
-        m_Minigame_MiniGameDirectionalDown = m_Minigame.FindAction("MiniGameDirectionalDown", throwIfNotFound: true);
-        m_Minigame_MiniGameDirectionalLeft = m_Minigame.FindAction("MiniGameDirectionalLeft", throwIfNotFound: true);
-        m_Minigame_MiniGameDirectionalRight = m_Minigame.FindAction("MiniGameDirectionalRight", throwIfNotFound: true);
-        m_Minigame_MiniGameButton1 = m_Minigame.FindAction("MiniGameButton1", throwIfNotFound: true);
-        m_Minigame_MiniGameButton2 = m_Minigame.FindAction("MiniGameButton2", throwIfNotFound: true);
-        m_Minigame_MiniGameButton3 = m_Minigame.FindAction("MiniGameButton3", throwIfNotFound: true);
-        m_Minigame_MiniGameButton4 = m_Minigame.FindAction("MiniGameButton4", throwIfNotFound: true);
+        m_Minigame_MinigameDirectionalUp = m_Minigame.FindAction("MinigameDirectionalUp", throwIfNotFound: true);
+        m_Minigame_MinigameDirectionalDown = m_Minigame.FindAction("MinigameDirectionalDown", throwIfNotFound: true);
+        m_Minigame_MinigameDirectionalLeft = m_Minigame.FindAction("MinigameDirectionalLeft", throwIfNotFound: true);
+        m_Minigame_MinigameDirectionalRight = m_Minigame.FindAction("MinigameDirectionalRight", throwIfNotFound: true);
+        m_Minigame_MinigameButtonA = m_Minigame.FindAction("MinigameButtonA", throwIfNotFound: true);
+        m_Minigame_MinigameButtonB = m_Minigame.FindAction("MinigameButtonB", throwIfNotFound: true);
+        m_Minigame_MinigameButtonX = m_Minigame.FindAction("MinigameButtonX", throwIfNotFound: true);
+        m_Minigame_MinigameButtonY = m_Minigame.FindAction("MinigameButtonY", throwIfNotFound: true);
         // Enemy
         m_Enemy = asset.FindActionMap("Enemy", throwIfNotFound: true);
         m_Enemy_Block = m_Enemy.FindAction("Block", throwIfNotFound: true);
@@ -798,26 +798,26 @@ public partial class @BattleControls : IInputActionCollection2, IDisposable
     // Minigame
     private readonly InputActionMap m_Minigame;
     private IMinigameActions m_MinigameActionsCallbackInterface;
-    private readonly InputAction m_Minigame_MiniGameDirectionalUp;
-    private readonly InputAction m_Minigame_MiniGameDirectionalDown;
-    private readonly InputAction m_Minigame_MiniGameDirectionalLeft;
-    private readonly InputAction m_Minigame_MiniGameDirectionalRight;
-    private readonly InputAction m_Minigame_MiniGameButton1;
-    private readonly InputAction m_Minigame_MiniGameButton2;
-    private readonly InputAction m_Minigame_MiniGameButton3;
-    private readonly InputAction m_Minigame_MiniGameButton4;
+    private readonly InputAction m_Minigame_MinigameDirectionalUp;
+    private readonly InputAction m_Minigame_MinigameDirectionalDown;
+    private readonly InputAction m_Minigame_MinigameDirectionalLeft;
+    private readonly InputAction m_Minigame_MinigameDirectionalRight;
+    private readonly InputAction m_Minigame_MinigameButtonA;
+    private readonly InputAction m_Minigame_MinigameButtonB;
+    private readonly InputAction m_Minigame_MinigameButtonX;
+    private readonly InputAction m_Minigame_MinigameButtonY;
     public struct MinigameActions
     {
         private @BattleControls m_Wrapper;
         public MinigameActions(@BattleControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @MiniGameDirectionalUp => m_Wrapper.m_Minigame_MiniGameDirectionalUp;
-        public InputAction @MiniGameDirectionalDown => m_Wrapper.m_Minigame_MiniGameDirectionalDown;
-        public InputAction @MiniGameDirectionalLeft => m_Wrapper.m_Minigame_MiniGameDirectionalLeft;
-        public InputAction @MiniGameDirectionalRight => m_Wrapper.m_Minigame_MiniGameDirectionalRight;
-        public InputAction @MiniGameButton1 => m_Wrapper.m_Minigame_MiniGameButton1;
-        public InputAction @MiniGameButton2 => m_Wrapper.m_Minigame_MiniGameButton2;
-        public InputAction @MiniGameButton3 => m_Wrapper.m_Minigame_MiniGameButton3;
-        public InputAction @MiniGameButton4 => m_Wrapper.m_Minigame_MiniGameButton4;
+        public InputAction @MinigameDirectionalUp => m_Wrapper.m_Minigame_MinigameDirectionalUp;
+        public InputAction @MinigameDirectionalDown => m_Wrapper.m_Minigame_MinigameDirectionalDown;
+        public InputAction @MinigameDirectionalLeft => m_Wrapper.m_Minigame_MinigameDirectionalLeft;
+        public InputAction @MinigameDirectionalRight => m_Wrapper.m_Minigame_MinigameDirectionalRight;
+        public InputAction @MinigameButtonA => m_Wrapper.m_Minigame_MinigameButtonA;
+        public InputAction @MinigameButtonB => m_Wrapper.m_Minigame_MinigameButtonB;
+        public InputAction @MinigameButtonX => m_Wrapper.m_Minigame_MinigameButtonX;
+        public InputAction @MinigameButtonY => m_Wrapper.m_Minigame_MinigameButtonY;
         public InputActionMap Get() { return m_Wrapper.m_Minigame; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -827,58 +827,58 @@ public partial class @BattleControls : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_MinigameActionsCallbackInterface != null)
             {
-                @MiniGameDirectionalUp.started -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMiniGameDirectionalUp;
-                @MiniGameDirectionalUp.performed -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMiniGameDirectionalUp;
-                @MiniGameDirectionalUp.canceled -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMiniGameDirectionalUp;
-                @MiniGameDirectionalDown.started -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMiniGameDirectionalDown;
-                @MiniGameDirectionalDown.performed -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMiniGameDirectionalDown;
-                @MiniGameDirectionalDown.canceled -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMiniGameDirectionalDown;
-                @MiniGameDirectionalLeft.started -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMiniGameDirectionalLeft;
-                @MiniGameDirectionalLeft.performed -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMiniGameDirectionalLeft;
-                @MiniGameDirectionalLeft.canceled -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMiniGameDirectionalLeft;
-                @MiniGameDirectionalRight.started -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMiniGameDirectionalRight;
-                @MiniGameDirectionalRight.performed -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMiniGameDirectionalRight;
-                @MiniGameDirectionalRight.canceled -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMiniGameDirectionalRight;
-                @MiniGameButton1.started -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMiniGameButton1;
-                @MiniGameButton1.performed -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMiniGameButton1;
-                @MiniGameButton1.canceled -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMiniGameButton1;
-                @MiniGameButton2.started -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMiniGameButton2;
-                @MiniGameButton2.performed -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMiniGameButton2;
-                @MiniGameButton2.canceled -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMiniGameButton2;
-                @MiniGameButton3.started -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMiniGameButton3;
-                @MiniGameButton3.performed -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMiniGameButton3;
-                @MiniGameButton3.canceled -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMiniGameButton3;
-                @MiniGameButton4.started -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMiniGameButton4;
-                @MiniGameButton4.performed -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMiniGameButton4;
-                @MiniGameButton4.canceled -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMiniGameButton4;
+                @MinigameDirectionalUp.started -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMinigameDirectionalUp;
+                @MinigameDirectionalUp.performed -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMinigameDirectionalUp;
+                @MinigameDirectionalUp.canceled -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMinigameDirectionalUp;
+                @MinigameDirectionalDown.started -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMinigameDirectionalDown;
+                @MinigameDirectionalDown.performed -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMinigameDirectionalDown;
+                @MinigameDirectionalDown.canceled -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMinigameDirectionalDown;
+                @MinigameDirectionalLeft.started -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMinigameDirectionalLeft;
+                @MinigameDirectionalLeft.performed -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMinigameDirectionalLeft;
+                @MinigameDirectionalLeft.canceled -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMinigameDirectionalLeft;
+                @MinigameDirectionalRight.started -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMinigameDirectionalRight;
+                @MinigameDirectionalRight.performed -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMinigameDirectionalRight;
+                @MinigameDirectionalRight.canceled -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMinigameDirectionalRight;
+                @MinigameButtonA.started -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMinigameButtonA;
+                @MinigameButtonA.performed -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMinigameButtonA;
+                @MinigameButtonA.canceled -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMinigameButtonA;
+                @MinigameButtonB.started -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMinigameButtonB;
+                @MinigameButtonB.performed -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMinigameButtonB;
+                @MinigameButtonB.canceled -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMinigameButtonB;
+                @MinigameButtonX.started -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMinigameButtonX;
+                @MinigameButtonX.performed -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMinigameButtonX;
+                @MinigameButtonX.canceled -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMinigameButtonX;
+                @MinigameButtonY.started -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMinigameButtonY;
+                @MinigameButtonY.performed -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMinigameButtonY;
+                @MinigameButtonY.canceled -= m_Wrapper.m_MinigameActionsCallbackInterface.OnMinigameButtonY;
             }
             m_Wrapper.m_MinigameActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @MiniGameDirectionalUp.started += instance.OnMiniGameDirectionalUp;
-                @MiniGameDirectionalUp.performed += instance.OnMiniGameDirectionalUp;
-                @MiniGameDirectionalUp.canceled += instance.OnMiniGameDirectionalUp;
-                @MiniGameDirectionalDown.started += instance.OnMiniGameDirectionalDown;
-                @MiniGameDirectionalDown.performed += instance.OnMiniGameDirectionalDown;
-                @MiniGameDirectionalDown.canceled += instance.OnMiniGameDirectionalDown;
-                @MiniGameDirectionalLeft.started += instance.OnMiniGameDirectionalLeft;
-                @MiniGameDirectionalLeft.performed += instance.OnMiniGameDirectionalLeft;
-                @MiniGameDirectionalLeft.canceled += instance.OnMiniGameDirectionalLeft;
-                @MiniGameDirectionalRight.started += instance.OnMiniGameDirectionalRight;
-                @MiniGameDirectionalRight.performed += instance.OnMiniGameDirectionalRight;
-                @MiniGameDirectionalRight.canceled += instance.OnMiniGameDirectionalRight;
-                @MiniGameButton1.started += instance.OnMiniGameButton1;
-                @MiniGameButton1.performed += instance.OnMiniGameButton1;
-                @MiniGameButton1.canceled += instance.OnMiniGameButton1;
-                @MiniGameButton2.started += instance.OnMiniGameButton2;
-                @MiniGameButton2.performed += instance.OnMiniGameButton2;
-                @MiniGameButton2.canceled += instance.OnMiniGameButton2;
-                @MiniGameButton3.started += instance.OnMiniGameButton3;
-                @MiniGameButton3.performed += instance.OnMiniGameButton3;
-                @MiniGameButton3.canceled += instance.OnMiniGameButton3;
-                @MiniGameButton4.started += instance.OnMiniGameButton4;
-                @MiniGameButton4.performed += instance.OnMiniGameButton4;
-                @MiniGameButton4.canceled += instance.OnMiniGameButton4;
+                @MinigameDirectionalUp.started += instance.OnMinigameDirectionalUp;
+                @MinigameDirectionalUp.performed += instance.OnMinigameDirectionalUp;
+                @MinigameDirectionalUp.canceled += instance.OnMinigameDirectionalUp;
+                @MinigameDirectionalDown.started += instance.OnMinigameDirectionalDown;
+                @MinigameDirectionalDown.performed += instance.OnMinigameDirectionalDown;
+                @MinigameDirectionalDown.canceled += instance.OnMinigameDirectionalDown;
+                @MinigameDirectionalLeft.started += instance.OnMinigameDirectionalLeft;
+                @MinigameDirectionalLeft.performed += instance.OnMinigameDirectionalLeft;
+                @MinigameDirectionalLeft.canceled += instance.OnMinigameDirectionalLeft;
+                @MinigameDirectionalRight.started += instance.OnMinigameDirectionalRight;
+                @MinigameDirectionalRight.performed += instance.OnMinigameDirectionalRight;
+                @MinigameDirectionalRight.canceled += instance.OnMinigameDirectionalRight;
+                @MinigameButtonA.started += instance.OnMinigameButtonA;
+                @MinigameButtonA.performed += instance.OnMinigameButtonA;
+                @MinigameButtonA.canceled += instance.OnMinigameButtonA;
+                @MinigameButtonB.started += instance.OnMinigameButtonB;
+                @MinigameButtonB.performed += instance.OnMinigameButtonB;
+                @MinigameButtonB.canceled += instance.OnMinigameButtonB;
+                @MinigameButtonX.started += instance.OnMinigameButtonX;
+                @MinigameButtonX.performed += instance.OnMinigameButtonX;
+                @MinigameButtonX.canceled += instance.OnMinigameButtonX;
+                @MinigameButtonY.started += instance.OnMinigameButtonY;
+                @MinigameButtonY.performed += instance.OnMinigameButtonY;
+                @MinigameButtonY.canceled += instance.OnMinigameButtonY;
             }
         }
     }
@@ -943,14 +943,14 @@ public partial class @BattleControls : IInputActionCollection2, IDisposable
     }
     public interface IMinigameActions
     {
-        void OnMiniGameDirectionalUp(InputAction.CallbackContext context);
-        void OnMiniGameDirectionalDown(InputAction.CallbackContext context);
-        void OnMiniGameDirectionalLeft(InputAction.CallbackContext context);
-        void OnMiniGameDirectionalRight(InputAction.CallbackContext context);
-        void OnMiniGameButton1(InputAction.CallbackContext context);
-        void OnMiniGameButton2(InputAction.CallbackContext context);
-        void OnMiniGameButton3(InputAction.CallbackContext context);
-        void OnMiniGameButton4(InputAction.CallbackContext context);
+        void OnMinigameDirectionalUp(InputAction.CallbackContext context);
+        void OnMinigameDirectionalDown(InputAction.CallbackContext context);
+        void OnMinigameDirectionalLeft(InputAction.CallbackContext context);
+        void OnMinigameDirectionalRight(InputAction.CallbackContext context);
+        void OnMinigameButtonA(InputAction.CallbackContext context);
+        void OnMinigameButtonB(InputAction.CallbackContext context);
+        void OnMinigameButtonX(InputAction.CallbackContext context);
+        void OnMinigameButtonY(InputAction.CallbackContext context);
     }
     public interface IEnemyActions
     {
