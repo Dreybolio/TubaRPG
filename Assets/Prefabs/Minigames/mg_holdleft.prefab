@@ -471,7 +471,7 @@ GameObject:
   - component: {fileID: 1198657546129574084}
   - component: {fileID: 4487002172252259497}
   m_Layer: 5
-  m_Name: mg_holdleft
+  m_Name: mg_HoldLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

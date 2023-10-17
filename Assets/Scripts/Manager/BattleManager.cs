@@ -24,11 +24,16 @@ public enum PostTurnEvent
     HERO_OUT_OF_ACTIONS,
     ENEMY_DIED,
 }
+public enum StatusEffect
+{
+    DECRESCENDO,
+    ASLEEP,
+    FERMATA,
+}
 public class BattleManager : MonoBehaviour
 {
     // Data
     private BattleStage battleStage;
-    private BattleData bd;
     private GenericEnemy[] enemyList;
     private GenericHero[] heroList;
     [SerializeField] private Transform minigameHolder;
@@ -57,7 +62,6 @@ public class BattleManager : MonoBehaviour
     }
     public void SetBattleData(BattleData bd)
     {
-        this.bd = bd;
         // Place each hero 1 and assign their values
         GameObject hero1 = Instantiate(gameData.heroOne_Object);
         hero1.transform.position = locationReferencer.heroSpawns[0].position;
@@ -93,6 +97,7 @@ public class BattleManager : MonoBehaviour
                 enemy.transform.position = locationReferencer.enemySpawns[i].position;
                 enemyList[i] = enemy.GetComponent<GenericEnemy>();
                 enemyList[i].SetPossibleTargets(heroList[0], heroList[1]);
+                bmManager.SetEnemyName(i, enemyList[i].name);
                 bmManager.SetEnemyHPBarValue(i, enemyList[i].hp);
                 bmManager.SetEnemySelectorValidity(i, enemyList[i] != null);
             }
@@ -128,20 +133,58 @@ public class BattleManager : MonoBehaviour
     private IEnumerator C_TopOfRound()
     {
         battleStage = BattleStage.TOP_OF_ROUND;
+        // Process all status effects for heroes
+        for (int i = 0; i < 2; i++)
+        {
+            foreach (KeyValuePair<StatusEffect, int> effect in heroList[i].statusEffects)
+            {
+                if (effect.Key == StatusEffect.FERMATA) { } // Hero should never be able to get this
 
-        // Process all status effects, roll for random events (If any)
+                if (effect.Value == -1) { continue; } // Effect length is infinite
+                if (effect.Value == 1)
+                {
+                    // Effect has run out.
+                    heroList[i].statusEffects.Remove(effect.Key);
+                }
+                else
+                {
+                    heroList[i].statusEffects[effect.Key] = effect.Value - 1;
+                }
+            }
+        }
+        // Process all status effects for enemies
+        for (int i = 0; i < 3; i++)
+        {
+            if (enemyList[i]  == null) { continue; }
+            foreach (KeyValuePair<StatusEffect, int> effect in enemyList[i].statusEffects)
+            {
+                if (effect.Key == StatusEffect.FERMATA) { enemyList[i].Damage(1); }
+                
+                if(effect.Value == -1) { continue; } // Effect length is infinite
+                if (effect.Value == 1)
+                {
+                    // Effect has run out.
+                    enemyList[i].statusEffects.Remove(effect.Key);
+                }
+                else
+                {
+                    enemyList[i].statusEffects[effect.Key] = effect.Value - 1;
+                }
+            }
+        }
+
+        // Roll for random events (If any)
         yield return new WaitForSeconds(0.1f);
         NextStage();
-
     }
     private IEnumerator C_PlayerTurn()
     {
-        if (heroList[0].isAlive)
+        if (heroList[0].isAlive && !heroList[0].statusEffects.ContainsKey(StatusEffect.ASLEEP))
         {
             heroList[0].SetActionsRemaining(1);
             SetActiveHero(0);
         }
-        if (heroList[1].isAlive)
+        if (heroList[1].isAlive && !heroList[0].statusEffects.ContainsKey(StatusEffect.ASLEEP))
         {
             heroList[1].SetActionsRemaining(1);
             if (!heroList[0].isAlive)
@@ -168,7 +211,7 @@ public class BattleManager : MonoBehaviour
         battleStage = BattleStage.ENEMY_TURN;
         for (int i = 0; i < enemyList.Length; i++)
         {
-            if (enemyList[i] == null) { continue; }
+            if (enemyList[i] == null || enemyList[i].statusEffects.ContainsKey(StatusEffect.ASLEEP)) { continue; }
             enemyList[i].BroadcastMessage("ProcessTurn");
             yield return new WaitUntil(() => _turnProcessed);
             _turnProcessed = false;
@@ -194,7 +237,7 @@ public class BattleManager : MonoBehaviour
                 case PostTurnEvent.HERO_DIED:
                     print("Processing a Hero's Death");
                     heroList[tuplePair.Item2].Kill();
-                    if (OnHeroKilled(tuplePair.Item2))
+                    if (OnHeroKilled())
                     {
                         // This returning true means the game has ended.
                         EndBattleLose();
@@ -249,13 +292,9 @@ public class BattleManager : MonoBehaviour
     }
     public void RelayActionToHero(HeroAction action, int targetIndex = -1, int optItemIndex = 0)
     {
-        // THIS IS TEMPORARY
-        // Later on, it is at this stage where minigames will be called before we finalize the action.
-
-
         // A target index of -1 implies that the target is not relevant, and the effect is general.
         playerController.SetControlType(ControlType.None);
-        bmManager.SetUIVisibility(false, false, false, false); // Disable the whole UI
+        bmManager.SetUIVisibility(false, false, false, false, false, false); // Disable the whole UI
         GenericEnemy target;
         if(targetIndex == -1) { target = null; } 
         else{ target = enemyList[targetIndex]; }
@@ -355,23 +394,18 @@ public class BattleManager : MonoBehaviour
             #endregion
         }
     }
-    public void ProcessMinigameAndAction(HeroBarbarian hero, HeroAction action)
-    {
-
-    }
-    
     public void AddPostTurnEvent(PostTurnEvent pte, GenericHero hero)
     {
         print("Hero Event! " + hero.name + " has " + pte);
         int index = GetHeroIndex(hero);
-        Tuple<PostTurnEvent, int> t = new Tuple<PostTurnEvent, int>(pte, index);
+        Tuple<PostTurnEvent, int> t = new(pte, index);
         postTurnEvents.Add(t);
     }
     public void AddPostTurnEvent(PostTurnEvent pte, GenericEnemy enemy)
     {
         print("Enemy Event! " + enemy.name + " has " + pte);
         int index = GetEnemyIndex(enemy);
-        Tuple<PostTurnEvent, int> t = new Tuple<PostTurnEvent, int>(pte, index);
+        Tuple<PostTurnEvent, int> t = new(pte, index);
         postTurnEvents.Add(t);
     }
     public void UpdateHeroHealthUI(GenericHero hero, int newHP)
@@ -401,7 +435,7 @@ public class BattleManager : MonoBehaviour
         int index = GetEnemyIndex(enemy);
         bmManager.SetEnemyHPBarValue(index, newHP);
     }
-    private bool OnHeroKilled(int index)
+    private bool OnHeroKilled()
     {
         bool battleLost = true;
         foreach (GenericHero h in heroList)
@@ -431,7 +465,7 @@ public class BattleManager : MonoBehaviour
         }
         return false;
     }
-    private int GetEnemyIndex(GenericEnemy e)
+    public int GetEnemyIndex(GenericEnemy e)
     {
         int index = -1;
         for (int i = 0; i < enemyList.Length; i++)
@@ -443,7 +477,7 @@ public class BattleManager : MonoBehaviour
         }
         return index;
     }
-    private int GetHeroIndex(GenericHero h)
+    public int GetHeroIndex(GenericHero h)
     {
         int index = -1;
         for (int i = 0; i < heroList.Length; i++)
@@ -454,6 +488,10 @@ public class BattleManager : MonoBehaviour
             }
         }
         return index;
+    }
+    public GenericHero GetHero(int index)
+    {
+        return heroList[index];
     }
     private void EndBattleWin()
     {

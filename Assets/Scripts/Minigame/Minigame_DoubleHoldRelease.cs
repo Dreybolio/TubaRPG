@@ -22,14 +22,6 @@ public class Minigame_DoubleHoldRelease : MinigameBase
     [SerializeField] private Image bar1Fill;
     [SerializeField] private Image bar2Fill;
 
-    [SerializeField] private Sprite buttonA;
-    [SerializeField] private Sprite buttonB;
-    [SerializeField] private Sprite buttonX;
-    [SerializeField] private Sprite buttonY;
-
-    [SerializeField] private Sprite releaseCorrect;
-    [SerializeField] private Sprite releaseIncorrect;
-
     private readonly float BAR_MAX = 100.00f;
     private float bar1Current;
     private float bar2Current;
@@ -52,9 +44,8 @@ public class Minigame_DoubleHoldRelease : MinigameBase
         bar1Fill.fillAmount = 0f;
         bar2Fill.fillAmount = 0f;
     }
-    public new void StartMinigame()
+    public override void StartMinigame()
     {
-        base.StartMinigame();
         DecideButtons();
         SetIndicatorSprite(bar1ButtonIndicator, bar1Button);
         SetIndicatorSprite(bar2ButtonIndicator, bar2Button);
@@ -81,23 +72,24 @@ public class Minigame_DoubleHoldRelease : MinigameBase
         float timeElapsed = 0;
         while (timeElapsed <= fillTime)
         {
-            bar1Current = Mathf.Lerp(startPos / BAR_MAX, BAR_MAX / BAR_MAX, timeElapsed / fillTime);
-            bar1Fill.fillAmount = bar1Current;
+            bar1Current = Mathf.Lerp(startPos, BAR_MAX, timeElapsed / fillTime);
+            bar1Fill.fillAmount = bar1Current / BAR_MAX;
             timeElapsed += Time.deltaTime;
             if(!CheckButtonIsHeld(bar1Button))
             {
+                print("Desired Release: " + bar1DesiredRelease + ", Current: " + bar1Current + ", leniency: " + leniency);
                 // Player let go.
                 if(bar1Current > bar1DesiredRelease - leniency && bar1Current < bar1DesiredRelease + leniency)
                 {
                     // Player let go correctly!
-                    bar1ReleasePointImage.sprite = releaseCorrect;
+                    bar1ReleasePointImage.sprite = sprCorrect;
                     bar1RoutineDone = true;
                     routineSuccess++;
                     yield break;
                 }
                 else
                 {
-                    bar1ReleasePointImage.sprite = releaseIncorrect;
+                    bar1ReleasePointImage.sprite = sprIncorrect;
                     bar1RoutineDone = true;
                     yield break;
                 }
@@ -106,7 +98,7 @@ public class Minigame_DoubleHoldRelease : MinigameBase
         }
         // If reached this point, you waited too long
         bar1Fill.fillAmount = 1;
-        bar1ReleasePointImage.sprite = releaseIncorrect;
+        bar1ReleasePointImage.sprite = sprIncorrect;
         bar1RoutineDone = true;
     }
     private IEnumerator C_SubroutineBar2()
@@ -115,8 +107,8 @@ public class Minigame_DoubleHoldRelease : MinigameBase
         float timeElapsed = 0;
         while (timeElapsed <= fillTime)
         {
-            bar2Current = Mathf.Lerp(startPos / BAR_MAX, BAR_MAX / BAR_MAX, timeElapsed / fillTime);
-            bar2Fill.fillAmount = bar2Current;
+            bar2Current = Mathf.Lerp(startPos, BAR_MAX, timeElapsed / fillTime);
+            bar2Fill.fillAmount = bar2Current / BAR_MAX;
             timeElapsed += Time.deltaTime;
             if (!CheckButtonIsHeld(bar2Button))
             {
@@ -124,14 +116,14 @@ public class Minigame_DoubleHoldRelease : MinigameBase
                 if (bar2Current > bar2DesiredRelease - leniency && bar2Current < bar2DesiredRelease + leniency)
                 {
                     // Player let go correctly!
-                    bar2ReleasePointImage.sprite = releaseCorrect;
+                    bar2ReleasePointImage.sprite = sprCorrect;
                     bar2RoutineDone = true;
                     routineSuccess++;
                     yield break;
                 }
                 else
                 {
-                    bar2ReleasePointImage.sprite = releaseIncorrect;
+                    bar2ReleasePointImage.sprite = sprIncorrect;
                     bar2RoutineDone = true;
                     yield break;
                 }
@@ -140,7 +132,7 @@ public class Minigame_DoubleHoldRelease : MinigameBase
         }
         // If reached this point, you waited too long
         bar2Fill.fillAmount = 1;
-        bar2ReleasePointImage.sprite = releaseIncorrect;
+        bar2ReleasePointImage.sprite = sprIncorrect;
         bar2RoutineDone = true;
     }
 
@@ -160,16 +152,16 @@ public class Minigame_DoubleHoldRelease : MinigameBase
         switch (type)
         {
             case MinigameButton.A:
-                indicator.sprite = buttonA;
+                indicator.sprite = sprA;
                 break;
             case MinigameButton.B:
-                indicator.sprite = buttonB;
+                indicator.sprite = sprB;
                 break;
             case MinigameButton.X:
-                indicator.sprite = buttonX;
+                indicator.sprite = sprX;
                 break;
             case MinigameButton.Y:
-                indicator.sprite = buttonY;
+                indicator.sprite = sprY;
                 break;
         }
     }

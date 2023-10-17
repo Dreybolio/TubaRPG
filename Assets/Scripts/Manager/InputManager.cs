@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
@@ -9,6 +10,10 @@ public class InputManager : MonoBehaviour
         get { return instance; }
     }
     private BattleControls battleControls;
+    private PlayerInput input;
+    [SerializeField] private Sprite[] keyboardButtons;
+    [SerializeField] private Sprite[] xboxButtons;
+    [SerializeField] private Sprite[] playstationButtons;
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -21,6 +26,7 @@ public class InputManager : MonoBehaviour
             DontDestroyOnLoad(instance);
         }
         battleControls = new BattleControls();
+        input = GetComponent<PlayerInput>();
     }
     private void OnEnable()
     {
@@ -120,5 +126,21 @@ public class InputManager : MonoBehaviour
     public bool GetBlock()
     {
         return battleControls.Enemy.Block.triggered;
+    }
+
+    public Sprite[] GetInputSprites()
+    {
+        switch (input.currentControlScheme)
+        {
+            case "Keyboard":
+                return keyboardButtons;
+            case "Xbox":
+                return xboxButtons;
+            case "Playstation":
+                return playstationButtons;
+            default:
+                Debug.LogError("ERROR: Could not find current control scheme!");
+                return null;
+        }
     }
 }

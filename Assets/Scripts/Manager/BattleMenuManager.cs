@@ -18,7 +18,12 @@ public class BattleMenuManager : MonoBehaviour
     [SerializeField] private CanvasGroup groupSubAbility;
     [SerializeField] private CanvasGroup groupSubItem;
     [SerializeField] private CanvasGroup groupSubOther;
+    [SerializeField] private CanvasGroup groupDescriptionBox;
+    [SerializeField] private CanvasGroup groupEnemyNameBox;
 
+
+    [Header("Fight Menu")]
+    [SerializeField] private BattleMenuElement_DoAction fightScript;
 
     [Header("Ability Submenu")]
     [SerializeField] private Text abilityOneText;
@@ -41,6 +46,13 @@ public class BattleMenuManager : MonoBehaviour
     [SerializeField] private Text e1HPText;
     [SerializeField] private Text e2HPText;
 
+    [Header("Status Effect Builders")]
+    [SerializeField] private BattleMenuStatusEffectHandler heroOneStatusEffectHandler;
+    [SerializeField] private BattleMenuStatusEffectHandler heroTwoStatusEffectHandler;
+    [SerializeField] private BattleMenuStatusEffectHandler enemyZeroStatusEffectHandler;
+    [SerializeField] private BattleMenuStatusEffectHandler enemyOneStatusEffectHandler;
+    [SerializeField] private BattleMenuStatusEffectHandler enemyTwoStatusEffectHandler;
+
     [Header("TopBar - Hero One")]
     [SerializeField] private Image heroOneIcon;
     [SerializeField] private Image[] heroOneMaxHPDigits;
@@ -54,22 +66,45 @@ public class BattleMenuManager : MonoBehaviour
     [SerializeField] private Image[] heroTwoHPDigits;
     [SerializeField] private Image[] heroTwoMaxNPDigits;
     [SerializeField] private Image[] heroTwoNPDigits;
-    public void SetUIVisibility(bool main, bool subAbility, bool subItem, bool subOther)
+
+    [Header("DescriptionBox")]
+    [SerializeField] private DescriptionBox dBox;
+    [SerializeField] private DescriptionBox enBox;
+    public void SetUIVisibility(bool main, bool subAbility, bool subItem, bool subOther, bool descBox, bool enBox)
     {
         groupMain.alpha = main ? 1f : 0f;
         groupSubAbility.alpha = subAbility ? 1f : 0f;
         groupSubItem.alpha = subItem ? 1f : 0f;
         groupSubOther.alpha = subOther ? 1f : 0f;
+        groupDescriptionBox.alpha = descBox ? 1f : 0f;
+        groupEnemyNameBox.alpha = enBox ? 1f : 0f;
     }
     public void SetMenuData(GenericHero hero)
     {
-        abilityOneText.text = hero.specialOneName;
-        abilityOneNPCost.text = hero.specialOneNPCost.ToString();
-        abilityOneScript.SetConfirmBehaviour(hero.specialOneRequiresHeroSelection, hero.specialOneRequiresEnemySelection);
+        fightScript.SetDescriptionBoxTextOnSelected(hero.attackDesc);
 
-        abilityTwoText.text = hero.specialTwoName;
-        abilityTwoNPCost.text = hero.specialTwoNPCost.ToString();
-        abilityTwoScript.SetConfirmBehaviour(hero.specialTwoRequiresHeroSelection, hero.specialTwoRequiresEnemySelection);
+        abilityOneText.text = hero.abilityOneName;
+        abilityOneNPCost.text = hero.abilityOneNPCost.ToString();
+        abilityOneScript.SetConfirmBehaviour(hero.abilityOneRequiresHeroSelection, hero.abilityOneRequiresEnemySelection);
+        abilityOneScript.SetSelectable(hero.GetNP() >= hero.abilityOneNPCost);
+        abilityOneScript.SetDescriptionBoxTextOnSelected(hero.abilityOneDesc);
+
+        abilityTwoText.text = hero.abilityTwoName;
+        abilityTwoNPCost.text = hero.abilityTwoNPCost.ToString();
+        abilityTwoScript.SetConfirmBehaviour(hero.abilityTwoRequiresHeroSelection, hero.abilityTwoRequiresEnemySelection);
+        abilityTwoScript.SetSelectable(hero.GetNP() >= hero.abilityTwoNPCost);
+        abilityTwoScript.SetDescriptionBoxTextOnSelected(hero.abilityTwoDesc);
+    }
+    public void SetEnemyName(int index, string enemyName)
+    {
+        BattleMenuElement elem = null;
+        if(index == 0) { elem = enemyZeroSelector; }
+        else if(index == 1) {  elem = enemyOneSelector; }
+        else if(index == 2) {  elem = enemyTwoSelector; }
+        if(elem != null)
+        {
+            elem.SetEnemyNameBoxTextOnSelected(enemyName);
+        }
     }
     public void SnapSelectionMenuToHero(int index)
     {
@@ -181,6 +216,40 @@ public class BattleMenuManager : MonoBehaviour
             int.TryParse(s.Substring(i, 1), out int numAtVal);
             heroTwoNPDigits[i].sprite = digits[numAtVal];
         }
+    }
+    public void SetHeroStatusEffects(int index, Dictionary<StatusEffect, int> dict)
+    {
+        if (index == 0)
+        {
+            heroOneStatusEffectHandler.SetStatusEffects(dict);
+        }
+        else if(index == 1)
+        {
+            heroTwoStatusEffectHandler.SetStatusEffects(dict);
+        }
+    }
+    public void SetEnemyStatusEffects(int index, Dictionary<StatusEffect, int> dict)
+    {
+        if (index == 0)
+        {
+            enemyZeroStatusEffectHandler.SetStatusEffects(dict);
+        }
+        else if(index == 1)
+        {
+            enemyOneStatusEffectHandler.SetStatusEffects(dict);
+        }
+        else if (index == 2)
+        {
+            enemyTwoStatusEffectHandler.SetStatusEffects(dict) ;
+        }
+    }
+    public void SetDescriptionBoxText(string text)
+    {
+        dBox.SetText(text);
+    }
+    public void SetEnemyNameBoxText(string text)
+    {
+        enBox.SetText(text);
     }
 
     private string ConvertIntToStringOfLength(int num, int length)

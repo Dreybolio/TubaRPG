@@ -13,23 +13,23 @@ public abstract class GenericHero : MonoBehaviour
     public string attackName;
     public string attackDesc;
 
-    public string specialOneName;
-    public string specialOneDesc;
-    public int specialOneNPCost;
-    public bool specialOneRequiresHeroSelection;
-    public bool specialOneRequiresEnemySelection;
+    public string abilityOneName;
+    public string abilityOneDesc;
+    public int abilityOneNPCost;
+    public bool abilityOneRequiresHeroSelection;
+    public bool abilityOneRequiresEnemySelection;
 
-    public string specialTwoName;
-    public string specialTwoDesc;
-    public int specialTwoNPCost;
-    public bool specialTwoRequiresHeroSelection;
-    public bool specialTwoRequiresEnemySelection;
+    public string abilityTwoName;
+    public string abilityTwoDesc;
+    public int abilityTwoNPCost;
+    public bool abilityTwoRequiresHeroSelection;
+    public bool abilityTwoRequiresEnemySelection;
 
     public bool canBeSelected = true;
     public bool canBeTargeted = true;
     public bool isAlive = true;
     public int actionsRemaining;
-    public int heroIndex;
+    [NonSerialized] public Dictionary<StatusEffect, int> statusEffects = new();
 
     [Header("Prefabs")]
     protected Transform minigameParent; // This will get set in BattleManager through SetMinigameParent();
@@ -61,27 +61,15 @@ public abstract class GenericHero : MonoBehaviour
         _hp = maxHP; _np = maxNP;
         AssignAnimationIDs();
     }
-    public void DoAttack(GenericEnemy target)
-    {
-        ActionFinished();
-    }
-    public void DoAbilityOne(GenericEnemy target)
-    {
-        ActionFinished();
-    }
-    public void DoAbilityTwo(GenericEnemy target)
-    {
-        ActionFinished();
-    }
+    public abstract void DoAttack(GenericEnemy target);
+    public abstract void DoAbilityOne(GenericEnemy target);
+    public abstract void DoAbilityTwo(GenericEnemy target);
+    public abstract void CheckEnemy(GenericEnemy target);
     public void UseItem(int itemIndex, GenericEnemy target)
     {
         ActionFinished();
     }
     public void UseItem(int itemIndex, GenericHero target)
-    {
-        ActionFinished();
-    }
-    public void CheckEnemy(GenericEnemy target)
     {
         ActionFinished();
     }
@@ -164,6 +152,10 @@ public abstract class GenericHero : MonoBehaviour
             Debug.LogError("ERROR: Used more NP than we have. This should never happen.");
         }
         battleManager.UpdateHeroNotePointUI(this, _np);
+    }
+    public int GetNP()
+    {
+        return _np;
     }
     public void SetGreyOut(bool b)
     {

@@ -147,7 +147,7 @@ TextureImporter:
         height: 157
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 91, y: 79, z: 72, w: 78}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -394,9 +394,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 306
-        y: 866
+        y: 876
         width: 691
-        height: 144
+        height: 145
       alignment: 4
       pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -406,6 +406,27 @@ TextureImporter:
       bones: []
       spriteID: ef724ed07496c02438e8d7fcfa2440f3
       internalID: 1636180473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: battle_ui_3
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 731
+        width: 903
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c8800b270659a4498829cd671e8ad06
+      internalID: 1258099921
       vertices: []
       indices: 
       edges: []
@@ -434,6 +455,7 @@ TextureImporter:
       battle_ui_ability: -278714897
       battle_ui_fight: -1429841124
       battle_ui_flute: 910725088
+      battle_ui_3: 1258099921
       battle_ui_2: 1636180473
   spritePackingTag: 
   pSDRemoveMatte: 0

@@ -6,8 +6,10 @@ using UnityEngine;
 public abstract class GenericEnemy : MonoBehaviour
 {
     // Personal Data
+    public new string name;
     [SerializeField] private int maxHP;
     public int hp;
+    [NonSerialized] public Dictionary<StatusEffect, int> statusEffects = new();
 
     // Attacking Data
     public int numAttackOptions;

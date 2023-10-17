@@ -217,24 +217,25 @@ MonoBehaviour:
   maxHP: 6
   maxNP: 6
   attackName: Attack
-  attackDesc: A regular attack.
-  specialOneName: Decrescendo
-  specialOneDesc: Next attack deals x3 damage. Enemies will always target your ally.
-  specialOneNPCost: 2
-  specialOneRequiresHeroSelection: 0
-  specialOneRequiresEnemySelection: 0
-  specialTwoName: Jazzy Tune
-  specialTwoDesc: Put an enemy to sleep.
-  specialTwoNPCost: 3
-  specialTwoRequiresHeroSelection: 0
-  specialTwoRequiresEnemySelection: 1
+  attackDesc: A regular attack.<br>Wait until the indicator pops up, then press <A>
+  abilityOneName: Decrescendo
+  abilityOneDesc: Noir's next attack does 3x damage. Cannot be targeted this turn.<br>Press
+    the shown combination of <A><B><X><Y>
+  abilityOneNPCost: 2
+  abilityOneRequiresHeroSelection: 0
+  abilityOneRequiresEnemySelection: 0
+  abilityTwoName: Jazzy Tune
+  abilityTwoDesc: Puts an enemy to sleep.<br>Press the shown <A><B><X><Y> combination
+    on time with the beat.
+  abilityTwoNPCost: 3
+  abilityTwoRequiresHeroSelection: 0
+  abilityTwoRequiresEnemySelection: 1
   canBeSelected: 1
   canBeTargeted: 1
   isAlive: 1
   actionsRemaining: 0
-  heroIndex: 0
-  attackMinigame: {fileID: 0}
-  abilityOneMinigame: {fileID: 0}
+  attackMinigame: {fileID: 78066196323939719, guid: df69fb7ff24ba5941b6a78b06747c3d6, type: 3}
+  abilityOneMinigame: {fileID: 78066196323939719, guid: 2220bf32e1b1346439cad3e0bd3846c0, type: 3}
   abilityTwoMinigame: {fileID: 0}
 --- !u!95 &5835140768831680001
 Animator:

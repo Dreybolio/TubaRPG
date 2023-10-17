@@ -8,16 +8,13 @@ public class Minigame_HoldLeft : MinigameBase
     [SerializeField] private Image[] indicators;
 
     [SerializeField] private Sprite sprPassed;
-    [SerializeField] private Sprite sprCorrect;
-    [SerializeField] private Sprite sprIncorrect;
 
     private new void Awake()
     {
         base.Awake();
     }
-    public new void StartMinigame()
+    public override void StartMinigame()
     {
-        base.StartMinigame();
         StartCoroutine(C_Minigame());
     }
 

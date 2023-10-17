@@ -541,6 +541,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1713747492}
   - component: {fileID: 1713747491}
+  - component: {fileID: 1713747493}
   m_Layer: 0
   m_Name: InputManager
   m_TagString: Untagged
@@ -560,6 +561,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 882f60033bf61ed49ace4fdba443d182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyboardButtons:
+  - {fileID: 274072053, guid: fa6a669cc6f56f54588516bd3c8708e0, type: 3}
+  - {fileID: -33881321, guid: fa6a669cc6f56f54588516bd3c8708e0, type: 3}
+  - {fileID: 123556165, guid: fa6a669cc6f56f54588516bd3c8708e0, type: 3}
+  - {fileID: 2050602389, guid: fa6a669cc6f56f54588516bd3c8708e0, type: 3}
+  - {fileID: 2059228210, guid: fa6a669cc6f56f54588516bd3c8708e0, type: 3}
+  - {fileID: 179689963, guid: fa6a669cc6f56f54588516bd3c8708e0, type: 3}
+  - {fileID: -615397611, guid: fa6a669cc6f56f54588516bd3c8708e0, type: 3}
+  - {fileID: 1963911274, guid: fa6a669cc6f56f54588516bd3c8708e0, type: 3}
+  xboxButtons:
+  - {fileID: 274072053, guid: fa6a669cc6f56f54588516bd3c8708e0, type: 3}
+  - {fileID: -33881321, guid: fa6a669cc6f56f54588516bd3c8708e0, type: 3}
+  - {fileID: 123556165, guid: fa6a669cc6f56f54588516bd3c8708e0, type: 3}
+  - {fileID: 2050602389, guid: fa6a669cc6f56f54588516bd3c8708e0, type: 3}
+  - {fileID: 2059228210, guid: fa6a669cc6f56f54588516bd3c8708e0, type: 3}
+  - {fileID: 179689963, guid: fa6a669cc6f56f54588516bd3c8708e0, type: 3}
+  - {fileID: -615397611, guid: fa6a669cc6f56f54588516bd3c8708e0, type: 3}
+  - {fileID: 1963911274, guid: fa6a669cc6f56f54588516bd3c8708e0, type: 3}
+  playstationButtons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!4 &1713747492
 Transform:
   m_ObjectHideFlags: 0
@@ -575,6 +603,88 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1713747493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713747490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 388f311c0031e3747a74407aaee52e8e, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f307c4fa-7803-491d-8efe-5e43fc958fc6
+    m_ActionName: Menu/Navigate[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0ae4e95d-2f14-4428-a424-3878f2a1e5fc
+    m_ActionName: Menu/Confirm[/Keyboard/z]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0ebb7f2e-f25c-4797-bbbf-73caeba3d80e
+    m_ActionName: Menu/Cancel[/Keyboard/x]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 71a27210-ac38-4d69-af86-6b33d16b4cec
+    m_ActionName: Menu/SwapHero[/Keyboard/c]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 72daf899-78e7-4554-8c18-2e3db16e191e
+    m_ActionName: Minigame/MinigameDirectionalUp[/Keyboard/upArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0736f02e-f66a-4598-936f-2af6e2833fe4
+    m_ActionName: Minigame/MinigameDirectionalDown[/Keyboard/downArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7a29ee28-c0e2-4615-b869-80e60ccfe48f
+    m_ActionName: Minigame/MinigameDirectionalLeft[/Keyboard/leftArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 58aea0c3-f885-423d-841b-dd69d1ba7222
+    m_ActionName: Minigame/MinigameDirectionalRight[/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6a68c8f2-0574-414e-9ee6-d4ccdd7ce400
+    m_ActionName: Minigame/MinigameButtonA[/Keyboard/z]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f5f6f44b-5e55-4451-aa33-6747bf65a9f7
+    m_ActionName: Minigame/MinigameButtonB[/Keyboard/x]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9e4c595f-ed7c-41ee-8059-134189a3bf66
+    m_ActionName: Minigame/MinigameButtonX[/Keyboard/c]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6e191321-d02c-43eb-b085-5510c23b4e14
+    m_ActionName: Minigame/MinigameButtonY[/Keyboard/v]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7e42a374-9243-474d-bcb4-f705c7f50a56
+    m_ActionName: Enemy/Block[/Keyboard/z]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Menu
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &2054218507
 GameObject:
   m_ObjectHideFlags: 0

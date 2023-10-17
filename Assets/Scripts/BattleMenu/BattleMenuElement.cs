@@ -13,12 +13,16 @@ public class BattleMenuElement : MonoBehaviour
     public BattleMenuElement elementOnCancel; // Public, since this is dynamic when in submenus
 
     public bool validSelection = true;
+    protected string descriptionBoxTextOnSelected = string.Empty;
+    protected string enemyNameBoxTextOnSelected = string.Empty;
 
     [Header("UI Visibility When Selected")]
     [SerializeField] private bool VIS_MAIN;
     [SerializeField] private bool VIS_SUBMENU_ABILITY;
     [SerializeField] private bool VIS_SUBMENU_ITEM;
     [SerializeField] private bool VIS_SUBMENU_OTHER;
+    [SerializeField] private bool VIS_DESCBOX;
+    [SerializeField] private bool VIS_ENBOX;
 
     protected Animator animator;
     protected BattleMenuManager bmManager;
@@ -152,7 +156,15 @@ public class BattleMenuElement : MonoBehaviour
         if (validSelection)
         {
             animator.SetBool("Selected", true);
-            bmManager.SetUIVisibility(VIS_MAIN, VIS_SUBMENU_ABILITY, VIS_SUBMENU_ITEM, VIS_SUBMENU_OTHER);
+            bmManager.SetUIVisibility(VIS_MAIN, VIS_SUBMENU_ABILITY, VIS_SUBMENU_ITEM, VIS_SUBMENU_OTHER, VIS_DESCBOX, VIS_ENBOX);
+            if(descriptionBoxTextOnSelected != string.Empty)
+            {
+                bmManager.SetDescriptionBoxText(descriptionBoxTextOnSelected);
+            }
+            if(enemyNameBoxTextOnSelected!= string.Empty)
+            {
+                bmManager.SetEnemyNameBoxText(enemyNameBoxTextOnSelected);
+            }
             return true;
         }
         else
@@ -164,5 +176,13 @@ public class BattleMenuElement : MonoBehaviour
     public void OnDeselect()
     {
         animator.SetBool("Selected", false);
+    }
+    public void SetDescriptionBoxTextOnSelected(string description)
+    {
+        descriptionBoxTextOnSelected = description;
+    }
+    public void SetEnemyNameBoxTextOnSelected(string description)
+    {
+        enemyNameBoxTextOnSelected = description;
     }
 }

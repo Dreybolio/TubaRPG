@@ -4,26 +4,73 @@ using UnityEngine;
 
 public class HeroRogue : GenericHero
 {
-    private bool hasDecrescendoBonus = false;
     // Note: ALL actions must end with ActionFinished();
-    public new void DoAttack(GenericEnemy target)
+    public override void DoAttack(GenericEnemy target)
     {
+        StartCoroutine(C_DoAttack(target));
+    }
+    private IEnumerator C_DoAttack(GenericEnemy target)
+    {
+        // Walk to target
+        WalkToTarget(target.GetPositionAtFront(), 1f);
+        yield return new WaitUntil(() => _walkCoroutineFinished);
+        yield return new WaitForSeconds(0.25f);
+
         // Do minigame to see if hit
-        // If hit
-        int attackMod = hasDecrescendoBonus ? 3 : 1; // If has decrescedo active, deal x3 damage
-        target.Damage(2 * attackMod);
-        hasDecrescendoBonus = false;
+        GameObject mgObject = Instantiate(attackMinigame, minigameParent);
+        Minigame_WaitPressA mgScript = mgObject.GetComponent<Minigame_WaitPressA>(); // We are expecting attackMinigame to be of this type
+        mgScript.StartMinigame();
+        yield return new WaitUntil(() => mgScript.isComplete);
+
+        bool hasDecrescendo = statusEffects.ContainsKey(StatusEffect.DECRESCENDO);
+        int decrescedoBonus = hasDecrescendo ? 3 : 1;
+        // Minigame is over, do damage
+        if (mgScript.successLevel == 1)
+        {
+            target.Damage(2 * decrescedoBonus);
+        }
+        else
+        {
+            target.Damage(1 * decrescedoBonus);
+        }
+        if (hasDecrescendo) { statusEffects.Remove(StatusEffect.DECRESCENDO); }
+
+        // Walk back to spot
+        WalkToTarget(locationReferencer.heroSpawns[battleManager.GetHeroIndex(this)], 1f);
+        yield return new WaitUntil(() => _walkCoroutineFinished);
+        yield return new WaitForSeconds(0.25f);
+        mgScript.Destroy();
         ActionFinished();
     }
-    public new void DoAbilityOne(GenericEnemy target)
+    public override void DoAbilityOne(GenericEnemy target)
     {
-        SubtractNP(2);
-        // Do minigame
-        hasDecrescendoBonus = true;
+        StartCoroutine(C_DoAbilityOne());
+    }
+    private IEnumerator C_DoAbilityOne()
+    {
+        SubtractNP(abilityOneNPCost);
+        yield return new WaitForSeconds(0.80f);
+
+        GameObject mgObject = Instantiate(abilityOneMinigame, minigameParent);
+        Minigame_5Button mgScript = mgObject.GetComponent<Minigame_5Button>(); // We are expecting attackMinigame to be of this type
+        mgScript.StartMinigame();
+        yield return new WaitUntil(() => mgScript.isComplete);
+
+        if(mgScript.successLevel == 1)
+        {
+            statusEffects.Add(StatusEffect.DECRESCENDO, -1);
+        }
+
+        yield return new WaitForSeconds(1f);
+        mgScript.Destroy();
         ActionFinished();
     }
-    public new void DoAbilityTwo(GenericEnemy target)
+    public override void DoAbilityTwo(GenericEnemy target)
     {
         ActionFinished();
+    }
+    public override void CheckEnemy(GenericEnemy target)
+    {
+        throw new System.NotImplementedException();
     }
 }

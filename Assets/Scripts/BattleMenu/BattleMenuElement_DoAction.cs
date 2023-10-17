@@ -1,21 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BattleMenuElement_DoAction : BattleMenuElement
 {
     // This script can handle the Fight, NP Actions, and Items. It will pass on 
     [SerializeField] private HeroAction action;
 
+    [Header("Selection")]    
+    public bool canBeSelected = true;
+    [SerializeField] private Image bgImage;
+    [SerializeField] private Image npImage;
+
     [Header("Behaviour States")]
     [SerializeField] private bool needsHeroSelection;
     [SerializeField] private bool needsEnemySelection;
 
-    [Header("Elements (First is Element On Confirm")]
+    [Header("Elements (First is Element On Confirm)")]
     [SerializeField] private BattleMenuElement_HeroSelector[] heroElements;
     [SerializeField] private BattleMenuElement_EnemySelector[] enemyElements;
+    private readonly Color COLOR_ACTIVE = new(1, 1, 1);
+    private readonly Color COLOR_INACTIVE = new(0.5f, 0.5f, 0.5f);
     public new BattleMenuElement OnConfirm()
     {
+        if(!canBeSelected)
+        {
+            return this;
+        }
         BattleMenuElement firstElem;
         if (elementOnConfirm == null)
         {
@@ -83,6 +95,21 @@ public class BattleMenuElement_DoAction : BattleMenuElement
         else
         {
             elementOnConfirm = null;
+        }
+    }
+    public void SetSelectable(bool selectable)
+    {
+        if(selectable)
+        {
+            canBeSelected = true;
+            bgImage.color = COLOR_ACTIVE;
+            npImage.color = COLOR_ACTIVE;
+        }
+        else
+        {
+            canBeSelected = false;
+            bgImage.color = COLOR_INACTIVE;
+            npImage.color = COLOR_INACTIVE;
         }
     }
 }

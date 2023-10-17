@@ -469,7 +469,7 @@ GameObject:
   - component: {fileID: 78066196323939716}
   - component: {fileID: 78066196323939717}
   m_Layer: 5
-  m_Name: mg_doubleholdrelease
+  m_Name: mg_DoubleHoldRelease
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -509,6 +509,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc3b0a67133066c46bd354850a77c1e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprCorrect: {fileID: -963505094, guid: cf4e01fc04eb4ae4c8f852a7e85f1f35, type: 3}
+  sprIncorrect: {fileID: -1496078486, guid: cf4e01fc04eb4ae4c8f852a7e85f1f35, type: 3}
   fillTime: 6
   xPosMin: -420
   xPosMax: 420
@@ -521,12 +523,6 @@ MonoBehaviour:
   bar2ButtonIndicator: {fileID: 78066195932455803}
   bar1Fill: {fileID: 78066196693296518}
   bar2Fill: {fileID: 78066197078188673}
-  buttonA: {fileID: 274072053, guid: fa6a669cc6f56f54588516bd3c8708e0, type: 3}
-  buttonB: {fileID: -33881321, guid: fa6a669cc6f56f54588516bd3c8708e0, type: 3}
-  buttonX: {fileID: 123556165, guid: fa6a669cc6f56f54588516bd3c8708e0, type: 3}
-  buttonY: {fileID: 2050602389, guid: fa6a669cc6f56f54588516bd3c8708e0, type: 3}
-  releaseCorrect: {fileID: -963505094, guid: cf4e01fc04eb4ae4c8f852a7e85f1f35, type: 3}
-  releaseIncorrect: {fileID: -1496078486, guid: cf4e01fc04eb4ae4c8f852a7e85f1f35, type: 3}
 --- !u!1 &78066196364670090
 GameObject:
   m_ObjectHideFlags: 0

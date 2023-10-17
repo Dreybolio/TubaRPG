@@ -5,7 +5,7 @@ using UnityEngine;
 public class HeroBarbarian : GenericHero
 {
     // Note: ALL actions must end with ActionFinished();
-    public new void DoAttack(GenericEnemy target)
+    public override void DoAttack(GenericEnemy target)
     {
         StartCoroutine(C_DoAttack(target));
     }
@@ -33,19 +33,19 @@ public class HeroBarbarian : GenericHero
         }
 
         // Walk back to spot
-        WalkToTarget(locationReferencer.heroSpawns[heroIndex], 1f);
+        WalkToTarget(locationReferencer.heroSpawns[battleManager.GetHeroIndex(this)], 1f);
         yield return new WaitUntil(() => _walkCoroutineFinished);
         yield return new WaitForSeconds(0.25f);
         mgScript.Destroy();
         ActionFinished();
     }
-    public new void DoAbilityOne(GenericEnemy target)
+    public override void DoAbilityOne(GenericEnemy target)
     {
         StartCoroutine(C_DoAbilityOne(target));
     }
     private IEnumerator C_DoAbilityOne(GenericEnemy target)
     {
-        SubtractNP(1);
+        SubtractNP(abilityOneNPCost);
         // Walk to target
         WalkToTarget(target.GetPositionAtFront(), 1f);
         yield return new WaitUntil(() => _walkCoroutineFinished);
@@ -72,14 +72,39 @@ public class HeroBarbarian : GenericHero
         }
 
         // Walk back to spot
-        WalkToTarget(locationReferencer.heroSpawns[heroIndex], 1f);
+        WalkToTarget(locationReferencer.heroSpawns[battleManager.GetHeroIndex(this)], 1f);
         yield return new WaitUntil(() => _walkCoroutineFinished);
         yield return new WaitForSeconds(0.25f);
         mgScript.Destroy();
         ActionFinished();
     }
-    public new void DoAbilityTwo(GenericEnemy target)
+    public override void DoAbilityTwo(GenericEnemy target)
     {
+        StartCoroutine(C_DoAbilityTwo());
+    }
+    public IEnumerator C_DoAbilityTwo()
+    {
+        SubtractNP(abilityTwoNPCost);
+        yield return new WaitForSeconds(0.80f);
+
+        GameObject mgObject = Instantiate(abilityTwoMinigame, minigameParent);
+        Minigame_ABAlternate mgScript = mgObject.GetComponent<Minigame_ABAlternate>(); // We are expecting attackMinigame to be of this type
+        mgScript.StartMinigame();
+        yield return new WaitUntil(() => mgScript.isComplete);
+        if(mgScript.successLevel == 1) 
+        {
+            int heroIndex = battleManager.GetHeroIndex(this);
+            int otherHeroIndex = heroIndex == 0 ? 1 : 0;
+            GenericHero other = battleManager.GetHero(otherHeroIndex);
+            other.SetActionsRemaining(other.actionsRemaining + 2);
+        }
+
+        yield return new WaitForSeconds(1f);
+        mgScript.Destroy();
         ActionFinished();
+    }
+    public override void CheckEnemy(GenericEnemy target)
+    {
+        throw new System.NotImplementedException();
     }
 }

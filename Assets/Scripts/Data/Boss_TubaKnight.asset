@@ -15,7 +15,7 @@ MonoBehaviour:
   sceneName: Battle01
   enemies:
   - {fileID: 1023360389297060250, guid: 0381c57cbae1f15409ab60677cf03ada, type: 3}
-  - {fileID: 1023360389297060250, guid: 0381c57cbae1f15409ab60677cf03ada, type: 3}
+  - {fileID: 1023360389297060250, guid: 54aedaa6cefd2ad41973c70094cf1fab, type: 3}
   - {fileID: 0}
   xpAwarded: 50
   music: {fileID: 0}

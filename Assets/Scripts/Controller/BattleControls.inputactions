@@ -115,7 +115,7 @@
                     "path": "<Gamepad>/leftStick/up",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "Xbox",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -126,7 +126,7 @@
                     "path": "<Gamepad>/leftStick/down",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "Xbox",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -137,7 +137,7 @@
                     "path": "<Gamepad>/leftStick/left",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "Xbox",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -148,7 +148,7 @@
                     "path": "<Gamepad>/leftStick/right",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "Xbox",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -170,7 +170,7 @@
                     "path": "<Gamepad>/dpad/up",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "Xbox",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -181,7 +181,7 @@
                     "path": "<Gamepad>/dpad/down",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "Xbox",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -192,7 +192,7 @@
                     "path": "<Gamepad>/dpad/left",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "Xbox",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -203,7 +203,7 @@
                     "path": "<Gamepad>/dpad/right",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "Xbox",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -225,7 +225,7 @@
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "Xbox",
                     "action": "Confirm",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -247,7 +247,7 @@
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "Xbox",
                     "action": "Cancel",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -269,7 +269,7 @@
                     "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "Xbox",
                     "action": "SwapHero",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -371,7 +371,7 @@
                     "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "Xbox",
                     "action": "MinigameButtonX",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -393,7 +393,7 @@
                     "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "Xbox",
                     "action": "MinigameButtonY",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -415,7 +415,7 @@
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "Xbox",
                     "action": "MinigameButtonA",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -437,7 +437,7 @@
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "Xbox",
                     "action": "MinigameButtonB",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -459,7 +459,7 @@
                     "path": "<Gamepad>/leftStick/up",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "Xbox",
                     "action": "MinigameDirectionalUp",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -470,7 +470,7 @@
                     "path": "<Gamepad>/dpad/up",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "Xbox",
                     "action": "MinigameDirectionalUp",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -492,7 +492,7 @@
                     "path": "<Gamepad>/leftStick/down",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "Xbox",
                     "action": "MinigameDirectionalDown",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -503,7 +503,7 @@
                     "path": "<Gamepad>/dpad/down",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "Xbox",
                     "action": "MinigameDirectionalDown",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -525,7 +525,7 @@
                     "path": "<Gamepad>/leftStick/left",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "Xbox",
                     "action": "MinigameDirectionalLeft",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -536,7 +536,7 @@
                     "path": "<Gamepad>/dpad/left",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "Xbox",
                     "action": "MinigameDirectionalLeft",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -558,7 +558,7 @@
                     "path": "<Gamepad>/leftStick/right",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "Xbox",
                     "action": "MinigameDirectionalRight",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -569,7 +569,7 @@
                     "path": "<Gamepad>/dpad/right",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "Xbox",
                     "action": "MinigameDirectionalRight",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -608,7 +608,7 @@
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "Xbox",
                     "action": "Block",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -629,8 +629,19 @@
             ]
         },
         {
-            "name": "Gamepad",
-            "bindingGroup": "Gamepad",
+            "name": "Xbox",
+            "bindingGroup": "Xbox",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Playstation",
+            "bindingGroup": "Playstation",
             "devices": [
                 {
                     "devicePath": "<Gamepad>",

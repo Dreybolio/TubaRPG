@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3825767ecb5ccc041afd819a26dd9196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Tuba Knight
   maxHP: 15
   hp: 15
   numAttackOptions: 3
