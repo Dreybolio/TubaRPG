@@ -172,6 +172,16 @@ public class BattleManager : MonoBehaviour
                 }
             }
         }
+        // Update Status Effect UI
+        for (int i = 0; i < 2; i++)
+        {
+            bmManager.SetHeroStatusEffects(i, heroList[i].statusEffects);
+        }
+        for (int i = 0; i < 3; i++)
+        {
+            if (enemyList[i] == null) { continue; }
+            bmManager.SetEnemyStatusEffects(i, enemyList[i].statusEffects);
+        }
 
         // Roll for random events (If any)
         yield return new WaitForSeconds(0.1f);
@@ -452,6 +462,7 @@ public class BattleManager : MonoBehaviour
     {
         bmManager.SetEnemyHPBarValue(index, 0, false);
         bmManager.SetEnemySelectorValidity(index, false);
+        bmManager.SetEnemyStatusEffects(index, null);
         enemyList[index] = null;
 
         bool battleWon = true;

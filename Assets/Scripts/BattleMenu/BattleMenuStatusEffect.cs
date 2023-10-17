@@ -33,6 +33,7 @@ public class BattleMenuStatusEffect : MonoBehaviour
     }
     public void SetNumber(int num)
     {
+        if(num == -1) { imgNum.sprite = null;  return; } // It is infinite, so no number
         imgNum.sprite = numSprites[num];
     }
 }

@@ -15,16 +15,20 @@ public class BattleMenuStatusEffectHandler : MonoBehaviour
     }
     public void SetStatusEffects(Dictionary<StatusEffect, int> effects)
     {
-        int effectsFound = 0;
-        foreach (KeyValuePair<StatusEffect, int> effect in effects)
+        ClearAll();
+        if(effects != null)
         {
-            GameObject instance = Instantiate(statusEffectPrefab, transform);
-            instance.transform.position = new Vector2(0, DISTANCE_BETWEEN_EACH_ELEMENT * effectsFound);
-            BattleMenuStatusEffect script = instance.GetComponent<BattleMenuStatusEffect>();
-            script.SetIcon(effect.Key); script.SetNumber(effect.Value);
-            list.Add(instance);
+            int effectsFound = 0;
+            foreach (KeyValuePair<StatusEffect, int> effect in effects)
+            {
+                GameObject instance = Instantiate(statusEffectPrefab, transform);
+                instance.transform.position = new Vector2(0, DISTANCE_BETWEEN_EACH_ELEMENT * effectsFound);
+                BattleMenuStatusEffect script = instance.GetComponent<BattleMenuStatusEffect>();
+                script.SetIcon(effect.Key); script.SetNumber(effect.Value);
+                list.Add(instance);
 
-            effectsFound++;
+                effectsFound++;
+            }
         }
     }
 
