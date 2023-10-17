@@ -66,23 +66,23 @@ public class BattleManager : MonoBehaviour
         GameObject hero1 = Instantiate(gameData.heroOne_Object);
         hero1.transform.position = locationReferencer.heroSpawns[0].position;
         heroList[0] = hero1.GetComponent<GenericHero>();
-        heroList[0].SetMinigameParent(minigameHolder);
-        bmManager.SetHeroOneIcon(gameData.heroOne_Icon);
-        bmManager.SetHeroOneMaxHP(heroList[0].maxHP);
-        bmManager.SetHeroOneHP(heroList[0].maxHP);
-        bmManager.SetHeroOneMaxNP(heroList[0].maxNP);
-        bmManager.SetHeroOneNP(heroList[0].maxNP);
 
         // Place each hero 2 and assign their values
         GameObject hero2 = Instantiate(gameData.heroTwo_Object);
         hero2.transform.position = locationReferencer.heroSpawns[1].position;
         heroList[1] = hero2.GetComponent<GenericHero>();
-        heroList[1].SetMinigameParent(minigameHolder);
-        bmManager.SetHeroTwoIcon(gameData.heroTwo_Icon);
-        bmManager.SetHeroTwoMaxHP(heroList[1].maxHP);
-        bmManager.SetHeroTwoHP(heroList[1].maxHP);
-        bmManager.SetHeroTwoMaxNP(heroList[1].maxNP);
-        bmManager.SetHeroTwoNP(heroList[1].maxNP);
+
+        // Set Hero Values and Set UI Accordingly
+        for (int i = 0; i < 2; i++)
+        {
+            heroList[i].SetMinigameParent(minigameHolder);
+            bmManager.SetHeroMaxHP(i, heroList[i].maxHP);
+            bmManager.SetHeroHP(i, heroList[i].maxHP);
+            bmManager.SetHeroMaxNP(i, heroList[i].maxNP);
+            bmManager.SetHeroNP(i, heroList[i].maxNP);
+        }
+        bmManager.SetHeroIcon(0, gameData.heroOne_Icon);
+        bmManager.SetHeroIcon(1, gameData.heroTwo_Icon);
 
         activeHero = heroList[0];
         bmManager.SetMenuData(activeHero);
@@ -96,7 +96,6 @@ public class BattleManager : MonoBehaviour
                 GameObject enemy = Instantiate(bd.enemies[i]);
                 enemy.transform.position = locationReferencer.enemySpawns[i].position;
                 enemyList[i] = enemy.GetComponent<GenericEnemy>();
-                enemyList[i].SetPossibleTargets(heroList[0], heroList[1]);
                 bmManager.SetEnemyName(i, enemyList[i].name);
                 bmManager.SetEnemyHPBarValue(i, enemyList[i].hp);
                 bmManager.SetEnemySelectorValidity(i, enemyList[i] != null);
@@ -417,33 +416,6 @@ public class BattleManager : MonoBehaviour
         int index = GetEnemyIndex(enemy);
         Tuple<PostTurnEvent, int> t = new(pte, index);
         postTurnEvents.Add(t);
-    }
-    public void UpdateHeroHealthUI(GenericHero hero, int newHP)
-    {
-        if(hero == heroList[0])
-        {
-            bmManager.SetHeroOneHP(newHP);
-        }
-        else
-        {
-            bmManager.SetHeroTwoHP(newHP);
-        }
-    }
-    public void UpdateHeroNotePointUI(GenericHero hero, int newNP)
-    {
-        if (hero == heroList[0])
-        {
-            bmManager.SetHeroOneNP(newNP);
-        }
-        else
-        {
-            bmManager.SetHeroTwoNP(newNP);
-        }
-    }
-    public void UpdateEnemyHealthUI(GenericEnemy enemy, int newHP)
-    {
-        int index = GetEnemyIndex(enemy);
-        bmManager.SetEnemyHPBarValue(index, newHP);
     }
     private bool OnHeroKilled()
     {

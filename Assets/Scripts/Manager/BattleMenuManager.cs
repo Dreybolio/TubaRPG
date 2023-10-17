@@ -137,84 +137,96 @@ public class BattleMenuManager : MonoBehaviour
 
         text.text = hp.ToString();
     }
-    public void SetHeroOneIcon(Sprite spr)
+    public void SetHeroIcon(int index, Sprite spr)
     {
-        heroOneIcon.sprite = spr;
-    }
-    public void SetHeroOneMaxHP(int maxHP)
-    {
-        string s = ConvertIntToStringOfLength(maxHP, heroOneMaxHPDigits.Length);
-        for (int i = 0; i < heroOneMaxHPDigits.Length; i++)
+        if(index == 0)
         {
-            int.TryParse(s.Substring(i, 1), out int numAtVal);
-            heroOneMaxHPDigits[i].sprite = digits[numAtVal];
+            heroOneIcon.sprite = spr;
+        }else if(index == 1)
+        {
+            heroTwoIcon.sprite = spr;
         }
     }
-    public void SetHeroOneHP(int hp)
+    public void SetHeroMaxHP(int index, int maxHP)
     {
-        string s = ConvertIntToStringOfLength(hp, heroOneHPDigits.Length);
-        for (int i = 0; i < heroOneHPDigits.Length; i++)
+        if(index == 0)
         {
-            int.TryParse(s.Substring(i, 1), out int numAtVal);
-            heroOneHPDigits[i].sprite = digits[numAtVal];
+            string s = ConvertIntToStringOfLength(maxHP, heroOneMaxHPDigits.Length);
+            for (int i = 0; i < heroOneMaxHPDigits.Length; i++)
+            {
+                int.TryParse(s.Substring(i, 1), out int numAtVal);
+                heroOneMaxHPDigits[i].sprite = digits[numAtVal];
+            }
+        }else if(index == 1)
+        {
+            string s = ConvertIntToStringOfLength(maxHP, heroTwoMaxHPDigits.Length);
+            for (int i = 0; i < heroTwoMaxHPDigits.Length; i++)
+            {
+                int.TryParse(s.Substring(i, 1), out int numAtVal);
+                heroTwoMaxHPDigits[i].sprite = digits[numAtVal];
+            }
         }
     }
-    public void SetHeroOneMaxNP(int hp)
+    public void SetHeroHP(int index, int hp)
     {
-        string s = ConvertIntToStringOfLength(hp, heroOneMaxNPDigits.Length);
-        for (int i = 0; i < heroOneMaxNPDigits.Length; i++)
+        if(index == 0)
         {
-            int.TryParse(s.Substring(i, 1), out int numAtVal);
-            heroOneMaxNPDigits[i].sprite = digits[numAtVal];
+            string s = ConvertIntToStringOfLength(hp, heroOneHPDigits.Length);
+            for (int i = 0; i < heroOneHPDigits.Length; i++)
+            {
+                int.TryParse(s.Substring(i, 1), out int numAtVal);
+                heroOneHPDigits[i].sprite = digits[numAtVal];
+            }
+        }
+        else if(index == 1)
+        {
+            string s = ConvertIntToStringOfLength(hp, heroTwoHPDigits.Length);
+            for (int i = 0; i < heroTwoHPDigits.Length; i++)
+            {
+                int.TryParse(s.Substring(i, 1), out int numAtVal);
+                heroTwoHPDigits[i].sprite = digits[numAtVal];
+            }
         }
     }
-    public void SetHeroOneNP(int hp)
+    public void SetHeroMaxNP(int index, int hp)
     {
-        string s = ConvertIntToStringOfLength(hp, heroOneNPDigits.Length);
-        for (int i = 0; i < heroOneNPDigits.Length; i++)
+        if(index == 0)
         {
-            int.TryParse(s.Substring(i, 1), out int numAtVal);
-            heroOneNPDigits[i].sprite = digits[numAtVal];
+            string s = ConvertIntToStringOfLength(hp, heroOneMaxNPDigits.Length);
+            for (int i = 0; i < heroOneMaxNPDigits.Length; i++)
+            {
+                int.TryParse(s.Substring(i, 1), out int numAtVal);
+                heroOneMaxNPDigits[i].sprite = digits[numAtVal];
+            }
+        }
+        else if(index == 1) 
+        {
+            string s = ConvertIntToStringOfLength(hp, heroTwoMaxNPDigits.Length);
+            for (int i = 0; i < heroTwoMaxNPDigits.Length; i++)
+            {
+                int.TryParse(s.Substring(i, 1), out int numAtVal);
+                heroTwoMaxNPDigits[i].sprite = digits[numAtVal];
+            }
         }
     }
-    public void SetHeroTwoIcon(Sprite spr)
+    public void SetHeroNP(int index, int hp)
     {
-        heroTwoIcon.sprite = spr;
-    }
-    public void SetHeroTwoMaxHP(int maxHP)
-    {
-        string s = ConvertIntToStringOfLength(maxHP, heroTwoMaxHPDigits.Length);
-        for (int i = 0; i < heroTwoMaxHPDigits.Length; i++)
+        if(index == 0)
         {
-            int.TryParse(s.Substring(i, 1), out int numAtVal);
-            heroTwoMaxHPDigits[i].sprite = digits[numAtVal];
-        }
-    }
-    public void SetHeroTwoHP(int hp)
-    {
-        string s = ConvertIntToStringOfLength(hp, heroTwoHPDigits.Length);
-        for (int i = 0; i < heroTwoHPDigits.Length; i++)
+            string s = ConvertIntToStringOfLength(hp, heroOneNPDigits.Length);
+            for (int i = 0; i < heroOneNPDigits.Length; i++)
+            {
+                int.TryParse(s.Substring(i, 1), out int numAtVal);
+                heroOneNPDigits[i].sprite = digits[numAtVal];
+            }
+        }else if(index == 1)
         {
-            int.TryParse(s.Substring(i, 1), out int numAtVal);
-            heroTwoHPDigits[i].sprite = digits[numAtVal];
-        }
-    }
-    public void SetHeroTwoMaxNP(int hp)
-    {
-        string s = ConvertIntToStringOfLength(hp, heroTwoMaxNPDigits.Length);
-        for (int i = 0; i < heroTwoMaxNPDigits.Length; i++)
-        {
-            int.TryParse(s.Substring(i, 1), out int numAtVal);
-            heroTwoMaxNPDigits[i].sprite = digits[numAtVal];
-        }
-    }
-    public void SetHeroTwoNP(int hp)
-    {
-        string s = ConvertIntToStringOfLength(hp, heroTwoNPDigits.Length);
-        for (int i = 0; i < heroTwoNPDigits.Length; i++)
-        {
-            int.TryParse(s.Substring(i, 1), out int numAtVal);
-            heroTwoNPDigits[i].sprite = digits[numAtVal];
+            string s = ConvertIntToStringOfLength(hp, heroTwoNPDigits.Length);
+            for (int i = 0; i < heroTwoNPDigits.Length; i++)
+            {
+                int.TryParse(s.Substring(i, 1), out int numAtVal);
+                heroTwoNPDigits[i].sprite = digits[numAtVal];
+            }
         }
     }
     public void SetHeroStatusEffects(int index, Dictionary<StatusEffect, int> dict)

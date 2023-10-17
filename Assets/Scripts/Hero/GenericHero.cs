@@ -28,6 +28,7 @@ public abstract class GenericHero : MonoBehaviour
     public bool canBeSelected = true;
     public bool canBeTargeted = true;
     public bool isAlive = true;
+    protected int heroIndex;
     public int actionsRemaining;
     [NonSerialized] public Dictionary<StatusEffect, int> statusEffects = new();
 
@@ -39,6 +40,7 @@ public abstract class GenericHero : MonoBehaviour
 
     // Pointers
     protected BattleManager battleManager;
+    protected BattleMenuManager bmManager;
     protected GameData gameData;
     protected Animator animator;
     protected BattleLocationReferencer locationReferencer;
@@ -56,8 +58,10 @@ public abstract class GenericHero : MonoBehaviour
     private void Start()
     {
         battleManager = FindObjectOfType<BattleManager>();
+        bmManager = FindObjectOfType<BattleMenuManager>();
         animator = GetComponent<Animator>();
         locationReferencer = FindObjectOfType<BattleLocationReferencer>();
+        heroIndex = battleManager.GetHeroIndex(this);
         _hp = maxHP; _np = maxNP;
         AssignAnimationIDs();
     }
@@ -111,7 +115,7 @@ public abstract class GenericHero : MonoBehaviour
         }
         else
         {
-            battleManager.UpdateHeroHealthUI(this, _hp);
+            bmManager.SetHeroHP(heroIndex, _hp);
         }
     }
     public void Kill()
@@ -121,7 +125,7 @@ public abstract class GenericHero : MonoBehaviour
     private IEnumerator C_Kill()
     {
         _hp = 0;
-        battleManager.UpdateHeroHealthUI(this, 0);
+        bmManager.SetHeroHP(heroIndex, 0);
         isAlive = false;
         canBeSelected = false;
         canBeTargeted = false;
@@ -151,11 +155,17 @@ public abstract class GenericHero : MonoBehaviour
         {
             Debug.LogError("ERROR: Used more NP than we have. This should never happen.");
         }
-        battleManager.UpdateHeroNotePointUI(this, _np);
+        bmManager.SetHeroNP(heroIndex, _np);
     }
     public int GetNP()
     {
         return _np;
+    }
+    public void AddStatusEffect(StatusEffect statusEffect, int turns)
+    {
+        statusEffects.Add(statusEffect, turns);
+        int index = battleManager.GetHeroIndex(this);
+        
     }
     public void SetGreyOut(bool b)
     {

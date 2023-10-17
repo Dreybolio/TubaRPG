@@ -10,6 +10,7 @@ public abstract class GenericEnemy : MonoBehaviour
     [SerializeField] private int maxHP;
     public int hp;
     [NonSerialized] public Dictionary<StatusEffect, int> statusEffects = new();
+    protected int enemyIndex;
 
     // Attacking Data
     public int numAttackOptions;
@@ -20,6 +21,7 @@ public abstract class GenericEnemy : MonoBehaviour
 
     // Pointers
     protected BattleManager battleManager;
+    protected BattleMenuManager bmManager;
     protected Animator animator;
 
     // Animation IDs
@@ -32,7 +34,10 @@ public abstract class GenericEnemy : MonoBehaviour
     private void Start()
     {
         battleManager = FindObjectOfType<BattleManager>();
+        bmManager = FindObjectOfType<BattleMenuManager>();
         animator = GetComponent<Animator>();
+        enemyIndex = battleManager.GetEnemyIndex(this);
+        SetPossibleTargets();
         AssignAnimationIDs();
     }
     public void ProcessTurn()
@@ -48,12 +53,12 @@ public abstract class GenericEnemy : MonoBehaviour
         this.hp -= hp;
         if(this.hp <= 0)
         {
-            battleManager.UpdateEnemyHealthUI(this, 0);
+            bmManager.SetEnemyHPBarValue(enemyIndex, 0);
             battleManager.AddPostTurnEvent(PostTurnEvent.ENEMY_DIED, this);
         }
         else
         {
-            battleManager.UpdateEnemyHealthUI(this, this.hp);
+            bmManager.SetEnemyHPBarValue(enemyIndex, hp);
         }
     }
     public void Kill()
@@ -66,9 +71,10 @@ public abstract class GenericEnemy : MonoBehaviour
         yield return new WaitForSeconds(2);
         Destroy(gameObject);
     }
-    public void SetPossibleTargets(GenericHero hero1, GenericHero hero2)
+    private void SetPossibleTargets()
     {
-        targets = new GenericHero[] { hero1, hero2 };
+        targets = new GenericHero[] 
+        { battleManager.GetHero(0), battleManager.GetHero(1) };
     }
     public Transform GetPositionAtFront()
     {
