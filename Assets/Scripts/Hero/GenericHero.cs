@@ -164,8 +164,12 @@ public abstract class GenericHero : MonoBehaviour
     public void AddStatusEffect(StatusEffect statusEffect, int turns)
     {
         statusEffects.Add(statusEffect, turns);
-        int index = battleManager.GetHeroIndex(this);
-        
+        bmManager.SetHeroStatusEffects(heroIndex, statusEffects); // Update UI
+    }
+    public void RemoveStatusEffect(StatusEffect statusEffect)
+    {
+        statusEffects.Remove(statusEffect);
+        bmManager.SetHeroStatusEffects(heroIndex, statusEffects);
     }
     public void SetGreyOut(bool b)
     {

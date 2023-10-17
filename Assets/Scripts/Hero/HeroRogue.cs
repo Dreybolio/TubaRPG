@@ -33,7 +33,7 @@ public class HeroRogue : GenericHero
         {
             target.Damage(1 * decrescedoBonus);
         }
-        if (hasDecrescendo) { statusEffects.Remove(StatusEffect.DECRESCENDO); }
+        if (hasDecrescendo) { RemoveStatusEffect(StatusEffect.DECRESCENDO); }
 
         // Walk back to spot
         WalkToTarget(locationReferencer.heroSpawns[battleManager.GetHeroIndex(this)], 1f);
@@ -58,7 +58,7 @@ public class HeroRogue : GenericHero
 
         if(mgScript.successLevel == 1)
         {
-            statusEffects.Add(StatusEffect.DECRESCENDO, -1);
+            AddStatusEffect(StatusEffect.DECRESCENDO, -1);
         }
 
         yield return new WaitForSeconds(1f);

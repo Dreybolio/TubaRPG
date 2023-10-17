@@ -96,6 +96,16 @@ public abstract class GenericEnemy : MonoBehaviour
         Debug.LogError("Could not choose attack. Did you input attack chances correctly?");
         return -1;
     }
+    public void AddStatusEffect(StatusEffect statusEffect, int turns)
+    {
+        statusEffects.Add(statusEffect, turns);
+        bmManager.SetHeroStatusEffects(enemyIndex, statusEffects); // Update UI
+    }
+    public void RemoveStatusEffect(StatusEffect statusEffect)
+    {
+        statusEffects.Remove(statusEffect);
+        bmManager.SetHeroStatusEffects(enemyIndex, statusEffects);
+    }
     private void AssignAnimationIDs()
     {
         _animIdle = Animator.StringToHash("Idle");
