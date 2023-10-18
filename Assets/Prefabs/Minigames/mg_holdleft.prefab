@@ -511,11 +511,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e59dcd0669f51db4ab6d9c699b3ab34f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprCorrect: {fileID: -963505094, guid: cf4e01fc04eb4ae4c8f852a7e85f1f35, type: 3}
+  sprIncorrect: {fileID: -1496078486, guid: cf4e01fc04eb4ae4c8f852a7e85f1f35, type: 3}
   indicators:
   - {fileID: 5954785107375250805}
   - {fileID: 6462425152635434056}
   - {fileID: 3924245187905810961}
   - {fileID: 7798687608531097344}
+  btnIndicatorLeft: {fileID: 5462717571039077375}
   sprPassed: {fileID: 1528385786, guid: cf4e01fc04eb4ae4c8f852a7e85f1f35, type: 3}
-  sprCorrect: {fileID: -963505094, guid: cf4e01fc04eb4ae4c8f852a7e85f1f35, type: 3}
-  sprIncorrect: {fileID: -1496078486, guid: cf4e01fc04eb4ae4c8f852a7e85f1f35, type: 3}

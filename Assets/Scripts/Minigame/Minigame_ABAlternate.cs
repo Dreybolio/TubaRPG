@@ -28,6 +28,8 @@ public class Minigame_ABAlternate : MinigameBase
     {
         base.Awake();
         barFill.fillAmount = 0f;
+        btnAIndicator.sprite = sprA;
+        btnBIndicator.sprite = sprB;
     }
     public override void StartMinigame()
     {

@@ -16,13 +16,17 @@ public abstract class GenericEnemy : MonoBehaviour
     public int numAttackOptions;
     public float[] attackOptionChances;
     protected GenericHero[] targets;
-    protected GenericHero currentTarget;
+    protected GenericHero target;
 
 
     // Pointers
     protected BattleManager battleManager;
     protected BattleMenuManager bmManager;
     protected Animator animator;
+    protected BattleLocationReferencer locationReferencer;
+
+    // Vars
+    protected bool _walkCoroutineFinished;
 
     // Animation IDs
     protected int _animIdle;
@@ -36,6 +40,7 @@ public abstract class GenericEnemy : MonoBehaviour
         battleManager = FindObjectOfType<BattleManager>();
         bmManager = FindObjectOfType<BattleMenuManager>();
         animator = GetComponent<Animator>();
+        locationReferencer = FindObjectOfType<BattleLocationReferencer>();
         enemyIndex = battleManager.GetEnemyIndex(this);
         SetPossibleTargets();
         AssignAnimationIDs();
@@ -48,10 +53,10 @@ public abstract class GenericEnemy : MonoBehaviour
     {
         battleManager.TurnProcessed();
     }
-    public void Damage(int hp)
+    public void Damage(int dmg)
     {
-        this.hp -= hp;
-        if(this.hp <= 0)
+        hp -= dmg;
+        if(hp <= 0)
         {
             bmManager.SetEnemyHPBarValue(enemyIndex, 0);
             battleManager.AddPostTurnEvent(PostTurnEvent.ENEMY_DIED, this);
@@ -100,6 +105,24 @@ public abstract class GenericEnemy : MonoBehaviour
         }
         Debug.LogError("Could not choose attack. Did you input attack chances correctly?");
         return -1;
+    }
+    public void WalkToTarget(Transform target, float duration)
+    {
+        _walkCoroutineFinished = false;
+        StartCoroutine(C_WalkToTarget(target, duration));
+    }
+    private IEnumerator C_WalkToTarget(Transform target, float duration)
+    {
+        Vector3 startPos = transform.position;
+        float timeElapsed = 0;
+        while (timeElapsed <= duration)
+        {
+            transform.position = Vector3.Lerp(startPos, target.position, timeElapsed / duration);
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
+        transform.position = target.position;
+        _walkCoroutineFinished = true;
     }
     public void AddStatusEffect(StatusEffect statusEffect, int turns)
     {

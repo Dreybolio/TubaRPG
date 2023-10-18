@@ -18,6 +18,7 @@ public class Minigame_WaitPressA : MinigameBase
     private new void Awake()
     {
         base.Awake();
+        indicator.sprite = sprA;
     }
     public override void StartMinigame()
     {

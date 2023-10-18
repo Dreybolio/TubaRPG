@@ -138,12 +138,12 @@ public class Minigame_DoubleHoldRelease : MinigameBase
 
     private void DecideButtons()
     {
-        int r1 = Random.Range(0, 4);
+        int r1 = Random.Range(1, 5);
         bar1Button = (MinigameButton)r1; // A, B, X, Y
         int r2;
         do
         {
-            r2 = Random.Range(0, 4);
+            r2 = Random.Range(1, 5);
         } while (r2 == r1); // Loop until r2 is not r1
         bar2Button = (MinigameButton)r2;
     }
@@ -167,17 +167,13 @@ public class Minigame_DoubleHoldRelease : MinigameBase
     }
     private bool CheckButtonIsHeld(MinigameButton btn)
     {
-        switch(btn)
+        return btn switch
         {
-            case MinigameButton.A:
-                return inputManager.GetMinigameButtonAHeld();
-            case MinigameButton.B:
-                return inputManager.GetMinigameButtonBHeld();
-            case MinigameButton.X:
-                return inputManager.GetMinigameButtonXHeld();
-            case MinigameButton.Y:
-                return inputManager.GetMinigameButtonYHeld();
-            default: return false;
-        }
+            MinigameButton.A => inputManager.GetMinigameButtonAHeld(),
+            MinigameButton.B => inputManager.GetMinigameButtonBHeld(),
+            MinigameButton.X => inputManager.GetMinigameButtonXHeld(),
+            MinigameButton.Y => inputManager.GetMinigameButtonYHeld(),
+            _ => throw new System.NotImplementedException()
+        };
     }
 }

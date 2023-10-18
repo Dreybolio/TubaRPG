@@ -572,6 +572,7 @@ MonoBehaviour:
   - {fileID: 1054357102, guid: 5dba3c74f92457a40ae2da58d75082aa, type: 3}
   - {fileID: 1320707993, guid: 5dba3c74f92457a40ae2da58d75082aa, type: 3}
   - {fileID: -504650303, guid: 5dba3c74f92457a40ae2da58d75082aa, type: 3}
+  keyboardSpriteAsset: {fileID: 11400000, guid: 80e3c6befbbbdbe4bbfcd1b7ffab159d, type: 2}
   xboxButtons:
   - {fileID: 274072053, guid: fa6a669cc6f56f54588516bd3c8708e0, type: 3}
   - {fileID: -33881321, guid: fa6a669cc6f56f54588516bd3c8708e0, type: 3}
@@ -581,6 +582,7 @@ MonoBehaviour:
   - {fileID: 179689963, guid: fa6a669cc6f56f54588516bd3c8708e0, type: 3}
   - {fileID: -615397611, guid: fa6a669cc6f56f54588516bd3c8708e0, type: 3}
   - {fileID: 1963911274, guid: fa6a669cc6f56f54588516bd3c8708e0, type: 3}
+  xboxSpriteAsset: {fileID: 11400000, guid: 2be5e91d27d2efe4e86fda1b173d1fbf, type: 2}
   playstationButtons:
   - {fileID: -410325638, guid: 26a0e127d8e314e45a76347d0328ed51, type: 3}
   - {fileID: 1882732137, guid: 26a0e127d8e314e45a76347d0328ed51, type: 3}
@@ -590,6 +592,7 @@ MonoBehaviour:
   - {fileID: 281916935, guid: 26a0e127d8e314e45a76347d0328ed51, type: 3}
   - {fileID: 830701523, guid: 26a0e127d8e314e45a76347d0328ed51, type: 3}
   - {fileID: 1372557414, guid: 26a0e127d8e314e45a76347d0328ed51, type: 3}
+  playstationSpriteAsset: {fileID: 11400000, guid: 2e0335b50adec5e4ab19ce7ccec701b6, type: 2}
 --- !u!4 &1713747492
 Transform:
   m_ObjectHideFlags: 0

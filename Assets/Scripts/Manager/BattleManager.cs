@@ -98,7 +98,7 @@ public class BattleManager : MonoBehaviour
                 enemy.transform.position = locationReferencer.enemySpawns[i].position;
                 enemyList[i] = enemy.GetComponent<GenericEnemy>();
                 bmManager.SetEnemyName(i, enemyList[i].name);
-                bmManager.SetEnemyHPBarValue(i, enemyList[i].hp);
+                bmManager.SetEnemyHPBarMaxValue(i, enemyList[i].hp);
                 bmManager.SetEnemySelectorValidity(i, enemyList[i] != null);
             }
             else

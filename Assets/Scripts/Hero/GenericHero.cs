@@ -55,6 +55,9 @@ public abstract class GenericHero : MonoBehaviour
     private int _animDie;
     private int _animGreyOut;
 
+    // Misc
+    [SerializeField] private Transform postitionAtFront;
+
     private void Start()
     {
         battleManager = FindObjectOfType<BattleManager>();
@@ -166,15 +169,23 @@ public abstract class GenericHero : MonoBehaviour
     {
         return _np;
     }
+    public Transform GetPositionAtFront()
+    {
+        return postitionAtFront;
+    }
     public void AddStatusEffect(StatusEffect statusEffect, int turns)
     {
         statusEffects.Add(statusEffect, turns);
         bmManager.SetHeroStatusEffects(heroIndex, statusEffects); // Update UI
+
+        if(statusEffect == StatusEffect.DECRESCENDO) { canBeTargeted = false; }
     }
     public void RemoveStatusEffect(StatusEffect statusEffect)
     {
         statusEffects.Remove(statusEffect);
         bmManager.SetHeroStatusEffects(heroIndex, statusEffects);
+
+        if (statusEffect == StatusEffect.DECRESCENDO) { canBeTargeted = true; }
     }
     public void SetGreyOut(bool b)
     {

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,12 +7,14 @@ using UnityEngine.UI;
 public class Minigame_HoldLeft : MinigameBase
 {
     [SerializeField] private Image[] indicators;
+    [SerializeField] private Image btnIndicatorLeft;
 
     [SerializeField] private Sprite sprPassed;
 
     private new void Awake()
     {
         base.Awake();
+        btnIndicatorLeft.sprite = sprLeft;
     }
     public override void StartMinigame()
     {

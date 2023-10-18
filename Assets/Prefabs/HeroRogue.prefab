@@ -220,13 +220,13 @@ MonoBehaviour:
   attackDesc: A regular attack.<br>Wait until the indicator pops up, then press <A>
   abilityOneName: Decrescendo
   abilityOneDesc: Noir's next attack does 3x damage. Cannot be targeted this turn.<br>Press
-    the shown combination of <A><B><X><Y>
+    the shown combination of <A> <B> <X> <Y>
   abilityOneNPCost: 2
   abilityOneRequiresHeroSelection: 0
   abilityOneRequiresEnemySelection: 0
   abilityTwoName: Jazzy Tune
-  abilityTwoDesc: Puts an enemy to sleep.<br>Press the shown <A><B><X><Y> combination
-    on time with the beat.
+  abilityTwoDesc: Puts an enemy to sleep.<br>Press the shown <A> <B> <X> <Y> <UP>
+    <DOWN> <LEFT> <RIGHT> combination on time with the beat.
   abilityTwoNPCost: 3
   abilityTwoRequiresHeroSelection: 0
   abilityTwoRequiresEnemySelection: 1

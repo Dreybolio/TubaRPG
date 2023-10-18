@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class Enemy_TubaKnight : GenericEnemy
 {
@@ -8,13 +9,13 @@ public class Enemy_TubaKnight : GenericEnemy
     public new void ProcessTurn()
     {
         base.ProcessTurn();
-        currentTarget = null;
-        while (currentTarget == null)
+        target = null;
+        while (target == null)
         {
             int r = Random.Range(0, 2);
             if (targets[r].canBeTargeted)
             {
-                currentTarget = targets[r];
+                target = targets[r];
             }
         }
         int attack = ChooseAttack();
@@ -33,11 +34,26 @@ public class Enemy_TubaKnight : GenericEnemy
     }
     private IEnumerator DoNoteProjectile()
     {
-        // Play animation
-        // Allow for block
-        yield return new WaitForSeconds(1);
-        currentTarget.Damage(2);
-        yield return new WaitForSeconds(0.5f);
+        // Walk to target
+        WalkToTarget(target.GetPositionAtFront(), 1f);
+        yield return new WaitUntil(() => _walkCoroutineFinished);
+        yield return new WaitForSeconds(0.25f);
+
+        // Do animation, allow for blocking
+        bool blockSuccessful = false;
+        if (!blockSuccessful)
+        {
+            target.Damage(2);
+        }
+        else
+        {
+            target.Damage(1);
+        }
+
+        // Walk back to spot
+        WalkToTarget(locationReferencer.enemySpawns[enemyIndex], 1f);
+        yield return new WaitUntil(() => _walkCoroutineFinished);
+        yield return new WaitForSeconds(0.25f);
         FinishTurn();
     }
     private IEnumerator DoCrush()
@@ -45,7 +61,7 @@ public class Enemy_TubaKnight : GenericEnemy
         // Play animation
         // Allow for block
         yield return new WaitForSeconds(1);
-        currentTarget.Damage(2);
+        target.Damage(2);
         yield return new WaitForSeconds(0.5f);
         FinishTurn();
     }
@@ -54,7 +70,7 @@ public class Enemy_TubaKnight : GenericEnemy
         // Check if space is available
         // Summon new guy and tell the BattleManager about it
         yield return new WaitForSeconds(1);
-        currentTarget.Damage(2);
+        target.Damage(2);
         yield return new WaitForSeconds(0.5f);
         FinishTurn();
     }

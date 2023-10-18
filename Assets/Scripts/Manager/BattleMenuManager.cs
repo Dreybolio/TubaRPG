@@ -39,12 +39,7 @@ public class BattleMenuManager : MonoBehaviour
     [SerializeField] private BattleMenuElement_EnemySelector enemyTwoSelector;
 
     [Header("Enemy HP Bar")]
-    [SerializeField] private CanvasGroup groupE0HP;
-    [SerializeField] private CanvasGroup groupE1HP;
-    [SerializeField] private CanvasGroup groupE2HP;
-    [SerializeField] private Text e0HPText;
-    [SerializeField] private Text e1HPText;
-    [SerializeField] private Text e2HPText;
+    [SerializeField] private HealthBar[] enemyHealthBars;
 
     [Header("Status Effect Builders")]
     [SerializeField] private BattleMenuStatusEffectHandler heroOneStatusEffectHandler;
@@ -125,17 +120,29 @@ public class BattleMenuManager : MonoBehaviour
             enemyTwoSelector.validSelection = isValid;
         }
     }
+    public void SetEnemyHPBarMaxValue(int index, int maxHP, bool enabled = true)
+    {
+        if (enabled)
+        {
+            enemyHealthBars[index].Enable();
+        }
+        else
+        {
+            enemyHealthBars[index].Disable();
+        }
+        enemyHealthBars[index].SetMaximum(maxHP, true);
+    }
     public void SetEnemyHPBarValue(int index, int hp, bool enabled = true)
     {
-        CanvasGroup group;
-        Text text;
-        if(index == 0) { group = groupE0HP; text = e0HPText; } // Index 0
-        else if (index == 1) { group = groupE1HP; text = e1HPText; } // Index 1
-        else { group = groupE2HP; text = e2HPText; } // Index 2
-        
-        group.alpha = enabled ? 1f : 0f;
-
-        text.text = hp.ToString();
+        if (enabled)
+        {
+            enemyHealthBars[index].Enable();
+        }
+        else
+        {
+            enemyHealthBars[index].Disable();
+        }
+        enemyHealthBars[index].SetValue(hp);
     }
     public void SetHeroIcon(int index, Sprite spr)
     {

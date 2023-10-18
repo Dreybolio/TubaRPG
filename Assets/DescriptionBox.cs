@@ -9,7 +9,6 @@ public class DescriptionBox : MonoBehaviour
     private void Start()
     {
         inputManager = InputManager.Instance;
-
         SetSpriteSheet();
     }
 
