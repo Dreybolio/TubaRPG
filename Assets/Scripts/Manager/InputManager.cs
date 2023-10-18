@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,8 +13,11 @@ public class InputManager : MonoBehaviour
     private BattleControls battleControls;
     private PlayerInput input;
     [SerializeField] private Sprite[] keyboardButtons;
+    [SerializeField] private TMP_SpriteAsset keyboardSpriteAsset;
     [SerializeField] private Sprite[] xboxButtons;
+    [SerializeField] private TMP_SpriteAsset xboxSpriteAsset;
     [SerializeField] private Sprite[] playstationButtons;
+    [SerializeField] private TMP_SpriteAsset playstationSpriteAsset;
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -114,7 +118,7 @@ public class InputManager : MonoBehaviour
     {
         return battleControls.Minigame.MinigameDirectionalLeft.IsPressed();
     }
-    public bool GetMinigameButtonRight()
+    public bool GetMinigameButtonRightPressed()
     {
         return battleControls.Minigame.MinigameDirectionalRight.triggered;
     }
@@ -138,6 +142,21 @@ public class InputManager : MonoBehaviour
                 return xboxButtons;
             case "Playstation":
                 return playstationButtons;
+            default:
+                Debug.LogError("ERROR: Could not find current control scheme!");
+                return null;
+        }
+    }
+    public TMP_SpriteAsset GetTextSpriteSheet()
+    {
+        switch (input.currentControlScheme)
+        {
+            case "Keyboard":
+                return keyboardSpriteAsset;
+            case "Xbox":
+                return xboxSpriteAsset;
+            case "Playstation":
+                return playstationSpriteAsset;
             default:
                 Debug.LogError("ERROR: Could not find current control scheme!");
                 return null;

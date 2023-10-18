@@ -116,6 +116,11 @@ public abstract class GenericHero : MonoBehaviour
         else
         {
             bmManager.SetHeroHP(heroIndex, _hp);
+            // Wake up if asleep
+            if (statusEffects.ContainsKey(StatusEffect.ASLEEP))
+            {
+                RemoveStatusEffect(StatusEffect.ASLEEP);
+            }
         }
     }
     public void Kill()

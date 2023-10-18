@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public enum BattleStage
@@ -155,7 +156,7 @@ public class BattleManager : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             if (enemyList[i]  == null) { continue; }
-            foreach (KeyValuePair<StatusEffect, int> effect in enemyList[i].statusEffects)
+            foreach (KeyValuePair<StatusEffect, int> effect in enemyList[i].statusEffects.ToList())
             {
                 if (effect.Key == StatusEffect.FERMATA) { enemyList[i].Damage(1); }
                 

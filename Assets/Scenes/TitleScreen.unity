@@ -430,6 +430,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3881d1fc93bb574bae2762a899a8b01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heroObjectRefs: []
+  heroIconRefs: []
 --- !u!1 &1687259180
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,14 +564,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyboardButtons:
-  - {fileID: 274072053, guid: fa6a669cc6f56f54588516bd3c8708e0, type: 3}
-  - {fileID: -33881321, guid: fa6a669cc6f56f54588516bd3c8708e0, type: 3}
-  - {fileID: 123556165, guid: fa6a669cc6f56f54588516bd3c8708e0, type: 3}
-  - {fileID: 2050602389, guid: fa6a669cc6f56f54588516bd3c8708e0, type: 3}
-  - {fileID: 2059228210, guid: fa6a669cc6f56f54588516bd3c8708e0, type: 3}
-  - {fileID: 179689963, guid: fa6a669cc6f56f54588516bd3c8708e0, type: 3}
-  - {fileID: -615397611, guid: fa6a669cc6f56f54588516bd3c8708e0, type: 3}
-  - {fileID: 1963911274, guid: fa6a669cc6f56f54588516bd3c8708e0, type: 3}
+  - {fileID: -644860361, guid: 5dba3c74f92457a40ae2da58d75082aa, type: 3}
+  - {fileID: -194067167, guid: 5dba3c74f92457a40ae2da58d75082aa, type: 3}
+  - {fileID: 527335904, guid: 5dba3c74f92457a40ae2da58d75082aa, type: 3}
+  - {fileID: 1517557203, guid: 5dba3c74f92457a40ae2da58d75082aa, type: 3}
+  - {fileID: -246136366, guid: 5dba3c74f92457a40ae2da58d75082aa, type: 3}
+  - {fileID: 1054357102, guid: 5dba3c74f92457a40ae2da58d75082aa, type: 3}
+  - {fileID: 1320707993, guid: 5dba3c74f92457a40ae2da58d75082aa, type: 3}
+  - {fileID: -504650303, guid: 5dba3c74f92457a40ae2da58d75082aa, type: 3}
   xboxButtons:
   - {fileID: 274072053, guid: fa6a669cc6f56f54588516bd3c8708e0, type: 3}
   - {fileID: -33881321, guid: fa6a669cc6f56f54588516bd3c8708e0, type: 3}
@@ -580,14 +582,14 @@ MonoBehaviour:
   - {fileID: -615397611, guid: fa6a669cc6f56f54588516bd3c8708e0, type: 3}
   - {fileID: 1963911274, guid: fa6a669cc6f56f54588516bd3c8708e0, type: 3}
   playstationButtons:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: -410325638, guid: 26a0e127d8e314e45a76347d0328ed51, type: 3}
+  - {fileID: 1882732137, guid: 26a0e127d8e314e45a76347d0328ed51, type: 3}
+  - {fileID: 656929201, guid: 26a0e127d8e314e45a76347d0328ed51, type: 3}
+  - {fileID: 539942960, guid: 26a0e127d8e314e45a76347d0328ed51, type: 3}
+  - {fileID: 1948247474, guid: 26a0e127d8e314e45a76347d0328ed51, type: 3}
+  - {fileID: 281916935, guid: 26a0e127d8e314e45a76347d0328ed51, type: 3}
+  - {fileID: 830701523, guid: 26a0e127d8e314e45a76347d0328ed51, type: 3}
+  - {fileID: 1372557414, guid: 26a0e127d8e314e45a76347d0328ed51, type: 3}
 --- !u!4 &1713747492
 Transform:
   m_ObjectHideFlags: 0

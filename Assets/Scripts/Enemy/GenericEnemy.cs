@@ -59,6 +59,11 @@ public abstract class GenericEnemy : MonoBehaviour
         else
         {
             bmManager.SetEnemyHPBarValue(enemyIndex, hp);
+            // Wake up if asleep
+            if (statusEffects.ContainsKey(StatusEffect.ASLEEP))
+            {
+                RemoveStatusEffect(StatusEffect.ASLEEP);
+            }
         }
     }
     public void Kill()
@@ -99,12 +104,12 @@ public abstract class GenericEnemy : MonoBehaviour
     public void AddStatusEffect(StatusEffect statusEffect, int turns)
     {
         statusEffects.Add(statusEffect, turns);
-        bmManager.SetHeroStatusEffects(enemyIndex, statusEffects); // Update UI
+        bmManager.SetEnemyStatusEffects(enemyIndex, statusEffects); // Update UI
     }
     public void RemoveStatusEffect(StatusEffect statusEffect)
     {
         statusEffects.Remove(statusEffect);
-        bmManager.SetHeroStatusEffects(enemyIndex, statusEffects);
+        bmManager.SetEnemyStatusEffects(enemyIndex, statusEffects);
     }
     private void AssignAnimationIDs()
     {

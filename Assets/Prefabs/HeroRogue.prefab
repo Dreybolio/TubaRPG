@@ -236,7 +236,7 @@ MonoBehaviour:
   actionsRemaining: 0
   attackMinigame: {fileID: 78066196323939719, guid: df69fb7ff24ba5941b6a78b06747c3d6, type: 3}
   abilityOneMinigame: {fileID: 78066196323939719, guid: 2220bf32e1b1346439cad3e0bd3846c0, type: 3}
-  abilityTwoMinigame: {fileID: 0}
+  abilityTwoMinigame: {fileID: 78066196323939719, guid: 1a98880c49052b248890186a3a576b3e, type: 3}
 --- !u!95 &5835140768831680001
 Animator:
   serializedVersion: 4

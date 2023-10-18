@@ -5,6 +5,13 @@ using UnityEngine;
 public class DescriptionBox : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI textMesh;
+    private InputManager inputManager;
+    private void Start()
+    {
+        inputManager = InputManager.Instance;
+
+        SetSpriteSheet();
+    }
 
     public void SetText(string text)
     {
@@ -26,5 +33,10 @@ public class DescriptionBox : MonoBehaviour
         newTxt = newTxt.Replace("<LEFT>", "<sprite=6>");
         newTxt = newTxt.Replace("<RIGHT>", "<sprite=7>");
         return newTxt;
+    }
+
+    private void SetSpriteSheet()
+    {
+        textMesh.spriteAsset = inputManager.GetTextSpriteSheet();
     }
 }

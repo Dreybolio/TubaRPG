@@ -67,6 +67,25 @@ public class HeroRogue : GenericHero
     }
     public override void DoAbilityTwo(GenericEnemy target)
     {
+        StartCoroutine(C_DoAbilityTwo(target));
+    }
+    public IEnumerator C_DoAbilityTwo(GenericEnemy target)
+    {
+        SubtractNP(abilityTwoNPCost);
+        yield return new WaitForSeconds(0.80f);
+
+        GameObject mgObject = Instantiate(abilityTwoMinigame, minigameParent);
+        Minigame_5ButtonTimed mgScript = mgObject.GetComponent<Minigame_5ButtonTimed>(); // We are expecting attackMinigame to be of this type
+        mgScript.StartMinigame();
+        yield return new WaitUntil(() => mgScript.isComplete);
+
+        if (mgScript.successLevel == 1)
+        {
+            target.AddStatusEffect(StatusEffect.ASLEEP, 1);
+        }
+
+        yield return new WaitForSeconds(1f);
+        mgScript.Destroy();
         ActionFinished();
     }
     public override void CheckEnemy(GenericEnemy target)
