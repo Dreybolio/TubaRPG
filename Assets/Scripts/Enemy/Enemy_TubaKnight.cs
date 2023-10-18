@@ -34,6 +34,7 @@ public class Enemy_TubaKnight : GenericEnemy
     }
     private IEnumerator DoNoteProjectile()
     {
+        #region
         // Walk to target
         WalkToTarget(target.GetPositionAtFront(), 1f);
         yield return new WaitUntil(() => _walkCoroutineFinished);
@@ -55,14 +56,32 @@ public class Enemy_TubaKnight : GenericEnemy
         yield return new WaitUntil(() => _walkCoroutineFinished);
         yield return new WaitForSeconds(0.25f);
         FinishTurn();
+        #endregion
     }
     private IEnumerator DoCrush()
     {
-        // Play animation
-        // Allow for block
-        yield return new WaitForSeconds(1);
-        target.Damage(2);
-        yield return new WaitForSeconds(0.5f);
+        // Walk to target
+        WalkToTarget(target.GetPositionAtFront(), 1f);
+        yield return new WaitUntil(() => _walkCoroutineFinished);
+        yield return new WaitForSeconds(0.25f);
+
+        battleManager.AllowHeroBlocking();
+        // Do animation, allow for blocking
+        bool blockSuccessful = target.isBlocking;
+        battleManager.DisallowHeroBlocking();
+        if (!blockSuccessful)
+        {
+            target.Damage(2);
+        }
+        else
+        {
+            target.Damage(1);
+        }
+
+        // Walk back to spot
+        WalkToTarget(locationReferencer.enemySpawns[enemyIndex], 1f);
+        yield return new WaitUntil(() => _walkCoroutineFinished);
+        yield return new WaitForSeconds(0.25f);
         FinishTurn();
     }
     private IEnumerator DoSummonTrumpet()

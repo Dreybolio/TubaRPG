@@ -28,6 +28,7 @@ public abstract class GenericHero : MonoBehaviour
     public bool canBeSelected = true;
     public bool canBeTargeted = true;
     public bool isAlive = true;
+    public bool isBlocking = false;
     protected int heroIndex;
     public int actionsRemaining;
     [NonSerialized] public Dictionary<StatusEffect, int> statusEffects = new();
@@ -49,6 +50,7 @@ public abstract class GenericHero : MonoBehaviour
     protected int _hp;
     protected int _np;
     protected bool _walkCoroutineFinished;
+    private readonly float BLOCK_TIME = 0.60f;
 
     // Anim
     private int _animIdle;
@@ -83,6 +85,18 @@ public abstract class GenericHero : MonoBehaviour
     public void DoNothing()
     {
         ActionFinished();
+    }
+    public void DoBlock()
+    {
+        StartCoroutine(C_DoBlock());
+    }
+    private IEnumerator C_DoBlock()
+    {
+        isBlocking = true;
+        // Do block animation
+        yield return new WaitForSeconds(BLOCK_TIME);
+        // End block animation
+        isBlocking = false;
     }
 
     public void ActionFinished()

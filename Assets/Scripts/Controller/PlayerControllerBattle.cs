@@ -109,6 +109,6 @@ public class PlayerControllerBattle : MonoBehaviour
     }
     private void Block()
     {
-
+        battleManager.OnHeroBlocked();
     }
 }

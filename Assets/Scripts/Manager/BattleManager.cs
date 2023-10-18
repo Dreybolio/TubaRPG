@@ -294,6 +294,19 @@ public class BattleManager : MonoBehaviour
         }
         bmManager.SetMenuData(activeHero);
     }
+    public void AllowHeroBlocking()
+    {
+        playerController.SetControlType(ControlType.Blocking);
+    }
+    public void DisallowHeroBlocking()
+    {
+        playerController.SetControlType(ControlType.None);
+    }
+    public void OnHeroBlocked()
+    {
+        // This will only happen during the enemy's attack phase.
+        activeHero.DoBlock();
+    }
     public void SetActiveHero(int heroIndex)
     {
         activeHero = heroList[heroIndex];
