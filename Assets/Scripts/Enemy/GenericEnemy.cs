@@ -27,6 +27,7 @@ public abstract class GenericEnemy : MonoBehaviour
 
     // Vars
     protected bool _walkCoroutineFinished;
+    protected bool _damageFramePassed;
 
     // Animation IDs
     protected int _animIdle;
@@ -133,6 +134,10 @@ public abstract class GenericEnemy : MonoBehaviour
     {
         statusEffects.Remove(statusEffect);
         bmManager.SetEnemyStatusEffects(enemyIndex, statusEffects);
+    }
+    public void DamageFramePassed()
+    {
+        _damageFramePassed = true;
     }
     private void AssignAnimationIDs()
     {

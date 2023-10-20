@@ -7176,7 +7176,10 @@ MonoBehaviour:
   enemyZeroSelector: {fileID: 1068405219}
   enemyOneSelector: {fileID: 1972937618}
   enemyTwoSelector: {fileID: 401862134}
-  enemyHealthBars: []
+  enemyHealthBars:
+  - {fileID: 2008080214}
+  - {fileID: 447013724}
+  - {fileID: 214762676}
   heroOneStatusEffectHandler: {fileID: 832314748}
   heroTwoStatusEffectHandler: {fileID: 371722111}
   enemyZeroStatusEffectHandler: {fileID: 494667058}

@@ -5,11 +5,18 @@ using static UnityEngine.GraphicsBuffer;
 
 public class Enemy_TubaKnight : GenericEnemy
 {
-    
+    // Specific Anim IDs
+    private int _animCrush;
     public new void ProcessTurn()
     {
         base.ProcessTurn();
         target = null;
+        if (!targets[0].canBeTargeted && !targets[1].canBeTargeted)
+        {
+            // Nobody can be targeted, probably due to Decrescendo if at this point. Just skip your turn.
+            FinishTurn();
+            return;
+        }
         while (target == null)
         {
             int r = Random.Range(0, 2);
@@ -34,29 +41,8 @@ public class Enemy_TubaKnight : GenericEnemy
     }
     private IEnumerator DoNoteProjectile()
     {
-        #region
-        // Walk to target
-        WalkToTarget(target.GetPositionAtFront(), 1f);
-        yield return new WaitUntil(() => _walkCoroutineFinished);
-        yield return new WaitForSeconds(0.25f);
-
-        // Do animation, allow for blocking
-        bool blockSuccessful = false;
-        if (!blockSuccessful)
-        {
-            target.Damage(2);
-        }
-        else
-        {
-            target.Damage(1);
-        }
-
-        // Walk back to spot
-        WalkToTarget(locationReferencer.enemySpawns[enemyIndex], 1f);
-        yield return new WaitUntil(() => _walkCoroutineFinished);
-        yield return new WaitForSeconds(0.25f);
-        FinishTurn();
-        #endregion
+        StartCoroutine(DoCrush());
+        yield return null;
     }
     private IEnumerator DoCrush()
     {
@@ -66,7 +52,8 @@ public class Enemy_TubaKnight : GenericEnemy
         yield return new WaitForSeconds(0.25f);
 
         battleManager.AllowHeroBlocking();
-        // Do animation, allow for blocking
+        _damageFramePassed = false;
+        yield return new WaitUntil(() => _damageFramePassed);
         bool blockSuccessful = target.isBlocking;
         battleManager.DisallowHeroBlocking();
         if (!blockSuccessful)
@@ -77,6 +64,7 @@ public class Enemy_TubaKnight : GenericEnemy
         {
             target.Damage(1);
         }
+        yield return new WaitForSeconds(0.50f);
 
         // Walk back to spot
         WalkToTarget(locationReferencer.enemySpawns[enemyIndex], 1f);

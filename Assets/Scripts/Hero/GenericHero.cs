@@ -25,13 +25,13 @@ public abstract class GenericHero : MonoBehaviour
     public bool abilityTwoRequiresHeroSelection;
     public bool abilityTwoRequiresEnemySelection;
 
-    public bool canBeSelected = true;
-    public bool canBeTargeted = true;
-    public bool isAlive = true;
-    public bool isBlocking = false;
-    protected int heroIndex;
-    public int actionsRemaining;
+    [NonSerialized] public bool canBeSelected = true;
+    [NonSerialized] public bool canBeTargeted = true;
+    [NonSerialized] public bool isAlive = true;
+    [NonSerialized] public bool isBlocking = false;
+    [NonSerialized] public int actionsRemaining;
     [NonSerialized] public Dictionary<StatusEffect, int> statusEffects = new();
+    protected int heroIndex;
 
     [Header("Prefabs")]
     protected Transform minigameParent; // This will get set in BattleManager through SetMinigameParent();
@@ -56,6 +56,7 @@ public abstract class GenericHero : MonoBehaviour
     private int _animIdle;
     private int _animDie;
     private int _animGreyOut;
+    private int _animBlock;
 
     // Misc
     [SerializeField] private Transform postitionAtFront;
@@ -93,9 +94,9 @@ public abstract class GenericHero : MonoBehaviour
     private IEnumerator C_DoBlock()
     {
         isBlocking = true;
-        // Do block animation
+        animator.SetBool(_animBlock, true);
         yield return new WaitForSeconds(BLOCK_TIME);
-        // End block animation
+        animator.SetBool(_animBlock, false);
         isBlocking = false;
     }
 
@@ -214,5 +215,6 @@ public abstract class GenericHero : MonoBehaviour
         _animIdle = Animator.StringToHash("Idle");
         _animDie = Animator.StringToHash("Die");
         _animGreyOut = Animator.StringToHash("GreyOut");
+        _animBlock = Animator.StringToHash("Block");
     }
 }

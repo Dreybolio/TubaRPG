@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c4f538d69c619bc4e89f6374d55bc17f
+guid: 99c4de4a83dfa6045816ab4be2903778
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -45,8 +45,8 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 7
-  spritePivot: {x: 0.5, y: 0}
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 256
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -120,10 +120,10 @@ TextureImporter:
       name: BagpipeBarbarian_0
       rect:
         serializedVersion: 2
-        x: 130
-        y: 25
-        width: 223
-        height: 480
+        x: 12
+        y: 537
+        width: 221
+        height: 487
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,8 +131,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 258577f0598882d42a79b2f71a2d08f1
-      internalID: 116338300
+      spriteID: f5a575581c83cec40a166c0c417a2bdd
+      internalID: 1515261014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BagpipeBarbarian_1
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 537
+        width: 221
+        height: 487
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: debe873bbfbe3a4409369b364bd704dc
+      internalID: -1179690970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BagpipeBarbarian_2
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 537
+        width: 237
+        height: 480
+      alignment: 9
+      pivot: {x: 0.6010235, y: 0.0007443746}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 066c690adc1516d428eca2b21ffa821f
+      internalID: 1124446654
       vertices: []
       indices: 
       edges: []
@@ -140,15 +182,17 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    spriteID: a07e9d34ddc538141b5ffcddce110cb3
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BagpipeBarbarian_0: 116338300
+      BagpipeBarbarian_1: -1179690970
+      BagpipeBarbarian_2: 1124446654
+      BagpipeBarbarian_0: 1515261014
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

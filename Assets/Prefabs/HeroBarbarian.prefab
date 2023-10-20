@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 116338300, guid: c4f538d69c619bc4e89f6374d55bc17f, type: 3}
+  m_Sprite: {fileID: 1515261014, guid: 99c4de4a83dfa6045816ab4be2903778, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,6 +84,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &5791552823047583030
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5908446080924903042}
+  m_Layer: 0
+  m_Name: PositionAtFront
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5908446080924903042
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5791552823047583030}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6257603415797739549}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6257603415797739551
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,6 +147,7 @@ Transform:
   m_Children:
   - {fileID: 4515012540217820499}
   - {fileID: 7399030696461305489}
+  - {fileID: 5908446080924903042}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -148,14 +180,10 @@ MonoBehaviour:
   abilityTwoNPCost: 3
   abilityTwoRequiresHeroSelection: 0
   abilityTwoRequiresEnemySelection: 0
-  canBeSelected: 1
-  canBeTargeted: 1
-  isAlive: 1
-  actionsRemaining: 0
-  heroIndex: 0
   attackMinigame: {fileID: 5988325687129428200, guid: 5174eeb62c9d4564a9aa5e56b7cb17ae, type: 3}
   abilityOneMinigame: {fileID: 78066196323939719, guid: fdc88c8f83736a2458dbab2a0735b9ef, type: 3}
   abilityTwoMinigame: {fileID: 78066196323939719, guid: b5aafff4fef593d45a678a286b900ec0, type: 3}
+  postitionAtFront: {fileID: 5908446080924903042}
 --- !u!95 &8342694607309949597
 Animator:
   serializedVersion: 4
