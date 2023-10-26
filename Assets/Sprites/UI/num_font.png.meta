@@ -335,7 +335,7 @@ TextureImporter:
         width: 44
         height: 52
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -343,6 +343,216 @@ TextureImporter:
       bones: []
       spriteID: b082897be31193d44aab317d45e634cb
       internalID: -1439100591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: num_font_wbg_0
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 192
+        width: 54
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d2457f93b539a244952fd464d49b7cd
+      internalID: 972699252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: num_font_wbg_1
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 192
+        width: 54
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 085d0974da59e8642b51410f4ceee201
+      internalID: -1407259013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: num_font_wbg_2
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 192
+        width: 54
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e59dceea2d4edb45a490dadb5afcfe4
+      internalID: -1877028313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: num_font_wbg_3
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 192
+        width: 54
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73bdb9005695eb744b1478f5c36e3dce
+      internalID: -319054522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: num_font_wbg_4
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 192
+        width: 55
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ead34577740229a46a8d376c1595f2e2
+      internalID: -93133330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: num_font_wbg_5
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 128
+        width: 54
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d444003889bf5bc44b255fd969ba72f1
+      internalID: -2053303453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: num_font_wbg_6
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 128
+        width: 54
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb87162b5e176be45a84c37bf4faada4
+      internalID: 77547263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: num_font_wbg_7
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 128
+        width: 54
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 306fab6806414d7418cf5902c67e57b3
+      internalID: 1205180734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: num_font_wbg_8
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 128
+        width: 54
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d752d4504c28154ab523f6616a23a27
+      internalID: -1184119013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: num_font_wbg_9
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 128
+        width: 54
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6b2580add0741f488d95aede9a49f7f
+      internalID: -1684466622
       vertices: []
       indices: 
       edges: []
@@ -359,16 +569,26 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       num_font_0: 2139226929
+      num_font_wbg_1: -1407259013
+      num_font_wbg_7: 1205180734
       num_font_2: -1437051350
       num_font_9: 1309441047
+      num_font_wbg_3: -319054522
       num_font_slash: -1439100591
+      num_font_wbg_0: 972699252
+      num_font_wbg_5: -2053303453
       num_font_4: -641568227
+      num_font_wbg_8: -1184119013
+      num_font_wbg_9: -1684466622
       num_font_5: -120352864
       num_font_7: -1413477996
       num_font_1: 1191236963
       num_font_6: 553222649
       num_font_3: 362280978
       num_font_8: -896918291
+      num_font_wbg_4: -93133330
+      num_font_wbg_6: 77547263
+      num_font_wbg_2: -1877028313
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

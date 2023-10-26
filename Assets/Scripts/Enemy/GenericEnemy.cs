@@ -35,8 +35,9 @@ public abstract class GenericEnemy : MonoBehaviour
 
     // Misc
     [SerializeField] private Transform postitionAtFront;
+    [SerializeField] private Transform postitionAtTop;
 
-    private void Start()
+    protected void Start()
     {
         battleManager = FindObjectOfType<BattleManager>();
         bmManager = FindObjectOfType<BattleMenuManager>();
@@ -44,7 +45,6 @@ public abstract class GenericEnemy : MonoBehaviour
         locationReferencer = FindObjectOfType<BattleLocationReferencer>();
         enemyIndex = battleManager.GetEnemyIndex(this);
         SetPossibleTargets();
-        AssignAnimationIDs();
     }
     public void ProcessTurn()
     {
@@ -71,6 +71,9 @@ public abstract class GenericEnemy : MonoBehaviour
                 RemoveStatusEffect(StatusEffect.ASLEEP);
             }
         }
+
+        // Spawn a damage indicator
+        bmManager.SpawnDamageIndicator(Camera.main.WorldToScreenPoint(postitionAtTop.position), DamageIndicatorType.ENEMY, dmg);
     }
     public void Kill()
     {
@@ -127,8 +130,11 @@ public abstract class GenericEnemy : MonoBehaviour
     }
     public void AddStatusEffect(StatusEffect statusEffect, int turns)
     {
-        statusEffects.Add(statusEffect, turns);
-        bmManager.SetEnemyStatusEffects(enemyIndex, statusEffects); // Update UI
+        if (!statusEffects.ContainsKey(statusEffect))
+        {
+            statusEffects.Add(statusEffect, turns);
+            bmManager.SetEnemyStatusEffects(enemyIndex, statusEffects); // Update UI
+        }
     }
     public void RemoveStatusEffect(StatusEffect statusEffect)
     {
@@ -139,7 +145,7 @@ public abstract class GenericEnemy : MonoBehaviour
     {
         _damageFramePassed = true;
     }
-    private void AssignAnimationIDs()
+    protected void AssignAnimationIDs()
     {
         _animIdle = Animator.StringToHash("Idle");
         _animDie = Animator.StringToHash("Die");

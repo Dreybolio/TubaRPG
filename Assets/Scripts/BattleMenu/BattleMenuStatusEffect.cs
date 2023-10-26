@@ -10,6 +10,8 @@ public class BattleMenuStatusEffect : MonoBehaviour
     [SerializeField] private Image imgNum;
 
     [Header("Sprites")]
+    [SerializeField] private Sprite sprAttackUp;
+    [SerializeField] private Sprite sprDefenceUp;
     [SerializeField] private Sprite sprAsleep;
     [SerializeField] private Sprite sprDecrescendo;
     [SerializeField] private Sprite sprFermata;
@@ -19,6 +21,12 @@ public class BattleMenuStatusEffect : MonoBehaviour
         Sprite newSprite = null;
         switch (statusEffect)
         {
+            case StatusEffect.ATTACKUP:
+                newSprite = sprAttackUp;
+                break;
+            case StatusEffect.DEFENCEUP:
+                newSprite = sprDefenceUp;
+                break;
             case StatusEffect.ASLEEP: 
                 newSprite = sprAsleep;
                 break;

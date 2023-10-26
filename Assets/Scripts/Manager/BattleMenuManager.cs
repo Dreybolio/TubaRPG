@@ -1,4 +1,3 @@
-using Newtonsoft.Json.Bson;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -65,6 +64,18 @@ public class BattleMenuManager : MonoBehaviour
     [Header("DescriptionBox")]
     [SerializeField] private DescriptionBox dBox;
     [SerializeField] private DescriptionBox enBox;
+
+    [Header("Damage Indicator")]
+    [SerializeField] private Transform damageIndicatorHolder;
+    [SerializeField] private GameObject damageIndicatorPrefab;
+
+    // Pointers
+    private BattleManager battleManager;
+
+    private void Start()
+    {
+        battleManager = FindObjectOfType<BattleManager>();
+    }
     public void SetUIVisibility(bool main, bool subAbility, bool subItem, bool subOther, bool descBox, bool enBox)
     {
         groupMain.alpha = main ? 1f : 0f;
@@ -89,6 +100,27 @@ public class BattleMenuManager : MonoBehaviour
         abilityTwoScript.SetConfirmBehaviour(hero.abilityTwoRequiresHeroSelection, hero.abilityTwoRequiresEnemySelection);
         abilityTwoScript.SetSelectable(hero.GetNP() >= hero.abilityTwoNPCost);
         abilityTwoScript.SetDescriptionBoxTextOnSelected(hero.abilityTwoDesc);
+
+        // Any manual exceptions are handled here
+
+        // FOR BARBARIAN: If the other hero isn't alive, you cannot use Invigorating Tune
+        if(hero.type == HeroType.BARBARIAN)
+        {
+            GenericHero otherHero = battleManager.GetHeroIndex(hero) == 0 ? battleManager.GetHero(1) : battleManager.GetHero(0);
+            if (!otherHero.isAlive)
+            {
+                abilityTwoScript.SetSelectable(false);
+            }
+        }
+
+        // FOR ROGUE: If you already are under the effects of Decrescendo, you cannot use Decrescendo again
+        if (hero.type == HeroType.ROGUE)
+        {
+            if (hero.statusEffects.ContainsKey(StatusEffect.DECRESCENDO))
+            {
+                abilityOneScript.SetSelectable(false);
+            }
+        }
     }
     public void SetEnemyName(int index, string enemyName)
     {
@@ -235,6 +267,12 @@ public class BattleMenuManager : MonoBehaviour
                 heroTwoNPDigits[i].sprite = digits[numAtVal];
             }
         }
+    }
+    public void SpawnDamageIndicator(Vector2 pos, DamageIndicatorType type, int num)
+    {
+        GameObject obj = Instantiate(damageIndicatorPrefab, damageIndicatorHolder);
+        obj.GetComponent<RectTransform>().anchoredPosition = pos;
+        obj.GetComponent<DamageIndicator>().SetData(type, num);
     }
     public void SetHeroStatusEffects(int index, Dictionary<StatusEffect, int> dict)
     {

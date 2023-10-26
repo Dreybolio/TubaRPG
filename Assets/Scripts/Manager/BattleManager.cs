@@ -27,6 +27,8 @@ public enum PostTurnEvent
 }
 public enum StatusEffect
 {
+    ATTACKUP,
+    DEFENCEUP,
     DECRESCENDO,
     ASLEEP,
     FERMATA,
@@ -35,8 +37,8 @@ public class BattleManager : MonoBehaviour
 {
     // Data
     private BattleStage battleStage;
-    private GenericEnemy[] enemyList;
-    private GenericHero[] heroList;
+    private readonly GenericEnemy[] enemyList = new GenericEnemy[3];
+    private readonly GenericHero[] heroList = new GenericHero[2];
     [SerializeField] private Transform minigameHolder;
 
     // Pointers
@@ -49,7 +51,8 @@ public class BattleManager : MonoBehaviour
     // Vars
     private bool _turnProcessed = false;
     private GenericHero activeHero;
-    private List<Tuple<PostTurnEvent, int>> postTurnEvents;
+    private readonly List<Tuple<PostTurnEvent, int>> postTurnEvents = new();
+    private readonly List<GenericHero> heroesSetForBlocking = new();
     private void Start()
     {
         playerController = FindObjectOfType<PlayerControllerBattle>();
@@ -57,9 +60,6 @@ public class BattleManager : MonoBehaviour
         levelManager = LevelManager.Instance;
         bmManager = FindObjectOfType<BattleMenuManager>();
         locationReferencer = FindObjectOfType<BattleLocationReferencer>();
-        enemyList = new GenericEnemy[3];
-        heroList = new GenericHero[2];
-        postTurnEvents = new List<Tuple<PostTurnEvent, int>>();
     }
     public void SetBattleData(BattleData bd)
     {
@@ -99,12 +99,13 @@ public class BattleManager : MonoBehaviour
                 enemyList[i] = enemy.GetComponent<GenericEnemy>();
                 bmManager.SetEnemyName(i, enemyList[i].name);
                 bmManager.SetEnemyHPBarMaxValue(i, enemyList[i].hp);
-                bmManager.SetEnemySelectorValidity(i, enemyList[i] != null);
+                bmManager.SetEnemySelectorValidity(i, true);
             }
             else
             {
                 // Set Invisible
                 bmManager.SetEnemyHPBarValue(i, 0, false);
+                bmManager.SetEnemySelectorValidity(i, false);
             }
         }
 
@@ -205,6 +206,8 @@ public class BattleManager : MonoBehaviour
         battleStage = BattleStage.PLAYER_TURN;
         while (heroList[0].actionsRemaining > 0 || heroList[1].actionsRemaining > 0)
         {
+            // The menu must be buffered every time
+            bmManager.SetMenuData(activeHero);
             playerController.SetControlType(ControlType.Menu);
             yield return new WaitUntil(() => _turnProcessed);
             _turnProcessed = false;
@@ -294,18 +297,25 @@ public class BattleManager : MonoBehaviour
         }
         bmManager.SetMenuData(activeHero);
     }
-    public void AllowHeroBlocking()
+    public void AllowHeroBlocking(GenericHero hero)
     {
         playerController.SetControlType(ControlType.Blocking);
+        heroesSetForBlocking.Add(hero);
+        hero.allowBlocking = true;
     }
     public void DisallowHeroBlocking()
     {
         playerController.SetControlType(ControlType.None);
+        heroesSetForBlocking.Clear();
+        heroesSetForBlocking.TrimExcess();
     }
     public void OnHeroBlocked()
     {
         // This will only happen during the enemy's attack phase.
-        activeHero.DoBlock();
+        foreach (GenericHero hero in heroesSetForBlocking)
+        {
+            hero.DoBlock();
+        }
     }
     public void SetActiveHero(int heroIndex)
     {

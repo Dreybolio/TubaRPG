@@ -7,6 +7,12 @@ public class Enemy_TubaKnight : GenericEnemy
 {
     // Specific Anim IDs
     private int _animCrush;
+
+    protected new void Start()
+    {
+        base.Start();
+        AssignAnimationIDs();
+    }
     public new void ProcessTurn()
     {
         base.ProcessTurn();
@@ -51,7 +57,8 @@ public class Enemy_TubaKnight : GenericEnemy
         yield return new WaitUntil(() => _walkCoroutineFinished);
         yield return new WaitForSeconds(0.25f);
 
-        battleManager.AllowHeroBlocking();
+        battleManager.AllowHeroBlocking(target);
+        animator.SetTrigger(_animCrush);
         _damageFramePassed = false;
         yield return new WaitUntil(() => _damageFramePassed);
         bool blockSuccessful = target.isBlocking;
@@ -74,11 +81,13 @@ public class Enemy_TubaKnight : GenericEnemy
     }
     private IEnumerator DoSummonTrumpet()
     {
-        // Check if space is available
-        // Summon new guy and tell the BattleManager about it
-        yield return new WaitForSeconds(1);
-        target.Damage(2);
-        yield return new WaitForSeconds(0.5f);
-        FinishTurn();
+        StartCoroutine(DoCrush());
+        yield return null;
+    }
+
+    private new void AssignAnimationIDs()
+    {
+        base.AssignAnimationIDs();
+        _animCrush = Animator.StringToHash("Crush");
     }
 }

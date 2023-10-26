@@ -120,8 +120,8 @@ TextureImporter:
       name: SaxophoneRogue_0
       rect:
         serializedVersion: 2
-        x: 119
-        y: 14
+        x: 19
+        y: 560
         width: 305
         height: 447
       alignment: 7
@@ -137,6 +137,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: SaxophoneRogue_1
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 560
+        width: 297
+        height: 444
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaf262c6bd0dffa47ab1c13f4a95b5d9
+      internalID: -545580866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaxophoneRogue_2
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 560
+        width: 217
+        height: 436
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c92b3031d78526540b3b97a62b497c96
+      internalID: -661046853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -148,7 +190,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      SaxophoneRogue_2: -661046853
+      SaxophoneRogue_1: -545580866
       SaxophoneRogue_0: 1535593193
+      SaxophoneRogue_3: -1069300363
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

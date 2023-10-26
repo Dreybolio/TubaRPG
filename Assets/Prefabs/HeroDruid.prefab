@@ -198,6 +198,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &6254708110267604359
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4493377146171764927}
+  m_Layer: 0
+  m_Name: PositionAtTop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4493377146171764927
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6254708110267604359}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6257603415797739549}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6257603415797739551
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,6 +261,7 @@ Transform:
   - {fileID: 4515012540217820499}
   - {fileID: 539024490672973131}
   - {fileID: 7266122765650790122}
+  - {fileID: 4493377146171764927}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -245,8 +277,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6ff5c5ca3d98e3438b6c0268e60f7be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 6
-  maxNP: 8
+  maxHP: 8
+  maxNP: 6
+  type: 2
   attackName: 
   attackDesc: A regular attack.<br>Alternate <LEFT> and <RIGHT> to fill up the bar.
   abilityOneName: Fermata
@@ -263,5 +296,6 @@ MonoBehaviour:
   abilityTwoRequiresEnemySelection: 0
   attackMinigame: {fileID: 78066196323939719, guid: cbe4376041ff81b4e87f7234f0006029, type: 3}
   abilityOneMinigame: {fileID: 78066196323939719, guid: 7fef1c5e9c554994aa5acd4a54d930fd, type: 3}
-  abilityTwoMinigame: {fileID: 0}
+  abilityTwoMinigame: {fileID: 78066196323939719, guid: 60ef24279d5cfed47a11c18813e7c29f, type: 3}
   postitionAtFront: {fileID: 7266122765650790122}
+  postitionAtTop: {fileID: 4493377146171764927}

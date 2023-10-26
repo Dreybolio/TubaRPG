@@ -440,7 +440,7 @@ TextureImporter:
         width: 125
         height: 27
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -461,7 +461,7 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -482,7 +482,7 @@ TextureImporter:
         width: 149
         height: 53
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -490,6 +490,27 @@ TextureImporter:
       bones: []
       spriteID: 9fbeb0c55cf73bc45bee29cf4710d790
       internalID: 904739877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: damage_indicator
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 190
+        width: 280
+        height: 284
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db31903dfd1e88946b204686c670a555
+      internalID: -654388172
       vertices: []
       indices: 
       edges: []
@@ -514,6 +535,7 @@ TextureImporter:
       battle_ui_0: 229767372
       battle_ui_other: -185246595
       battle_ui_clarinet: 880620770
+      damage_indicator: -654388172
       battle_ui_saxophone: -1071511027
       battle_ui_item: -800131986
       battle_ui_np: 1942439285

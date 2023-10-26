@@ -10,6 +10,8 @@ public abstract class GenericHero : MonoBehaviour
     public int maxNP;
 
     [Header("Data")]
+    public HeroType type;
+
     public string attackName;
     public string attackDesc;
 
@@ -25,11 +27,6 @@ public abstract class GenericHero : MonoBehaviour
     public bool abilityTwoRequiresHeroSelection;
     public bool abilityTwoRequiresEnemySelection;
 
-    [NonSerialized] public bool canBeSelected = true;
-    [NonSerialized] public bool canBeTargeted = true;
-    [NonSerialized] public bool isAlive = true;
-    [NonSerialized] public bool isBlocking = false;
-    [NonSerialized] public int actionsRemaining;
     [NonSerialized] public Dictionary<StatusEffect, int> statusEffects = new();
     protected int heroIndex;
 
@@ -47,10 +44,16 @@ public abstract class GenericHero : MonoBehaviour
     protected BattleLocationReferencer locationReferencer;
 
     // Vars
+    [NonSerialized] public bool canBeSelected = true;
+    [NonSerialized] public bool canBeTargeted = true;
+    [NonSerialized] public bool isAlive = true;
+    [NonSerialized] public bool isBlocking = false;
+    [NonSerialized] public int actionsRemaining;
+    [NonSerialized] public bool allowBlocking = false;
     protected int _hp;
     protected int _np;
     protected bool _walkCoroutineFinished;
-    private readonly float BLOCK_TIME = 0.60f;
+    private readonly float BLOCK_TIME = 0.40f;
 
     // Anim
     private int _animIdle;
@@ -60,6 +63,7 @@ public abstract class GenericHero : MonoBehaviour
 
     // Misc
     [SerializeField] private Transform postitionAtFront;
+    [SerializeField] private Transform postitionAtTop;
 
     private void Start()
     {
@@ -93,11 +97,15 @@ public abstract class GenericHero : MonoBehaviour
     }
     private IEnumerator C_DoBlock()
     {
-        isBlocking = true;
-        animator.SetBool(_animBlock, true);
-        yield return new WaitForSeconds(BLOCK_TIME);
-        animator.SetBool(_animBlock, false);
-        isBlocking = false;
+        if(allowBlocking)
+        {
+            allowBlocking = true; // Disable functionality after doing this once.
+            isBlocking = true;
+            animator.SetBool(_animBlock, true);
+            yield return new WaitForSeconds(BLOCK_TIME);
+            animator.SetBool(_animBlock, false);
+            isBlocking = false;
+        }
     }
 
     public void ActionFinished()
@@ -140,6 +148,9 @@ public abstract class GenericHero : MonoBehaviour
                 RemoveStatusEffect(StatusEffect.ASLEEP);
             }
         }
+
+        // Spawn a damage indicator
+        bmManager.SpawnDamageIndicator(Camera.main.WorldToScreenPoint(postitionAtTop.position), DamageIndicatorType.HERO, damage);
     }
     public void Kill()
     {
@@ -190,10 +201,13 @@ public abstract class GenericHero : MonoBehaviour
     }
     public void AddStatusEffect(StatusEffect statusEffect, int turns)
     {
-        statusEffects.Add(statusEffect, turns);
-        bmManager.SetHeroStatusEffects(heroIndex, statusEffects); // Update UI
+        if (!statusEffects.ContainsKey(statusEffect))
+        {
+            statusEffects.Add(statusEffect, turns);
+            bmManager.SetHeroStatusEffects(heroIndex, statusEffects); // Update UI
 
-        if(statusEffect == StatusEffect.DECRESCENDO) { canBeTargeted = false; }
+            if(statusEffect == StatusEffect.DECRESCENDO) { canBeTargeted = false; }
+        }
     }
     public void RemoveStatusEffect(StatusEffect statusEffect)
     {

@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ClassType
+public enum HeroType
 {
-    Barbarian,
-    Rogue,
-    Druid,
-    Wizard
+    BARBARIAN,
+    ROGUE,
+    DRUID,
+    WIZARD
 }
 public class GameData : MonoBehaviour
 {
@@ -35,14 +35,14 @@ public class GameData : MonoBehaviour
     public int heroOne_Level;
     public int heroOne_HPAllocations;
     public int heroOne_NPAllocations;
-    public ClassType heroOne_ClassType;
+    public HeroType heroOne_HeroType;
     public GameObject heroOne_Object;
     public Sprite heroOne_Icon;
 
     public int heroTwo_Level;
     public int heroTwo_HPAllocations;
     public int heroTwo_NPAllocations;
-    public ClassType heroTwo_ClassType;
+    public HeroType heroTwo_HeroType;
     public GameObject heroTwo_Object;
     public Sprite heroTwo_Icon;
 
