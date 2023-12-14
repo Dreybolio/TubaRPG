@@ -10,7 +10,7 @@ public class InputManager : MonoBehaviour
     {
         get { return instance; }
     }
-    private BattleControls battleControls;
+    private PlayerControls controls;
     private PlayerInput input;
     [SerializeField] private Sprite[] keyboardButtons;
     [SerializeField] private TMP_SpriteAsset keyboardSpriteAsset;
@@ -29,16 +29,16 @@ public class InputManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(instance);
         }
-        battleControls = new BattleControls();
+        controls = new PlayerControls();
         input = GetComponent<PlayerInput>();
     }
     private void OnEnable()
     {
-        battleControls.Enable();
+        controls.Enable();
     }
     private void OnDisable()
     {
-        //battleControls.Disable();
+        controls.Disable();
     }
     //*****************//
     //*BATTLE CONTROLS*//
@@ -47,89 +47,99 @@ public class InputManager : MonoBehaviour
     // Menu
     public Vector2 GetMenuNavigation()
     {
-        return battleControls.Menu.Navigate.ReadValue<Vector2>();
+        return controls.Menu.Navigate.ReadValue<Vector2>();
     }
     public bool GetConfirm()
     {
-        return battleControls.Menu.Confirm.triggered;
+        return controls.Menu.Confirm.triggered;
     }
     public bool GetCancel()
     {
-        return battleControls.Menu.Cancel.triggered;
+        return controls.Menu.Cancel.triggered;
     }
     public bool GetSwapHero()
     {
-        return battleControls.Menu.SwapHero.triggered;
+        return controls.Menu.SwapHero.triggered;
     }
     // Minigame
     public bool GetMinigameButtonAPressed()
     {
-        return battleControls.Minigame.MinigameButtonA.triggered;
+        return controls.Minigame.MinigameButtonA.triggered;
     }
     public bool GetMinigameButtonAHeld()
     {
-        return battleControls.Minigame.MinigameButtonA.IsPressed();
+        return controls.Minigame.MinigameButtonA.IsPressed();
     }
     public bool GetMinigameButtonBPressed()
     {
-        return battleControls.Minigame.MinigameButtonB.triggered;
+        return controls.Minigame.MinigameButtonB.triggered;
     }
     public bool GetMinigameButtonBHeld()
     {
-        return battleControls.Minigame.MinigameButtonB.IsPressed();
+        return controls.Minigame.MinigameButtonB.IsPressed();
     }
     public bool GetMinigameButtonXPressed()
     {
-        return battleControls.Minigame.MinigameButtonX.triggered;
+        return controls.Minigame.MinigameButtonX.triggered;
     }
     public bool GetMinigameButtonXHeld()
     {
-        return battleControls.Minigame.MinigameButtonX.IsPressed();
+        return controls.Minigame.MinigameButtonX.IsPressed();
     }
     public bool GetMinigameButtonYPressed()
     {
-        return battleControls.Minigame.MinigameButtonY.triggered;
+        return controls.Minigame.MinigameButtonY.triggered;
     }
     public bool GetMinigameButtonYHeld()
     {
-        return battleControls.Minigame.MinigameButtonY.IsPressed();
+        return controls.Minigame.MinigameButtonY.IsPressed();
     }
     public bool GetMinigameButtonUpPressed()
     {
-        return battleControls.Minigame.MinigameDirectionalUp.triggered;
+        return controls.Minigame.MinigameDirectionalUp.triggered;
     }
     public bool GetMinigameButtonUpHeld()
     {
-        return battleControls.Minigame.MinigameDirectionalUp.IsPressed();
+        return controls.Minigame.MinigameDirectionalUp.IsPressed();
     }
     public bool GetMinigameButtonDownPressed()
     {
-        return battleControls.Minigame.MinigameDirectionalDown.triggered;
+        return controls.Minigame.MinigameDirectionalDown.triggered;
     }
     public bool GetMinigameButtonDownHeld()
     {
-        return battleControls.Minigame.MinigameDirectionalDown.IsPressed();
+        return controls.Minigame.MinigameDirectionalDown.IsPressed();
     }
     public bool GetMinigameButtonLeftPressed()
     {
-        return battleControls.Minigame.MinigameDirectionalLeft.triggered;
+        return controls.Minigame.MinigameDirectionalLeft.triggered;
     }
     public bool GetMinigameButtonLeftHeld()
     {
-        return battleControls.Minigame.MinigameDirectionalLeft.IsPressed();
+        return controls.Minigame.MinigameDirectionalLeft.IsPressed();
     }
     public bool GetMinigameButtonRightPressed()
     {
-        return battleControls.Minigame.MinigameDirectionalRight.triggered;
+        return controls.Minigame.MinigameDirectionalRight.triggered;
     }
     public bool GetMinigameButtonRightHeld()
     {
-        return battleControls.Minigame.MinigameDirectionalRight.IsPressed();
+        return controls.Minigame.MinigameDirectionalRight.IsPressed();
     }
     // Enemy Phase
     public bool GetBlock()
     {
-        return battleControls.Enemy.Block.triggered;
+        return controls.Enemy.Block.triggered;
+    }
+
+    // Console
+    public bool GetConsoleToggled()
+    {
+        return controls.Console.ToggleConsole.triggered;
+    }
+    public bool GetConsoleSubmit()
+    {
+        return controls.Console.Submit.triggered;
     }
 
     public Sprite[] GetInputSprites()

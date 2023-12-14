@@ -1,5 +1,5 @@
 {
-    "name": "BattleControls",
+    "name": "PlayerControls",
     "maps": [
         {
             "name": "Menu",
@@ -610,6 +610,54 @@
                     "processors": "",
                     "groups": "Xbox",
                     "action": "Block",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Console",
+            "id": "6cc00538-ddf6-45d8-8a96-4f5a5025705f",
+            "actions": [
+                {
+                    "name": "ToggleConsole",
+                    "type": "Button",
+                    "id": "1f34df0e-1d23-4b2a-9424-d2f1bf2728c9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Submit",
+                    "type": "Button",
+                    "id": "daf7038c-61ff-4131-8db7-85b202b19eaa",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "4f23a4d5-8479-4c51-8025-27e50eb3883e",
+                    "path": "<Keyboard>/backquote",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard;Xbox;Playstation",
+                    "action": "ToggleConsole",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "311aac74-2d9c-4415-a9c0-1a37c212e3a5",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard;Xbox;Playstation",
+                    "action": "Submit",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

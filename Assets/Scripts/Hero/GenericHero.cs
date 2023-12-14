@@ -27,6 +27,8 @@ public abstract class GenericHero : MonoBehaviour
     public bool abilityTwoRequiresHeroSelection;
     public bool abilityTwoRequiresEnemySelection;
 
+    [SerializeField] protected Material material;
+
     [NonSerialized] public Dictionary<StatusEffect, int> statusEffects = new();
     protected int heroIndex;
 
@@ -58,7 +60,6 @@ public abstract class GenericHero : MonoBehaviour
     // Anim
     private int _animIdle;
     private int _animDie;
-    private int _animGreyOut;
     private int _animBlock;
 
     // Misc
@@ -101,9 +102,8 @@ public abstract class GenericHero : MonoBehaviour
         {
             allowBlocking = true; // Disable functionality after doing this once.
             isBlocking = true;
-            animator.SetBool(_animBlock, true);
+            animator.SetTrigger(_animBlock);
             yield return new WaitForSeconds(BLOCK_TIME);
-            animator.SetBool(_animBlock, false);
             isBlocking = false;
         }
     }
@@ -218,7 +218,14 @@ public abstract class GenericHero : MonoBehaviour
     }
     public void SetGreyOut(bool b)
     {
-        animator.SetBool(_animGreyOut, b);
+        if (b)
+        {
+            material.SetColor("_Base_Color", Color.grey);
+        }
+        else
+        {
+            material.SetColor("_Base_Color", Color.white);
+        }
     }
     public void SetMinigameParent(Transform mgp)
     {
@@ -228,7 +235,6 @@ public abstract class GenericHero : MonoBehaviour
     {
         _animIdle = Animator.StringToHash("Idle");
         _animDie = Animator.StringToHash("Die");
-        _animGreyOut = Animator.StringToHash("GreyOut");
         _animBlock = Animator.StringToHash("Block");
     }
 }

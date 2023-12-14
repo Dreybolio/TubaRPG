@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cd60dd8f7e094a44483080db7874c56e
+guid: 811412e82312f374b9876c2f32c85f30
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -44,14 +44,14 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
-  alignment: 7
-  spritePivot: {x: 0.5, y: 0}
-  spritePixelsToUnits: 256
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 512
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
@@ -117,22 +117,379 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ClarinetWizard_0
+      name: clarinetwizard_0
       rect:
         serializedVersion: 2
-        x: 90
-        y: 30
-        width: 331
-        height: 443
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 704
+        y: 1830
+        width: 108
+        height: 85
+      alignment: 9
+      pivot: {x: 0.95925397, y: 0.26401654}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0196c431710e79a4c8d27dbf215dff7c
-      internalID: 2134443705
+      spriteID: 3acc2e5a4a4268f418e8fb2d621e3cdc
+      internalID: -243525272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clarinetwizard_1
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 1804
+        width: 278
+        height: 225
+      alignment: 9
+      pivot: {x: 0.61110944, y: 0.043521974}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fb0c06897e74c04794925d1312adb6b
+      internalID: -1184388972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clarinetwizard_2
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 1550
+        width: 420
+        height: 226
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e48e1afa70b14a54f837ff0d2b8e4a98
+      internalID: -1133617096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clarinetwizard_3
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 1241
+        width: 147
+        height: 139
+      alignment: 9
+      pivot: {x: 0.9111652, y: 0.4382491}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b42d43c552f8fe42a97302e5a0f1d64
+      internalID: 1647958513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clarinetwizard_4
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 1270
+        width: 121
+        height: 126
+      alignment: 9
+      pivot: {x: 0.016163724, y: 0.1647833}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c562858277c5594f9559c284b288f59
+      internalID: 1632551811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clarinetwizard_5
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 1322
+        width: 259
+        height: 198
+      alignment: 9
+      pivot: {x: 0.48968482, y: 0.8823014}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31cf6e0d86570aa40b354ad83edb1508
+      internalID: 963953188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clarinetwizard_6
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 1110
+        width: 252
+        height: 166
+      alignment: 9
+      pivot: {x: 0.98299736, y: 0.9639613}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49491f0b261b8d24989ace88f7a9083a
+      internalID: 1845737220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clarinetwizard_7
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 1000
+        width: 106
+        height: 65
+      alignment: 9
+      pivot: {x: 0.9606001, y: 0.9337515}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bb5828b23d774b42b14356a7f21e4d5
+      internalID: 661062876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clarinetwizard_8
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 523
+        width: 361
+        height: 372
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c388f7850cf831244a3795ed5edd1414
+      internalID: -453086083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clarinetwizard_9
+      rect:
+        serializedVersion: 2
+        x: 1430
+        y: 791
+        width: 185
+        height: 107
+      alignment: 9
+      pivot: {x: 0.08599821, y: 0.73977405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b797ae664d63bb44b94a8b912608f1de
+      internalID: -312418938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clarinetwizard_10
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 649
+        width: 120
+        height: 91
+      alignment: 9
+      pivot: {x: 0.05301412, y: 0.32142052}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48bbf00b8681177468db2422547448fe
+      internalID: -863550489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clarinetwizard_11
+      rect:
+        serializedVersion: 2
+        x: 1878
+        y: 61
+        width: 82
+        height: 666
+      alignment: 9
+      pivot: {x: 0.53092396, y: 0.61439335}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51581b7a67fb4b04da7c29d6ecbf2607
+      internalID: 1158556752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clarinetwizard_12
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 501
+        width: 73
+        height: 73
+      alignment: 9
+      pivot: {x: 0.06249164, y: 0.47510183}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7081d7e28db38ad4aae5718adc3a15c3
+      internalID: 996457700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clarinetwizard_13
+      rect:
+        serializedVersion: 2
+        x: 1577
+        y: 519
+        width: 30
+        height: 48
+      alignment: 9
+      pivot: {x: 0.12781982, y: 0.90571976}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d668f8686f9fc64ca0bdd21b13dcb8d
+      internalID: -390228801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clarinetwizard_14
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 17
+        width: 219
+        height: 233
+      alignment: 9
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ccc41b2714454b49a35ec41a734e0d1
+      internalID: -1855789510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clarinetwizard_15
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 21
+        width: 176
+        height: 244
+      alignment: 9
+      pivot: {x: 0.97181875, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 906c0618ddf2f3d42b66c3de502eaaf6
+      internalID: -1290324361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clarinetwizard_16
+      rect:
+        serializedVersion: 2
+        x: 1053
+        y: 21
+        width: 159
+        height: 241
+      alignment: 9
+      pivot: {x: 0.5048767, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0423c322502fd6b469284cd85090ed1a
+      internalID: -158744786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clarinetwizard_17
+      rect:
+        serializedVersion: 2
+        x: 1276
+        y: 17
+        width: 94
+        height: 246
+      alignment: 9
+      pivot: {x: 0.8228435, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc9d323f5474ed44abe5e75ef9b6585e
+      internalID: -1646071343
       vertices: []
       indices: 
       edges: []
@@ -140,15 +497,32 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    spriteID: 4ca387ad42f902745afd76b96818cc0f
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ClarinetWizard_0: 2134443705
+      clarinetwizard_4: 1632551811
+      clarinetwizard_7: 661062876
+      clarinetwizard_15: -1290324361
+      clarinetwizard_10: -863550489
+      clarinetwizard_13: -390228801
+      clarinetwizard_0: -243525272
+      clarinetwizard_3: 1647958513
+      clarinetwizard_9: -312418938
+      clarinetwizard_12: 996457700
+      clarinetwizard_8: -453086083
+      clarinetwizard_11: 1158556752
+      clarinetwizard_5: 963953188
+      clarinetwizard_1: -1184388972
+      clarinetwizard_2: -1133617096
+      clarinetwizard_6: 1845737220
+      clarinetwizard_16: -158744786
+      clarinetwizard_14: -1855789510
+      clarinetwizard_17: -1646071343
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

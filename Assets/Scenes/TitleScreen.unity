@@ -393,13 +393,13 @@ MonoBehaviour:
   heroOne_Level: 1
   heroOne_HPAllocations: 0
   heroOne_NPAllocations: 0
-  heroOne_ClassType: 0
+  heroOne_HeroType: 0
   heroOne_Object: {fileID: 6257603415797739551, guid: bd45d42a7f293824e961898332dd94d2, type: 3}
   heroOne_Icon: {fileID: -602079944, guid: 275603d4d8189434f801e8b1a690fdec, type: 3}
   heroTwo_Level: 1
   heroTwo_HPAllocations: 0
   heroTwo_NPAllocations: 0
-  heroTwo_ClassType: 1
+  heroTwo_HeroType: 0
   heroTwo_Object: {fileID: 6257603415797739551, guid: b84af6bc393f9924ba7ba2a1f4130318, type: 3}
   heroTwo_Icon: {fileID: -1071511027, guid: 275603d4d8189434f801e8b1a690fdec, type: 3}
   items: []
@@ -432,6 +432,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroObjectRefs: []
   heroIconRefs: []
+--- !u!1 &1538669759
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1538669761}
+  - component: {fileID: 1538669760}
+  m_Layer: 0
+  m_Name: Console
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1538669760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538669759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7622ade6cb07fd448d79b0f42cc55b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1538669761
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538669759}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1687259180
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,6 +729,38 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 7e42a374-9243-474d-bcb4-f705c7f50a56
     m_ActionName: Enemy/Block[/Keyboard/z]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: ConsoleController, Assembly-CSharp
+        m_MethodName: OnToggleConsole
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1f34df0e-1d23-4b2a-9424-d2f1bf2728c9
+    m_ActionName: Console/ToggleConsole[/Keyboard/backquote]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: ConsoleController, Assembly-CSharp
+        m_MethodName: OnSubmit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: daf7038c-61ff-4131-8db7-85b202b19eaa
+    m_ActionName: Console/Submit[/Keyboard/enter]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Menu

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d9d8e3744f346a847ba1626488ecd51c
+guid: 70cfb93faf007dc4080748c7758bc53d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -44,14 +44,14 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
-  alignment: 7
-  spritePivot: {x: 0.5, y: 0}
-  spritePixelsToUnits: 256
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 512
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
@@ -120,19 +120,19 @@ TextureImporter:
       name: SaxophoneRogue_0
       rect:
         serializedVersion: 2
-        x: 19
-        y: 560
-        width: 305
-        height: 447
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 655
+        y: 1593
+        width: 122
+        height: 121
+      alignment: 9
+      pivot: {x: 0.97208244, y: 0.8894416}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4353fdf7c2b390246ae535dff10895dd
-      internalID: 1535593193
+      spriteID: e483d325b92f72f43a14af3699d69a78
+      internalID: 1933651003
       vertices: []
       indices: 
       edges: []
@@ -141,19 +141,19 @@ TextureImporter:
       name: SaxophoneRogue_1
       rect:
         serializedVersion: 2
-        x: 333
-        y: 560
-        width: 297
-        height: 444
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 863
+        y: 1513
+        width: 279
+        height: 268
+      alignment: 9
+      pivot: {x: 0.47855303, y: 0.025539113}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aaf262c6bd0dffa47ab1c13f4a95b5d9
-      internalID: -545580866
+      spriteID: 4029647ed2bfb304bbb413426ae57a88
+      internalID: 1653798848
       vertices: []
       indices: 
       edges: []
@@ -162,19 +162,439 @@ TextureImporter:
       name: SaxophoneRogue_2
       rect:
         serializedVersion: 2
-        x: 665
-        y: 560
-        width: 217
-        height: 436
-      alignment: 9
-      pivot: {x: 0.6, y: 0}
+        x: 956
+        y: 1391
+        width: 76
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c92b3031d78526540b3b97a62b497c96
-      internalID: -661046853
+      spriteID: 3c0cf001b3b2481459a5993cffcf8381
+      internalID: -1556949606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaxophoneRogue_3
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 1149
+        width: 83
+        height: 173
+      alignment: 9
+      pivot: {x: 0.91454047, y: 0.8977672}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0478f8644a23c4848855b904baf5b0f9
+      internalID: 1735945415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaxophoneRogue_4
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 710
+        width: 334
+        height: 662
+      alignment: 9
+      pivot: {x: 0.7990326, y: 0.9437396}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1decd202699d9e4686308182e63d46d
+      internalID: 15855645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaxophoneRogue_5
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 1025
+        width: 171
+        height: 289
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0446a7a53db18bb4d8060a5958df074c
+      internalID: -701002313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaxophoneRogue_6
+      rect:
+        serializedVersion: 2
+        x: 1185
+        y: 1159
+        width: 118
+        height: 205
+      alignment: 9
+      pivot: {x: 0.4007951, y: 0.8967178}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3064c18c121838f488a71818431833c6
+      internalID: 1473968570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaxophoneRogue_7
+      rect:
+        serializedVersion: 2
+        x: 1343
+        y: 731
+        width: 234
+        height: 648
+      alignment: 9
+      pivot: {x: 0.4962685, y: 0.9747639}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c54571e4075ee24d9bda12426819596
+      internalID: -1389718992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaxophoneRogue_8
+      rect:
+        serializedVersion: 2
+        x: 1730
+        y: 1156
+        width: 91
+        height: 161
+      alignment: 9
+      pivot: {x: 0.15635598, y: 0.9273151}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c70b947b25feef846b1c86201590f6f1
+      internalID: -119176415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaxophoneRogue_9
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 944
+        width: 51
+        height: 127
+      alignment: 9
+      pivot: {x: 0.4853348, y: 0.87693197}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8f979e5aefb8194cb2329f0d624bc19
+      internalID: 1099040829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaxophoneRogue_10
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 837
+        width: 164
+        height: 119
+      alignment: 9
+      pivot: {x: 0.49537286, y: 0.9336763}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdf35c1ab65e54f4989ee791c566788c
+      internalID: 869650901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaxophoneRogue_11
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 942
+        width: 99
+        height: 109
+      alignment: 9
+      pivot: {x: 0.22834793, y: 0.7983723}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc8bec657ed034944ae55d51ab83a660
+      internalID: -1883475510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaxophoneRogue_12
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 749
+        width: 67
+        height: 58
+      alignment: 9
+      pivot: {x: 0.48883694, y: 0.8481961}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 135095191fcd06b46891ca4631c715e3
+      internalID: 1057774401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaxophoneRogue_13
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 632
+        width: 80
+        height: 153
+      alignment: 9
+      pivot: {x: 0.5094879, y: 0.87202644}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce5b8091be9814e4eb3c67512126da5d
+      internalID: 653831043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaxophoneRogue_14
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 651
+        width: 68
+        height: 133
+      alignment: 9
+      pivot: {x: 0.46651864, y: 0.8937323}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1df0739b7646364aaf32fd6fb6456e3
+      internalID: 1017629647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaxophoneRogue_15
+      rect:
+        serializedVersion: 2
+        x: 1780
+        y: 750
+        width: 72
+        height: 65
+      alignment: 9
+      pivot: {x: 0.23071797, y: 0.69244194}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90cdb2075caaeee4ba07bfd81f382dff
+      internalID: -1858808978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaxophoneRogue_16
+      rect:
+        serializedVersion: 2
+        x: 1899
+        y: 757
+        width: 32
+        height: 47
+      alignment: 9
+      pivot: {x: 0.4609146, y: 0.6729931}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca84596fc1704944e97c6624d80fe657
+      internalID: -1402385365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaxophoneRogue_17
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 16
+        width: 445
+        height: 655
+      alignment: 9
+      pivot: {x: 0.5999901, y: 0.9781386}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 967a1974b4d30ff4cbe4fa0b591f020a
+      internalID: 1050463975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaxophoneRogue_18
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 430
+        width: 73
+        height: 168
+      alignment: 9
+      pivot: {x: 0.4896048, y: 0.88850147}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a602edc036cc9d24994d0daa4c64e57c
+      internalID: -1096810816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaxophoneRogue_19
+      rect:
+        serializedVersion: 2
+        x: 1084
+        y: 426
+        width: 56
+        height: 176
+      alignment: 9
+      pivot: {x: 0.51355416, y: 0.9139633}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ff9f594465b6ae489eb57f08d9c447f
+      internalID: -758378085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaxophoneRogue_20
+      rect:
+        serializedVersion: 2
+        x: 1783
+        y: 395
+        width: 66
+        height: 251
+      alignment: 9
+      pivot: {x: 0.5071078, y: 0.2197042}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cc0a9b3e236aa141b9dbf4f1159109e
+      internalID: -1766757615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaxophoneRogue_21
+      rect:
+        serializedVersion: 2
+        x: 886
+        y: 304
+        width: 88
+        height: 45
+      alignment: 9
+      pivot: {x: 0.31889343, y: 0.8710334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7607512f630a682469cbde6e4558ac40
+      internalID: -736744473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SaxophoneRogue_22
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 303
+        width: 97
+        height: 41
+      alignment: 9
+      pivot: {x: 0.3200482, y: 0.81468016}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b358df193196bb140a038de269133889
+      internalID: -914953030
       vertices: []
       indices: 
       edges: []
@@ -182,18 +602,38 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    spriteID: 4c7cf58bd73b30746b8912a9175a78e4
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SaxophoneRogue_2: -661046853
-      SaxophoneRogue_1: -545580866
-      SaxophoneRogue_0: 1535593193
-      SaxophoneRogue_3: -1069300363
+      SaxophoneRogue_22: -914953030
+      SaxophoneRogue_8: -119176415
+      SaxophoneRogue_13: 653831043
+      SaxophoneRogue_19: -758378085
+      SaxophoneRogue_5: -701002313
+      SaxophoneRogue_14: 1017629647
+      SaxophoneRogue_18: -1096810816
+      SaxophoneRogue_2: -1556949606
+      SaxophoneRogue_12: 1057774401
+      SaxophoneRogue_1: 1653798848
+      SaxophoneRogue_4: 15855645
+      SaxophoneRogue_11: -1883475510
+      SaxophoneRogue_21: -736744473
+      SaxophoneRogue_7: -1389718992
+      SaxophoneRogue_6: 1473968570
+      SaxophoneRogue_23: 713199662
+      SaxophoneRogue_20: -1766757615
+      SaxophoneRogue_0: 1933651003
+      SaxophoneRogue_10: 869650901
+      SaxophoneRogue_17: 1050463975
+      SaxophoneRogue_3: 1735945415
+      SaxophoneRogue_16: -1402385365
+      SaxophoneRogue_15: -1858808978
+      SaxophoneRogue_9: 1099040829
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
