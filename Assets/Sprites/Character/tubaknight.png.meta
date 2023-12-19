@@ -1,0 +1,510 @@
+fileFormatVersion: 2
+guid: 957b21fadfd7166449f0099b3dd16faf
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 512
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tubaknight_0
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 1451
+        width: 324
+        height: 397
+      alignment: 9
+      pivot: {x: 0.68076015, y: 0.19719121}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eb7e7c1d48aaed4c8424b5326eb4191
+      internalID: 953115531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tubaknight_1
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 1153
+        width: 112
+        height: 186
+      alignment: 9
+      pivot: {x: 0.7287821, y: 0.8956227}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e7e3b1c3b4d2ac41b2fe7491caf6ae6
+      internalID: 1421331189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tubaknight_2
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 1003
+        width: 306
+        height: 350
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b326750567ea2341a82c6487d66d11e
+      internalID: -737025418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tubaknight_3
+      rect:
+        serializedVersion: 2
+        x: 1374
+        y: 1204
+        width: 146
+        height: 189
+      alignment: 9
+      pivot: {x: 0.2114609, y: 0.82618415}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fa7cce92f1d3a84f8b0cee86926c736
+      internalID: -180284931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tubaknight_4
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 537
+        width: 113
+        height: 523
+      alignment: 9
+      pivot: {x: 0.49999973, y: 0.14281094}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6648476a39db7f48baeb83027215712
+      internalID: 1853574827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tubaknight_5
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 885
+        width: 114
+        height: 178
+      alignment: 9
+      pivot: {x: 0.9668274, y: 0.9761524}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d60e64c650725d469838e4eafe0bfa0
+      internalID: -619015081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tubaknight_6
+      rect:
+        serializedVersion: 2
+        x: 1465
+        y: 950
+        width: 83
+        height: 192
+      alignment: 9
+      pivot: {x: 0.73332345, y: 0.97997475}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fd0060ab13208249b1d0b778a0a4bee
+      internalID: -1321061961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tubaknight_7
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 702
+        width: 41
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 624f84bc7c6847f45a0fec0cc869bf9b
+      internalID: 1505833980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tubaknight_8
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 681
+        width: 95
+        height: 87
+      alignment: 9
+      pivot: {x: 0.596823, y: 0.8322838}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 360cf41b9fae65f49abbaa8769210ada
+      internalID: -1938735979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tubaknight_9
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 741
+        width: 116
+        height: 209
+      alignment: 9
+      pivot: {x: 0.4943353, y: 0.90552694}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94a4cbc63f93cc546a6d10fac059e9d1
+      internalID: -1407836540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tubaknight_10
+      rect:
+        serializedVersion: 2
+        x: 1117
+        y: 731
+        width: 108
+        height: 218
+      alignment: 9
+      pivot: {x: 0.48783252, y: 0.888785}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5ecd1d52b3636b42964a418ac9ba6d2
+      internalID: -118916556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tubaknight_11
+      rect:
+        serializedVersion: 2
+        x: 1462
+        y: 669
+        width: 91
+        height: 76
+      alignment: 9
+      pivot: {x: 0.5073376, y: 0.9129759}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a88c10c6c520c24489ada7e11246552
+      internalID: 1303189224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tubaknight_12
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 383
+        width: 88
+        height: 248
+      alignment: 9
+      pivot: {x: 0.04688412, y: 0.9853879}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d821253db6d5033409a97d52762ace99
+      internalID: -1677245531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tubaknight_13
+      rect:
+        serializedVersion: 2
+        x: 1117
+        y: 400
+        width: 97
+        height: 229
+      alignment: 9
+      pivot: {x: 0.050461296, y: 0.97835445}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18abd1696289f5a4ba393e3734464eab
+      internalID: 1231146359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tubaknight_14
+      rect:
+        serializedVersion: 2
+        x: 1552
+        y: 145
+        width: 420
+        height: 450
+      alignment: 9
+      pivot: {x: 0.38862887, y: 0.37526423}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4259f1b3039f5fc4ea69e11b6523222d
+      internalID: -1808125020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tubaknight_15
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 253
+        width: 129
+        height: 57
+      alignment: 9
+      pivot: {x: 0.70568657, y: 0.91230106}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 836dd69a4aab9be40a8074d5be00375f
+      internalID: 57496343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tubaknight_16
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 247
+        width: 120
+        height: 55
+      alignment: 9
+      pivot: {x: 0.5625946, y: 0.92729384}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5359714987a0ca345a116379dad8712a
+      internalID: -1578285059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 093fcd6ca24c1ac4098de7f17730b84e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      tubaknight_11: 1303189224
+      tubaknight_4: 1853574827
+      tubaknight_2: -737025418
+      tubaknight_3: -180284931
+      tubaknight_5: -619015081
+      tubaknight_9: -1407836540
+      tubaknight_6: -1321061961
+      tubaknight_16: -1578285059
+      tubaknight_15: 57496343
+      tubaknight_14: -1808125020
+      tubaknight_17: -1033456779
+      tubaknight_0: 953115531
+      tubaknight_13: 1231146359
+      tubaknight_7: 1505833980
+      tubaknight_8: -1938735979
+      tubaknight_10: -118916556
+      tubaknight_1: 1421331189
+      tubaknight_12: -1677245531
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
