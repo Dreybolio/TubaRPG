@@ -1026,24 +1026,10 @@ MonoBehaviour:
   maxHP: 8
   maxNP: 6
   type: 2
-  attackName: 
-  attackDesc: A regular attack.<br>Alternate <LEFT> and <RIGHT> to fill up the bar.
-  abilityOneName: Fermata
-  abilityOneDesc: Deals damage and inflicts sunburn.<br>Repeatedly press <A> to fill
-    up the bar
-  abilityOneNPCost: 1
-  abilityOneRequiresHeroSelection: 0
-  abilityOneRequiresEnemySelection: 1
-  abilityTwoName: Beautiful Tune
-  abilityTwoDesc: Gives the party +2 DEF for 1 turn.<br>Press the specified button
-    when the bar reaches the circle on each bar.
-  abilityTwoNPCost: 2
-  abilityTwoRequiresHeroSelection: 0
-  abilityTwoRequiresEnemySelection: 0
+  attack: {fileID: 11400000, guid: 8349b92863ab6e045af04b24529aaf1d, type: 2}
+  abilityOne: {fileID: 11400000, guid: 2d75b269909b0c04f83352f7805bb57d, type: 2}
+  abilityTwo: {fileID: 11400000, guid: ef5239bd26deea44c8b64409a60bb98a, type: 2}
   material: {fileID: 2100000, guid: 6d23b3ac7d4ef6d41a583a8e5d8c28cf, type: 2}
-  attackMinigame: {fileID: 78066196323939719, guid: cbe4376041ff81b4e87f7234f0006029, type: 3}
-  abilityOneMinigame: {fileID: 78066196323939719, guid: 7fef1c5e9c554994aa5acd4a54d930fd, type: 3}
-  abilityTwoMinigame: {fileID: 78066196323939719, guid: 60ef24279d5cfed47a11c18813e7c29f, type: 3}
   postitionAtFront: {fileID: 7266122765650790122}
   postitionAtTop: {fileID: 4493377146171764927}
 --- !u!95 &1950973650364166610

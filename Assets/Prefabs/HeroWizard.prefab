@@ -1312,25 +1312,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7833ec772717ca449c3ee83ca627eff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 0
-  maxNP: 0
+  maxHP: 5
+  maxNP: 6
   type: 3
-  attackName: 
-  attackDesc: 
-  abilityOneName: 
-  abilityOneDesc: 
-  abilityOneNPCost: 0
-  abilityOneRequiresHeroSelection: 0
-  abilityOneRequiresEnemySelection: 0
-  abilityTwoName: 
-  abilityTwoDesc: 
-  abilityTwoNPCost: 0
-  abilityTwoRequiresHeroSelection: 0
-  abilityTwoRequiresEnemySelection: 0
+  attack: {fileID: 11400000, guid: 0a19fb8e29bd21c41a979a08aa81c527, type: 2}
+  abilityOne: {fileID: 11400000, guid: d3ee5ebc7505b8b4394ae103f5905658, type: 2}
+  abilityTwo: {fileID: 11400000, guid: 2e464d3f097e58e479424a58f8f2c680, type: 2}
   material: {fileID: 2100000, guid: cdf934a8584653d42ac251e0073f5457, type: 2}
-  attackMinigame: {fileID: 0}
-  abilityOneMinigame: {fileID: 0}
-  abilityTwoMinigame: {fileID: 0}
   postitionAtFront: {fileID: 3271240928776688803}
   postitionAtTop: {fileID: 5518663241897945009}
 --- !u!95 &5001577047149659329

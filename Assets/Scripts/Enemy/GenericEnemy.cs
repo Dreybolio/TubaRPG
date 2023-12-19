@@ -2,12 +2,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+public enum EnemyOverrideStatus
+{
+    NO_OVERRIDE,
+    ATTACK_OTHER_ENEMY,
+}
 public abstract class GenericEnemy : MonoBehaviour
 {
     // Personal Data
     public new string name;
     [SerializeField] private int maxHP;
+    public int defence;
+
     public int hp;
     [NonSerialized] public Dictionary<StatusEffect, int> statusEffects = new();
     protected int enemyIndex;
@@ -46,18 +52,27 @@ public abstract class GenericEnemy : MonoBehaviour
         enemyIndex = battleManager.GetEnemyIndex(this);
         SetPossibleTargets();
     }
-    public void ProcessTurn()
+    public EnemyOverrideStatus CheckForOverrides()
     {
-
+        if (statusEffects.ContainsKey(StatusEffect.DIZZY))
+        {
+            return EnemyOverrideStatus.ATTACK_OTHER_ENEMY;
+        }
+        return EnemyOverrideStatus.NO_OVERRIDE;
     }
+    public abstract void ProcessTurn();
+    protected abstract IEnumerator AttackOtherEnemy();
     protected void FinishTurn()
     {
         battleManager.TurnProcessed();
     }
-    public void Damage(int dmg)
+    public void Damage(int damage)
     {
-        hp -= dmg;
-        if(hp <= 0)
+        int tempDefence = 0;
+        if (statusEffects.ContainsKey(StatusEffect.DEFENCEUP)) { tempDefence += 1; }
+        int totalInflicted = Mathf.Clamp(damage - defence - tempDefence, 0, 999);
+        hp -= totalInflicted;
+        if (hp <= 0)
         {
             bmManager.SetEnemyHPBarValue(enemyIndex, 0);
             battleManager.AddPostTurnEvent(PostTurnEvent.ENEMY_DIED, this);
@@ -73,7 +88,7 @@ public abstract class GenericEnemy : MonoBehaviour
         }
 
         // Spawn a damage indicator
-        bmManager.SpawnDamageIndicator(Camera.main.WorldToScreenPoint(postitionAtTop.position), DamageIndicatorType.ENEMY, dmg);
+        bmManager.SpawnDamageIndicator(Camera.main.WorldToScreenPoint(postitionAtTop.position), DamageIndicatorType.ENEMY, totalInflicted);
     }
     public void Kill()
     {
@@ -109,6 +124,12 @@ public abstract class GenericEnemy : MonoBehaviour
         }
         Debug.LogError("Could not choose attack. Did you input attack chances correctly?");
         return -1;
+    }
+    protected List<GenericEnemy> GetEnemiesOtherThanSelf()
+    {
+        List<GenericEnemy> list = battleManager.GetAllEnemies();
+        list.Remove(this);
+        return list;
     }
     public void WalkToTarget(Transform target, float duration)
     {

@@ -87,19 +87,19 @@ public class BattleMenuManager : MonoBehaviour
     }
     public void SetMenuData(GenericHero hero)
     {
-        fightScript.SetDescriptionBoxTextOnSelected(hero.attackDesc);
+        fightScript.SetDescriptionBoxTextOnSelected(hero.attack.description);
 
-        abilityOneText.text = hero.abilityOneName;
-        abilityOneNPCost.text = hero.abilityOneNPCost.ToString();
-        abilityOneScript.SetConfirmBehaviour(hero.abilityOneRequiresHeroSelection, hero.abilityOneRequiresEnemySelection);
-        abilityOneScript.SetSelectable(hero.GetNP() >= hero.abilityOneNPCost);
-        abilityOneScript.SetDescriptionBoxTextOnSelected(hero.abilityOneDesc);
+        abilityOneText.text = hero.abilityOne.name;
+        abilityOneNPCost.text = hero.abilityOne.npCost.ToString();
+        abilityOneScript.SetConfirmBehaviour(hero.abilityOne.requiresHeroSelection, hero.abilityOne.requiresEnemySelection);
+        abilityOneScript.SetSelectable(hero.GetNP() >= hero.abilityOne.npCost);
+        abilityOneScript.SetDescriptionBoxTextOnSelected(hero.abilityOne.description);
 
-        abilityTwoText.text = hero.abilityTwoName;
-        abilityTwoNPCost.text = hero.abilityTwoNPCost.ToString();
-        abilityTwoScript.SetConfirmBehaviour(hero.abilityTwoRequiresHeroSelection, hero.abilityTwoRequiresEnemySelection);
-        abilityTwoScript.SetSelectable(hero.GetNP() >= hero.abilityTwoNPCost);
-        abilityTwoScript.SetDescriptionBoxTextOnSelected(hero.abilityTwoDesc);
+        abilityTwoText.text = hero.abilityTwo.name;
+        abilityTwoNPCost.text = hero.abilityTwo.npCost.ToString();
+        abilityTwoScript.SetConfirmBehaviour(hero.abilityTwo.requiresHeroSelection, hero.abilityTwo.requiresEnemySelection);
+        abilityTwoScript.SetSelectable(hero.GetNP() >= hero.abilityTwo.npCost);
+        abilityTwoScript.SetDescriptionBoxTextOnSelected(hero.abilityTwo.description);
 
         // Any manual exceptions are handled here
 

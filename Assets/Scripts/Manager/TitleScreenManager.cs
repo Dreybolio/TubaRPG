@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class TitleScreenManager : MonoBehaviour
 {
-    [SerializeField] private BattleData firstScene;
-
     private InputManager inputManager;
     private LevelManager levelManager;
     private bool _buttonPressed = false;
@@ -20,8 +18,7 @@ public class TitleScreenManager : MonoBehaviour
         if (!_buttonPressed && inputManager.GetConfirm())
         {
             _buttonPressed = true;
-            print(firstScene.sceneName);
-            levelManager.LoadBattle(firstScene);
+            levelManager.LoadScene("CharacterSelect");
         }
     }
 }

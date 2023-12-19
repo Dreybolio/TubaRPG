@@ -13,9 +13,15 @@ public class Enemy_TubaKnight : GenericEnemy
         base.Start();
         AssignAnimationIDs();
     }
-    public new void ProcessTurn()
+    public override void ProcessTurn()
     {
-        base.ProcessTurn();
+        EnemyOverrideStatus ovStatus = CheckForOverrides();
+        if (ovStatus == EnemyOverrideStatus.ATTACK_OTHER_ENEMY)
+        {
+            StartCoroutine(AttackOtherEnemy());
+            return;
+        }
+
         target = null;
         if (!targets[0].canBeTargeted && !targets[1].canBeTargeted)
         {
@@ -45,11 +51,17 @@ public class Enemy_TubaKnight : GenericEnemy
                 break;
         }
     }
+    /**
+     *  Projectile attack, X damage on hit.
+     */
     private IEnumerator DoNoteProjectile()
     {
         StartCoroutine(DoCrush());
         yield return null;
     }
+    /**
+     *  Melee attack; 2 damage on hit.
+     */
     private IEnumerator DoCrush()
     {
         // Walk to target
@@ -79,10 +91,48 @@ public class Enemy_TubaKnight : GenericEnemy
         yield return new WaitForSeconds(0.25f);
         FinishTurn();
     }
+    /**
+     *  Creates a little minion and adds it to the fight
+     */
     private IEnumerator DoSummonTrumpet()
     {
         StartCoroutine(DoCrush());
         yield return null;
+    }
+
+    /**
+     *  Walk to enemy, and guarantee do 2 damage
+     */
+    protected override IEnumerator AttackOtherEnemy()
+    {
+        // Choose a target
+
+        List<GenericEnemy> list = GetEnemiesOtherThanSelf();
+        if(list.Count <= 0) 
+        {
+            FinishTurn(); // No other enemies, skip turn instead
+            yield break;
+        }
+        int r = Random.Range(0, list.Count);
+        GenericEnemy target = list[r];
+
+        // Process attack vs. target
+
+        WalkToTarget(target.GetPositionAtFront(), 1f);
+        yield return new WaitUntil(() => _walkCoroutineFinished);
+        yield return new WaitForSeconds(0.25f);
+
+        animator.SetTrigger(_animCrush);
+        _damageFramePassed = false;
+        yield return new WaitUntil(() => _damageFramePassed);
+        target.Damage(2);
+        yield return new WaitForSeconds(0.50f);
+
+        // Walk back to spot
+        WalkToTarget(locationReferencer.enemySpawns[enemyIndex], 1f);
+        yield return new WaitUntil(() => _walkCoroutineFinished);
+        yield return new WaitForSeconds(0.25f);
+        FinishTurn();
     }
 
     private new void AssignAnimationIDs()

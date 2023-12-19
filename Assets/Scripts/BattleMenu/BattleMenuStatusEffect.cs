@@ -15,6 +15,7 @@ public class BattleMenuStatusEffect : MonoBehaviour
     [SerializeField] private Sprite sprAsleep;
     [SerializeField] private Sprite sprDecrescendo;
     [SerializeField] private Sprite sprFermata;
+    [SerializeField] private Sprite sprDizzy;
     [SerializeField] private Sprite[] numSprites;
     public void SetIcon(StatusEffect statusEffect)
     {
@@ -35,6 +36,9 @@ public class BattleMenuStatusEffect : MonoBehaviour
                 break;
             case StatusEffect.FERMATA:
                 newSprite = sprFermata;
+                break;
+            case StatusEffect.DIZZY:
+                newSprite = sprDizzy;
                 break;
         }
         imgIcon.sprite = newSprite;

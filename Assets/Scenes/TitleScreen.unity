@@ -359,7 +359,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0819214ca8445654bb6b1813e7a063aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstScene: {fileID: 11400000, guid: 9564676d9c9badc4eb73125bcfce3e5c, type: 2}
 --- !u!1 &1105988478
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,19 +389,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb1aaaf0ebeab4b44b542e09da7063e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heroOne_Level: 1
-  heroOne_HPAllocations: 0
-  heroOne_NPAllocations: 0
-  heroOne_HeroType: 0
-  heroOne_Object: {fileID: 6257603415797739551, guid: bd45d42a7f293824e961898332dd94d2, type: 3}
-  heroOne_Icon: {fileID: -602079944, guid: 275603d4d8189434f801e8b1a690fdec, type: 3}
-  heroTwo_Level: 1
-  heroTwo_HPAllocations: 0
-  heroTwo_NPAllocations: 0
-  heroTwo_HeroType: 0
-  heroTwo_Object: {fileID: 6257603415797739551, guid: b84af6bc393f9924ba7ba2a1f4130318, type: 3}
-  heroTwo_Icon: {fileID: -1071511027, guid: 275603d4d8189434f801e8b1a690fdec, type: 3}
-  items: []
+  barbarianObject: {fileID: 6257603415797739551, guid: bd45d42a7f293824e961898332dd94d2, type: 3}
+  rogueObject: {fileID: 6257603415797739551, guid: b84af6bc393f9924ba7ba2a1f4130318, type: 3}
+  druidObject: {fileID: 6257603415797739551, guid: ecc252ec99117434986c741b853406d6, type: 3}
+  wizardObject: {fileID: 6257603415797739551, guid: 6ec1d5d538b6b504b8d3657b0a97ea76, type: 3}
+  barbarianIcon: {fileID: -602079944, guid: 275603d4d8189434f801e8b1a690fdec, type: 3}
+  rogueIcon: {fileID: -1071511027, guid: 275603d4d8189434f801e8b1a690fdec, type: 3}
+  druidIcon: {fileID: 910725088, guid: 275603d4d8189434f801e8b1a690fdec, type: 3}
+  wizardIcon: {fileID: 880620770, guid: 275603d4d8189434f801e8b1a690fdec, type: 3}
 --- !u!4 &1105988480
 Transform:
   m_ObjectHideFlags: 0

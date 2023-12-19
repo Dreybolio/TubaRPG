@@ -85,30 +85,4 @@ public class Minigame_5Button : MinigameBase
             SetIndicatorSprite(btnImages[i], btnOrder[i]);
         }
     }
-    private void SetIndicatorSprite(Image indicator, MinigameButton type)
-    {
-        switch (type)
-        {
-            case MinigameButton.A:
-                indicator.sprite = sprA;
-                break;
-            case MinigameButton.B:
-                indicator.sprite = sprB;
-                break;
-            case MinigameButton.X:
-                indicator.sprite = sprX;
-                break;
-            case MinigameButton.Y:
-                indicator.sprite = sprY;
-                break;
-        }
-    }
-    private MinigameButton GetButtonPressed()
-    {
-        if (inputManager.GetMinigameButtonAPressed()) { return MinigameButton.A; }
-        else if (inputManager.GetMinigameButtonBPressed()) { return MinigameButton.B; }
-        else if (inputManager.GetMinigameButtonXPressed()) { return MinigameButton.X; }
-        else if (inputManager.GetMinigameButtonYPressed()) { return MinigameButton.Y; }
-        else { return MinigameButton.NONE; }
-    }
 }

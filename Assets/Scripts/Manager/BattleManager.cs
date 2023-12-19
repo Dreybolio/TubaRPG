@@ -32,6 +32,7 @@ public enum StatusEffect
     DECRESCENDO,
     ASLEEP,
     FERMATA,
+    DIZZY,
 }
 public class BattleManager : MonoBehaviour
 {
@@ -137,9 +138,9 @@ public class BattleManager : MonoBehaviour
         // Process all status effects for heroes
         for (int i = 0; i < 2; i++)
         {
-            foreach (KeyValuePair<StatusEffect, int> effect in heroList[i].statusEffects)
+            foreach (KeyValuePair<StatusEffect, int> effect in heroList[i].statusEffects.ToList())
             {
-                if (effect.Key == StatusEffect.FERMATA) { } // Hero should never be able to get this
+                if (effect.Key == StatusEffect.FERMATA) { heroList[i].Damage(1); } // Hero should never be able to get this
 
                 if (effect.Value == -1) { continue; } // Effect length is infinite
                 if (effect.Value == 1)
@@ -253,7 +254,8 @@ public class BattleManager : MonoBehaviour
                     if (OnHeroKilled())
                     {
                         // This returning true means the game has ended.
-                        EndBattleLose();
+                        StopAllCoroutines();
+                        StartCoroutine(EndBattleLose());
                         return;
                     }
                     break;
@@ -267,7 +269,8 @@ public class BattleManager : MonoBehaviour
                     if (OnEnemyKilled(tuplePair.Item2))
                     {
                         // This returning true means the game has ended.
-                        EndBattleWin();
+                        StopAllCoroutines();
+                        StartCoroutine(EndBattleWin());
                         return;
                     }
                     break;
@@ -380,7 +383,7 @@ public class BattleManager : MonoBehaviour
             }
             #endregion
         }
-        else if (activeHero is HeroRogue heroDruid)
+        else if (activeHero is HeroDruid heroDruid)
         {
             #region
             switch (action)
@@ -403,7 +406,7 @@ public class BattleManager : MonoBehaviour
             }
             #endregion
         }
-        else if (activeHero is HeroRogue heroWizard)
+        else if (activeHero is HeroWizard heroWizard)
         {
             #region
             switch (action)
@@ -484,6 +487,18 @@ public class BattleManager : MonoBehaviour
         }
         return index;
     }
+    public List<GenericEnemy> GetAllEnemies()
+    {
+        List<GenericEnemy> list = new();
+        foreach (GenericEnemy e in enemyList)
+        {
+            if(e != null)
+            {
+                list.Add(e);
+            }
+        }
+        return list;
+    }
     public int GetHeroIndex(GenericHero h)
     {
         int index = -1;
@@ -500,7 +515,7 @@ public class BattleManager : MonoBehaviour
     {
         return heroList[index];
     }
-    private void EndBattleWin()
+    private IEnumerator EndBattleWin()
     {
         foreach (GenericEnemy e in enemyList)
         {
@@ -516,12 +531,12 @@ public class BattleManager : MonoBehaviour
                 h.StopAllCoroutines();
             }
         }
-        StopAllCoroutines();
         print("You Won The Battle!");
+        yield return new WaitForSeconds(2f);
         playerController.SetControlType(ControlType.None);
         levelManager.LoadScene("TitleScreen");
     }
-    private void EndBattleLose()
+    private IEnumerator EndBattleLose()
     {
         foreach (GenericEnemy e in enemyList)
         {
@@ -537,8 +552,8 @@ public class BattleManager : MonoBehaviour
                 h.StopAllCoroutines();
             }
         }
-        StopAllCoroutines();
         print("You Lost The Battle!");
+        yield return new WaitForSeconds(2f);
         playerController.SetControlType(ControlType.None);
         levelManager.LoadScene("TitleScreen");
     }

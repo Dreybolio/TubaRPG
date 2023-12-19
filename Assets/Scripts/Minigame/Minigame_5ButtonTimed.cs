@@ -100,46 +100,4 @@ public class Minigame_5ButtonTimed : MinigameBase
             SetIndicatorSprite(btnImages[i], btnOrder[i]);
         }
     }
-    private void SetIndicatorSprite(Image indicator, MinigameButton type)
-    {
-        switch (type)
-        {
-            case MinigameButton.A:
-                indicator.sprite = sprA;
-                break;
-            case MinigameButton.B:
-                indicator.sprite = sprB;
-                break;
-            case MinigameButton.X:
-                indicator.sprite = sprX;
-                break;
-            case MinigameButton.Y:
-                indicator.sprite = sprY;
-                break;
-            case MinigameButton.UP:
-                indicator.sprite = sprUp;
-                break;
-            case MinigameButton.DOWN:
-                indicator.sprite = sprDown;
-                break;
-            case MinigameButton.LEFT:
-                indicator.sprite = sprLeft;
-                break;
-            case MinigameButton.RIGHT:
-                indicator.sprite = sprRight;
-                break;
-        }
-    }
-    private MinigameButton GetButtonPressed()
-    {
-        if (inputManager.GetMinigameButtonAPressed()) { return MinigameButton.A; }
-        else if (inputManager.GetMinigameButtonBPressed()) { return MinigameButton.B; }
-        else if (inputManager.GetMinigameButtonXPressed()) { return MinigameButton.X; }
-        else if (inputManager.GetMinigameButtonYPressed()) { return MinigameButton.Y; }
-        else if (inputManager.GetMinigameButtonUpPressed()) { return MinigameButton.UP; }
-        else if (inputManager.GetMinigameButtonDownPressed()) { return MinigameButton.DOWN; }
-        else if (inputManager.GetMinigameButtonLeftPressed()) { return MinigameButton.LEFT; }
-        else if (inputManager.GetMinigameButtonRightPressed()) { return MinigameButton.RIGHT; }
-        else { return MinigameButton.NONE; }
-    }
 }

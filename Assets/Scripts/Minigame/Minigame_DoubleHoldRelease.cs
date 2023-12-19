@@ -10,7 +10,6 @@ public class Minigame_DoubleHoldRelease : MinigameBase
 
     [SerializeField] private float xPosMin;
     [SerializeField] private float xPosMax;
-    [SerializeField] private float successWidth;
 
     [SerializeField] private RectTransform bar1ReleasePoint;
     [SerializeField] private Image bar1ReleasePointImage;
@@ -26,9 +25,9 @@ public class Minigame_DoubleHoldRelease : MinigameBase
     private float bar1Current;
     private float bar2Current;
 
-    private int bar1DesiredRelease;
-    private int bar2DesiredRelease;
-    private int leniency;
+    private float bar1DesiredRelease;
+    private float bar2DesiredRelease;
+    private readonly float leniency = 3.5f;
 
     private bool bar1RoutineDone = false;
     private bool bar2RoutineDone = false;
@@ -49,10 +48,9 @@ public class Minigame_DoubleHoldRelease : MinigameBase
         DecideButtons();
         SetIndicatorSprite(bar1ButtonIndicator, bar1Button);
         SetIndicatorSprite(bar2ButtonIndicator, bar2Button);
-        leniency = Mathf.RoundToInt(successWidth / Mathf.Abs(xPosMax - xPosMin) * BAR_MAX / 2); // width-to-full ratio applied to a 0-100 scale, halved.
-        bar1DesiredRelease = Random.Range(50 + leniency, (int)BAR_MAX - leniency);
+        bar1DesiredRelease = Random.Range(50 + leniency, BAR_MAX - leniency);
         bar1ReleasePoint.anchoredPosition = new Vector2(Mathf.Lerp(xPosMin, xPosMax, bar1DesiredRelease / BAR_MAX), bar1ReleasePoint.anchoredPosition.y);
-        bar2DesiredRelease = Random.Range(50 + leniency, (int)BAR_MAX - leniency);
+        bar2DesiredRelease = Random.Range(50 + leniency, BAR_MAX - leniency);
         bar2ReleasePoint.anchoredPosition = new Vector2(Mathf.Lerp(xPosMin, xPosMax, bar2DesiredRelease / BAR_MAX), bar2ReleasePoint.anchoredPosition.y);
         StartCoroutine(C_Minigame());
     }
@@ -146,34 +144,5 @@ public class Minigame_DoubleHoldRelease : MinigameBase
             r2 = Random.Range(1, 5);
         } while (r2 == r1); // Loop until r2 is not r1
         bar2Button = (MinigameButton)r2;
-    }
-    private void SetIndicatorSprite(Image indicator, MinigameButton type)
-    {
-        switch (type)
-        {
-            case MinigameButton.A:
-                indicator.sprite = sprA;
-                break;
-            case MinigameButton.B:
-                indicator.sprite = sprB;
-                break;
-            case MinigameButton.X:
-                indicator.sprite = sprX;
-                break;
-            case MinigameButton.Y:
-                indicator.sprite = sprY;
-                break;
-        }
-    }
-    private bool CheckButtonIsHeld(MinigameButton btn)
-    {
-        return btn switch
-        {
-            MinigameButton.A => inputManager.GetMinigameButtonAHeld(),
-            MinigameButton.B => inputManager.GetMinigameButtonBHeld(),
-            MinigameButton.X => inputManager.GetMinigameButtonXHeld(),
-            MinigameButton.Y => inputManager.GetMinigameButtonYHeld(),
-            _ => throw new System.NotImplementedException()
-        };
     }
 }

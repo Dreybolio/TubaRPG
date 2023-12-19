@@ -8,35 +8,24 @@ public abstract class GenericHero : MonoBehaviour
     [Header("Stats")]
     public int maxHP;
     public int maxNP;
+    public int defence;
 
     [Header("Data")]
     public HeroType type;
 
-    public string attackName;
-    public string attackDesc;
-
-    public string abilityOneName;
-    public string abilityOneDesc;
-    public int abilityOneNPCost;
-    public bool abilityOneRequiresHeroSelection;
-    public bool abilityOneRequiresEnemySelection;
-
-    public string abilityTwoName;
-    public string abilityTwoDesc;
-    public int abilityTwoNPCost;
-    public bool abilityTwoRequiresHeroSelection;
-    public bool abilityTwoRequiresEnemySelection;
+    public HeroAbility attack;
+    protected AbilityBase attackScript;
+    public HeroAbility abilityOne;
+    protected AbilityBase abilityOneScript;
+    public HeroAbility abilityTwo;
+    protected AbilityBase abilityTwoScript;
 
     [SerializeField] protected Material material;
 
     [NonSerialized] public Dictionary<StatusEffect, int> statusEffects = new();
-    protected int heroIndex;
 
-    [Header("Prefabs")]
-    protected Transform minigameParent; // This will get set in BattleManager through SetMinigameParent();
-    [SerializeField] protected GameObject attackMinigame;
-    [SerializeField] protected GameObject abilityOneMinigame;
-    [SerializeField] protected GameObject abilityTwoMinigame;
+    [NonSerialized] public int heroIndex;
+    [NonSerialized] public Transform minigameParent; // This will get set in BattleManager through SetMinigameParent();
 
     // Pointers
     protected BattleManager battleManager;
@@ -54,7 +43,7 @@ public abstract class GenericHero : MonoBehaviour
     [NonSerialized] public bool allowBlocking = false;
     protected int _hp;
     protected int _np;
-    protected bool _walkCoroutineFinished;
+    [NonSerialized] public bool _walkCoroutineFinished;
     private readonly float BLOCK_TIME = 0.40f;
 
     // Anim
@@ -74,6 +63,7 @@ public abstract class GenericHero : MonoBehaviour
         locationReferencer = FindObjectOfType<BattleLocationReferencer>();
         heroIndex = battleManager.GetHeroIndex(this);
         _hp = maxHP; _np = maxNP;
+        CreateAbilityObjects();
         AssignAnimationIDs();
     }
     public abstract void DoAttack(GenericEnemy target);
@@ -133,7 +123,10 @@ public abstract class GenericHero : MonoBehaviour
     }
     public void Damage(int damage)
     {
-        _hp -= damage;
+        int tempDefence = 0;
+        if(statusEffects.ContainsKey(StatusEffect.DEFENCEUP)) { tempDefence += 1; }
+        int totalInflicted = Mathf.Clamp(damage - defence - tempDefence, 0, 999);
+        _hp -= totalInflicted;
         print(name + " HP: " + _hp + " (Dealt " + damage + ")");
         if(_hp <= 0)
         {
@@ -150,7 +143,7 @@ public abstract class GenericHero : MonoBehaviour
         }
 
         // Spawn a damage indicator
-        bmManager.SpawnDamageIndicator(Camera.main.WorldToScreenPoint(postitionAtTop.position), DamageIndicatorType.HERO, damage);
+        bmManager.SpawnDamageIndicator(Camera.main.WorldToScreenPoint(postitionAtTop.position), DamageIndicatorType.HERO, totalInflicted);
     }
     public void Kill()
     {
@@ -216,6 +209,10 @@ public abstract class GenericHero : MonoBehaviour
 
         if (statusEffect == StatusEffect.DECRESCENDO) { canBeTargeted = true; }
     }
+    /**
+     * Sets whether the Hero is greyed out or not after performing an action
+     *  "_Base_Color" is derived from the material property
+     */
     public void SetGreyOut(bool b)
     {
         if (b)
@@ -230,6 +227,19 @@ public abstract class GenericHero : MonoBehaviour
     public void SetMinigameParent(Transform mgp)
     {
         minigameParent = mgp;
+    }
+    /**
+     * Adds components corresponding to each attached HeroAbility.
+     * NOTE: The name of each HeroAbility must correspond to an AbilityBase of the same name!
+     */
+    public void CreateAbilityObjects()
+    {
+        attackScript = (AbilityBase)gameObject.AddComponent(Type.GetType(attack.className, true));
+        attackScript.Initialize(this, attack.minigame, attack.npCost, locationReferencer, battleManager);
+        abilityOneScript = (AbilityBase)gameObject.AddComponent(Type.GetType(abilityOne.className, true));
+        abilityOneScript.Initialize(this, abilityOne.minigame, abilityOne.npCost, locationReferencer, battleManager);
+        abilityTwoScript = (AbilityBase)gameObject.AddComponent(Type.GetType(abilityTwo.className, true));
+        abilityTwoScript.Initialize(this, abilityTwo.minigame, abilityTwo.npCost, locationReferencer, battleManager);
     }
     private void AssignAnimationIDs()
     {

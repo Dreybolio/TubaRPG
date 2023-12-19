@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcd2cdd6a57cb9c41a5d67b8d231bd33, type: 3}
+  m_Name: R_Attack
+  m_EditorClassIdentifier: 
+  name: Attack
+  className: R_Attack
+  description: A regular attack.<br>Wait until the indicator pops up, then press
+    <A>
+  npCost: 0
+  requiresHeroSelection: 0
+  requiresEnemySelection: 1
+  minigame: {fileID: 78066196323939719, guid: df69fb7ff24ba5941b6a78b06747c3d6, type: 3}
+  abilityScript: {fileID: 0}

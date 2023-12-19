@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcd2cdd6a57cb9c41a5d67b8d231bd33, type: 3}
+  m_Name: B_Attack
+  m_EditorClassIdentifier: 
+  name: Attack
+  className: B_Attack
+  description: A regular attack.<br>Hold <LEFT> until the indicator reaches the big
+    circle.
+  npCost: 0
+  requiresHeroSelection: 0
+  requiresEnemySelection: 0
+  minigame: {fileID: 5988325687129428200, guid: 5174eeb62c9d4564a9aa5e56b7cb17ae, type: 3}
