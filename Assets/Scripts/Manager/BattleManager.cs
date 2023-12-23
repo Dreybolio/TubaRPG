@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using UnityEngine;
 
 public enum BattleStage
@@ -48,6 +49,7 @@ public class BattleManager : MonoBehaviour
     private BattleMenuManager bmManager;
     private LevelManager levelManager;
     private BattleLocationReferencer locationReferencer;
+    private SoundManager soundManager;
 
     // Vars
     private bool _turnProcessed = false;
@@ -59,6 +61,7 @@ public class BattleManager : MonoBehaviour
         playerController = FindObjectOfType<PlayerControllerBattle>();
         gameData = GameData.Instance;
         levelManager = LevelManager.Instance;
+        soundManager = SoundManager.Instance;
         bmManager = FindObjectOfType<BattleMenuManager>();
         locationReferencer = FindObjectOfType<BattleLocationReferencer>();
     }
@@ -110,6 +113,15 @@ public class BattleManager : MonoBehaviour
             }
         }
 
+        // Start the Music
+        if(bd.introMusic != null)
+        {
+            soundManager.PlayMusicWithIntro(bd.introMusic, bd.music, 0.75f);
+        }
+        else
+        {
+            soundManager.PlayMusic(bd.music, true, 0.75f);
+        }
 
         StartCoroutine(C_TopOfRound());
     }
@@ -463,7 +475,6 @@ public class BattleManager : MonoBehaviour
         bmManager.SetEnemySelectorValidity(index, false);
         bmManager.SetEnemyStatusEffects(index, null);
         enemyList[index] = null;
-
         bool battleWon = true;
         foreach (GenericEnemy e in enemyList)
         {
@@ -532,7 +543,8 @@ public class BattleManager : MonoBehaviour
             }
         }
         print("You Won The Battle!");
-        yield return new WaitForSeconds(2f);
+        soundManager.FadeOutMusic(4);
+        yield return new WaitForSeconds(6f);
         playerController.SetControlType(ControlType.None);
         levelManager.LoadScene("TitleScreen");
     }
@@ -553,6 +565,7 @@ public class BattleManager : MonoBehaviour
             }
         }
         print("You Lost The Battle!");
+        soundManager.FadeOutMusic(4);
         yield return new WaitForSeconds(2f);
         playerController.SetControlType(ControlType.None);
         levelManager.LoadScene("TitleScreen");

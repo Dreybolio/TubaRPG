@@ -27,7 +27,7 @@ public class Minigame_DoubleHoldRelease : MinigameBase
 
     private float bar1DesiredRelease;
     private float bar2DesiredRelease;
-    private readonly float leniency = 3.5f;
+    private readonly float leniency = 6.5f;
 
     private bool bar1RoutineDone = false;
     private bool bar2RoutineDone = false;
@@ -50,7 +50,15 @@ public class Minigame_DoubleHoldRelease : MinigameBase
         SetIndicatorSprite(bar2ButtonIndicator, bar2Button);
         bar1DesiredRelease = Random.Range(50 + leniency, BAR_MAX - leniency);
         bar1ReleasePoint.anchoredPosition = new Vector2(Mathf.Lerp(xPosMin, xPosMax, bar1DesiredRelease / BAR_MAX), bar1ReleasePoint.anchoredPosition.y);
-        bar2DesiredRelease = Random.Range(50 + leniency, BAR_MAX - leniency);
+        bool cond = false;
+        while (!cond)
+        {
+            bar2DesiredRelease = Random.Range(50 + leniency, BAR_MAX - leniency);
+            if(Mathf.Abs(bar2DesiredRelease - bar1DesiredRelease) >= 7f)
+            {
+                cond = true;
+            }
+        }
         bar2ReleasePoint.anchoredPosition = new Vector2(Mathf.Lerp(xPosMin, xPosMax, bar2DesiredRelease / BAR_MAX), bar2ReleasePoint.anchoredPosition.y);
         StartCoroutine(C_Minigame());
     }
@@ -75,7 +83,6 @@ public class Minigame_DoubleHoldRelease : MinigameBase
             timeElapsed += Time.deltaTime;
             if(!CheckButtonIsHeld(bar1Button))
             {
-                print("Desired Release: " + bar1DesiredRelease + ", Current: " + bar1Current + ", leniency: " + leniency);
                 // Player let go.
                 if(bar1Current > bar1DesiredRelease - leniency && bar1Current < bar1DesiredRelease + leniency)
                 {

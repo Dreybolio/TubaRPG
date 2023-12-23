@@ -16,6 +16,7 @@ public class BattleMenuElement_HeroSelector : BattleMenuElement
         // undergo the selection purpose action against 
         // the target associated with this selector.
         battleManager.RelayActionToHero(selectionPurpose, targetIndex);
+        soundManager.PlaySound(sndConfirm);
         return null;
     }
     public void SetPurpose(HeroAction purpose)

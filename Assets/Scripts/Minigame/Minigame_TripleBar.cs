@@ -63,8 +63,8 @@ public class Minigame_TripleBar : MinigameBase
                 barCurrent[i] = Mathf.Lerp(0, BAR_MAX, timeElapsed / fillTime);
                 barFills[i].fillAmount = barCurrent[i] / BAR_MAX;
 
-                float timeMultiplier = 0.5f + (0.5f * i);
-                // 1 if i = 1,    1.5 if i = 2,    2 if i = 3
+                float timeMultiplier = 0.5f + (0.5f * (i + 1));
+                // 1 if i = 0,    1.5 if i = 1,    2 if i = 2
                 timeElapsed += Time.deltaTime * timeMultiplier;
                 MinigameButton pressedButton = GetButtonPressed();
                 if (pressedButton != MinigameButton.NONE)

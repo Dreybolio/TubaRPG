@@ -54,7 +54,7 @@ MonoBehaviour:
   sprIncorrect: {fileID: -1496078486, guid: cf4e01fc04eb4ae4c8f852a7e85f1f35, type: 3}
   minWaitTime: 0.5
   maxWaitTime: 3
-  pressTimeout: 0.5
+  pressTimeout: 0.9
   textPress: {fileID: 2403726902308459084}
   textWaitForIt: {fileID: 530864347292876730}
   indicator: {fileID: 78066196721269972}

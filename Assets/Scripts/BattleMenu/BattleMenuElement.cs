@@ -24,14 +24,21 @@ public class BattleMenuElement : MonoBehaviour
     [SerializeField] private bool VIS_DESCBOX;
     [SerializeField] private bool VIS_ENBOX;
 
+    [Header("SFX")]
+    [SerializeField] protected AudioClip sndNavigate;
+    [SerializeField] protected AudioClip sndConfirm;
+    [SerializeField] protected AudioClip sndInvalid;
+
     protected Animator animator;
     protected BattleMenuManager bmManager;
     protected BattleManager battleManager;
+    protected SoundManager soundManager;
     protected void Awake()
     {
         animator = GetComponent<Animator>();
         bmManager = FindObjectOfType<BattleMenuManager>();
         battleManager = FindObjectOfType<BattleManager>();
+        soundManager = SoundManager.Instance;
     }
     public BattleMenuElement Navigate(Vector2 dir, int numIterationsTried = 0)
     {
@@ -41,6 +48,7 @@ public class BattleMenuElement : MonoBehaviour
             if (elementOnLeft.OnSelected())
             {
                 // Passed selection successfully
+                soundManager.PlaySound(sndNavigate);
                 return elementOnLeft;
             }
             else
@@ -62,6 +70,7 @@ public class BattleMenuElement : MonoBehaviour
             if (elementOnRight.OnSelected())
             {
                 // Passed selection successfully
+                soundManager.PlaySound(sndNavigate);
                 return elementOnRight;
             }
             else
@@ -82,6 +91,7 @@ public class BattleMenuElement : MonoBehaviour
             if (elementOnUp.OnSelected())
             {
                 // Passed selection successfully
+                soundManager.PlaySound(sndNavigate);
                 return elementOnUp;
             }
             else
@@ -102,6 +112,7 @@ public class BattleMenuElement : MonoBehaviour
             if (elementOnDown.OnSelected())
             {
                 // Passed selection successfully
+                soundManager.PlaySound(sndNavigate);
                 return elementOnDown;
             }
             else
@@ -127,6 +138,7 @@ public class BattleMenuElement : MonoBehaviour
             if (elementOnConfirm.OnSelected())
             {
                 // Passed selection successfully
+                soundManager.PlaySound(sndConfirm);
                 return elementOnConfirm;
             }
             else

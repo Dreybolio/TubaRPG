@@ -488,7 +488,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2331475479527542128}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.088, y: -0.267, z: 0}
+  m_LocalPosition: {x: 0.088, y: -0.267, z: 0.003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1674,6 +1674,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 9
   maxNP: 6
+  defence: 0
   type: 0
   attack: {fileID: 11400000, guid: 495ce5b0312ced74baf372a4916ebdde, type: 2}
   abilityOne: {fileID: 11400000, guid: 9b1ef3aa82dc3cf4980e4487a4b4ef74, type: 2}
@@ -1681,6 +1682,7 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 00284333e4322c14faa97ca284250e2a, type: 2}
   postitionAtFront: {fileID: 5908446080924903042}
   postitionAtTop: {fileID: 1400570029918692455}
+  sndHurt: {fileID: 8300000, guid: 29b9ef6d6b4f1eb4286d0e36d0bdfd53, type: 3}
 --- !u!95 &8342694607309949597
 Animator:
   serializedVersion: 4
@@ -1691,7 +1693,7 @@ Animator:
   m_GameObject: {fileID: 6257603415797739551}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9b8e84a054707d5439b43f9602a18316, type: 2}
+  m_Controller: {fileID: 22100000, guid: 69a79d4b77cbd134eb93a3e2f59a6c7a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

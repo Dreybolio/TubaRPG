@@ -512,7 +512,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprCorrect: {fileID: -963505094, guid: cf4e01fc04eb4ae4c8f852a7e85f1f35, type: 3}
   sprIncorrect: {fileID: -1496078486, guid: cf4e01fc04eb4ae4c8f852a7e85f1f35, type: 3}
-  fillTime: 4
+  fillTime: 3
   xPosMin: -420
   xPosMax: 420
   barPressPointTransforms:

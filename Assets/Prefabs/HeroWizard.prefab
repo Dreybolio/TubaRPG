@@ -1314,6 +1314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 5
   maxNP: 6
+  defence: 0
   type: 3
   attack: {fileID: 11400000, guid: 0a19fb8e29bd21c41a979a08aa81c527, type: 2}
   abilityOne: {fileID: 11400000, guid: d3ee5ebc7505b8b4394ae103f5905658, type: 2}
@@ -1321,6 +1322,7 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: cdf934a8584653d42ac251e0073f5457, type: 2}
   postitionAtFront: {fileID: 3271240928776688803}
   postitionAtTop: {fileID: 5518663241897945009}
+  sndHurt: {fileID: 8300000, guid: 29b9ef6d6b4f1eb4286d0e36d0bdfd53, type: 3}
 --- !u!95 &5001577047149659329
 Animator:
   serializedVersion: 4
@@ -1331,7 +1333,7 @@ Animator:
   m_GameObject: {fileID: 6257603415797739551}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0eab2166fbd25194faf3958e77d7075e, type: 2}
+  m_Controller: {fileID: 22100000, guid: b311e37eb3b59fb43a33156595f3ff20, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

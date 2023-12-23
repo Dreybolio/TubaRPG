@@ -18,4 +18,5 @@ MonoBehaviour:
   - {fileID: 1023360389297060250, guid: 54aedaa6cefd2ad41973c70094cf1fab, type: 3}
   - {fileID: 0}
   xpAwarded: 50
-  music: {fileID: 0}
+  introMusic: {fileID: 8300000, guid: 0435fd4b4e3fd974faa92206b605f390, type: 3}
+  music: {fileID: 8300000, guid: 477457314dbc791429ee4d1af2237879, type: 3}

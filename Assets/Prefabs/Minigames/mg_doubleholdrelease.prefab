@@ -514,7 +514,6 @@ MonoBehaviour:
   fillTime: 6
   xPosMin: -420
   xPosMax: 420
-  successWidth: 96
   bar1ReleasePoint: {fileID: 78066196105396112}
   bar1ReleasePointImage: {fileID: 78066196105396113}
   bar1ButtonIndicator: {fileID: 78066196721269972}

@@ -26,12 +26,14 @@ public class BattleMenuElement_DoAction : BattleMenuElement
     {
         if(!canBeSelected)
         {
+            soundManager.PlaySound(sndInvalid);
             return this;
         }
         BattleMenuElement firstElem;
         if (elementOnConfirm == null)
         {
             battleManager.RelayActionToHero(action);
+            soundManager.PlaySound(sndConfirm);
             return null;
         }
         else
@@ -41,6 +43,7 @@ public class BattleMenuElement_DoAction : BattleMenuElement
             if (elementOnConfirm.OnSelected())
             {
                 // Passed selection successfully
+                soundManager.PlaySound(sndConfirm);
                 firstElem = elementOnConfirm;
             }
             else

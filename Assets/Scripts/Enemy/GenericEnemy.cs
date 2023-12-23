@@ -17,31 +17,37 @@ public abstract class GenericEnemy : MonoBehaviour
     public int hp;
     [NonSerialized] public Dictionary<StatusEffect, int> statusEffects = new();
     protected int enemyIndex;
+    [SerializeField] protected bool dontDestroyAfterDeath;
 
-    // Attacking Data
+    [Header("Attacking Data")]
     public int numAttackOptions;
     public float[] attackOptionChances;
     protected GenericHero[] targets;
     protected GenericHero target;
 
+    [Header("Positional Data")]
+    [SerializeField] private Transform postitionAtFront;
+    [SerializeField] private Transform postitionAtTop;
+
+    [Header("Sounds")]
+    [SerializeField] protected AudioClip sndHurt;
 
     // Pointers
     protected BattleManager battleManager;
     protected BattleMenuManager bmManager;
     protected Animator animator;
     protected BattleLocationReferencer locationReferencer;
+    protected SoundManager soundManager;
 
     // Vars
     protected bool _walkCoroutineFinished;
-    protected bool _damageFramePassed;
 
     // Animation IDs
-    protected int _animIdle;
-    protected int _animDie;
+    protected int _animIdle_T, _animDie_T, _animWalking_B;
+    // Animation Toggled Vars
+    protected bool _damageFramePassed;
+    protected bool _deathAnimFinished;
 
-    // Misc
-    [SerializeField] private Transform postitionAtFront;
-    [SerializeField] private Transform postitionAtTop;
 
     protected void Start()
     {
@@ -49,6 +55,7 @@ public abstract class GenericEnemy : MonoBehaviour
         bmManager = FindObjectOfType<BattleMenuManager>();
         animator = GetComponent<Animator>();
         locationReferencer = FindObjectOfType<BattleLocationReferencer>();
+        soundManager = SoundManager.Instance;
         enemyIndex = battleManager.GetEnemyIndex(this);
         SetPossibleTargets();
     }
@@ -89,6 +96,7 @@ public abstract class GenericEnemy : MonoBehaviour
 
         // Spawn a damage indicator
         bmManager.SpawnDamageIndicator(Camera.main.WorldToScreenPoint(postitionAtTop.position), DamageIndicatorType.ENEMY, totalInflicted);
+        soundManager.PlaySound(sndHurt, 1, true);
     }
     public void Kill()
     {
@@ -96,9 +104,12 @@ public abstract class GenericEnemy : MonoBehaviour
     }
     private IEnumerator C_Kill()
     {
-        animator.SetTrigger(_animDie);
-        yield return new WaitForSeconds(2);
-        Destroy(gameObject);
+        animator.SetTrigger(_animDie_T);
+        yield return new WaitUntil(() => _deathAnimFinished);
+        if (!dontDestroyAfterDeath)
+        {
+            Destroy(gameObject);
+        }
     }
     private void SetPossibleTargets()
     {
@@ -140,6 +151,7 @@ public abstract class GenericEnemy : MonoBehaviour
     {
         Vector3 startPos = transform.position;
         float timeElapsed = 0;
+        animator.SetBool(_animWalking_B, true);
         while (timeElapsed <= duration)
         {
             transform.position = Vector3.Lerp(startPos, target.position, timeElapsed / duration);
@@ -148,6 +160,7 @@ public abstract class GenericEnemy : MonoBehaviour
         }
         transform.position = target.position;
         _walkCoroutineFinished = true;
+        animator.SetBool(_animWalking_B, false);
     }
     public void AddStatusEffect(StatusEffect statusEffect, int turns)
     {
@@ -166,9 +179,14 @@ public abstract class GenericEnemy : MonoBehaviour
     {
         _damageFramePassed = true;
     }
+    public void DeathAnimationOver()
+    {
+        _deathAnimFinished = true;
+    }
     protected void AssignAnimationIDs()
     {
-        _animIdle = Animator.StringToHash("Idle");
-        _animDie = Animator.StringToHash("Die");
+        _animIdle_T = Animator.StringToHash("Idle");
+        _animDie_T = Animator.StringToHash("Die");
+        _animWalking_B = Animator.StringToHash("Walking");
     }
 }

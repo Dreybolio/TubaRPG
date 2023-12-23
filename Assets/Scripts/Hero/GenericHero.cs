@@ -27,12 +27,20 @@ public abstract class GenericHero : MonoBehaviour
     [NonSerialized] public int heroIndex;
     [NonSerialized] public Transform minigameParent; // This will get set in BattleManager through SetMinigameParent();
 
+    [Header("Positional Data")]
+    [SerializeField] private Transform postitionAtFront;
+    [SerializeField] private Transform postitionAtTop;
+
+    [Header("Sounds")]
+    [SerializeField] protected AudioClip sndHurt;
+
     // Pointers
     protected BattleManager battleManager;
     protected BattleMenuManager bmManager;
     protected GameData gameData;
     protected Animator animator;
     protected BattleLocationReferencer locationReferencer;
+    protected SoundManager soundManager;
 
     // Vars
     [NonSerialized] public bool canBeSelected = true;
@@ -47,13 +55,8 @@ public abstract class GenericHero : MonoBehaviour
     private readonly float BLOCK_TIME = 0.40f;
 
     // Anim
-    private int _animIdle;
-    private int _animDie;
-    private int _animBlock;
+    private int _animIdle_T, _animDie_T, _animBlock_T, _animWalking_B;
 
-    // Misc
-    [SerializeField] private Transform postitionAtFront;
-    [SerializeField] private Transform postitionAtTop;
 
     private void Start()
     {
@@ -61,6 +64,7 @@ public abstract class GenericHero : MonoBehaviour
         bmManager = FindObjectOfType<BattleMenuManager>();
         animator = GetComponent<Animator>();
         locationReferencer = FindObjectOfType<BattleLocationReferencer>();
+        soundManager =SoundManager.Instance;
         heroIndex = battleManager.GetHeroIndex(this);
         _hp = maxHP; _np = maxNP;
         CreateAbilityObjects();
@@ -92,7 +96,7 @@ public abstract class GenericHero : MonoBehaviour
         {
             allowBlocking = true; // Disable functionality after doing this once.
             isBlocking = true;
-            animator.SetTrigger(_animBlock);
+            animator.SetTrigger(_animBlock_T);
             yield return new WaitForSeconds(BLOCK_TIME);
             isBlocking = false;
         }
@@ -112,6 +116,7 @@ public abstract class GenericHero : MonoBehaviour
     {
         Vector3 startPos = transform.position;
         float timeElapsed = 0;
+        animator.SetBool(_animWalking_B, true);
         while(timeElapsed <= duration)
         {
             transform.position = Vector3.Lerp(startPos, target.position, timeElapsed / duration);
@@ -119,6 +124,7 @@ public abstract class GenericHero : MonoBehaviour
             yield return null;
         }
         transform.position = target.position;
+        animator.SetBool(_animWalking_B, false);
         _walkCoroutineFinished = true;
     }
     public void Damage(int damage)
@@ -144,6 +150,7 @@ public abstract class GenericHero : MonoBehaviour
 
         // Spawn a damage indicator
         bmManager.SpawnDamageIndicator(Camera.main.WorldToScreenPoint(postitionAtTop.position), DamageIndicatorType.HERO, totalInflicted);
+        soundManager.PlaySound(sndHurt, 1, true);
     }
     public void Kill()
     {
@@ -156,7 +163,7 @@ public abstract class GenericHero : MonoBehaviour
         isAlive = false;
         canBeSelected = false;
         canBeTargeted = false;
-        animator.SetTrigger(_animDie);
+        animator.SetTrigger(_animDie_T);
         yield return new WaitForSeconds(2);
         // After animation is done
     }
@@ -243,8 +250,9 @@ public abstract class GenericHero : MonoBehaviour
     }
     private void AssignAnimationIDs()
     {
-        _animIdle = Animator.StringToHash("Idle");
-        _animDie = Animator.StringToHash("Die");
-        _animBlock = Animator.StringToHash("Block");
+        _animIdle_T = Animator.StringToHash("Idle");
+        _animDie_T = Animator.StringToHash("Die");
+        _animBlock_T = Animator.StringToHash("Block");
+        _animWalking_B = Animator.StringToHash("Walking");
     }
 }

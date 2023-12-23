@@ -4,12 +4,7 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
-    private static InputManager instance;
-
-    public static InputManager Instance
-    {
-        get { return instance; }
-    }
+    public static InputManager Instance;
     private PlayerControls controls;
     private PlayerInput input;
     [SerializeField] private Sprite[] keyboardButtons;
@@ -20,14 +15,14 @@ public class InputManager : MonoBehaviour
     [SerializeField] private TMP_SpriteAsset playstationSpriteAsset;
     private void Awake()
     {
-        if (instance != null && instance != this)
+        if (Instance == null)
         {
-            Destroy(gameObject);
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
-            instance = this;
-            DontDestroyOnLoad(instance);
+            Destroy(gameObject);
         }
         controls = new PlayerControls();
         input = GetComponent<PlayerInput>();

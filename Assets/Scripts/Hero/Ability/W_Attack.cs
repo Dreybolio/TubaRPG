@@ -11,7 +11,9 @@ public class W_Attack : AbilityBase
 
     public override IEnumerator C_DoAbility(GenericEnemy target)
     {
-        // Do Pre-Anim
+        // Walk to target
+        hero.WalkToTarget(target.GetPositionAtFront(), 1f);
+        yield return new WaitUntil(() => hero._walkCoroutineFinished);
         yield return new WaitForSeconds(0.25f);
 
         // Do minigame to see if hit
@@ -30,7 +32,9 @@ public class W_Attack : AbilityBase
             target.Damage(1);
         }
 
-        // Do Post-anim
+        // Walk back to spot
+        hero.WalkToTarget(locationReferencer.heroSpawns[battleManager.GetHeroIndex(hero)], 1f);
+        yield return new WaitUntil(() => hero._walkCoroutineFinished);
         yield return new WaitForSeconds(0.25f);
         mgScript.Destroy();
         hero.ActionFinished();

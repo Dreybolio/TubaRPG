@@ -10,7 +10,7 @@ public class Minigame_5ButtonTimed : MinigameBase
     [SerializeField] private Image[] btnImages;
 
     private readonly float[] pressPoints = new float[] {17, 37, 57, 77, 97};
-    private readonly float leniency = 4;
+    private readonly float leniency = 6.5f;
     private readonly float BAR_MAX = 100.00f;
     private float barCurrent;
 
