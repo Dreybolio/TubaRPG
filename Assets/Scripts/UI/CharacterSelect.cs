@@ -7,10 +7,12 @@ public class CharacterSelect : MonoBehaviour
 {
     [SerializeField] private BattleData firstScene;
 
-    [SerializeField] private CharacterSelectButton barbarianButton;
-    [SerializeField] private CharacterSelectButton rogueButton;
-    [SerializeField] private CharacterSelectButton druidButton;
-    [SerializeField] private CharacterSelectButton wizardButton;
+    [SerializeField] private CharacterSelectMenuElement barbarianButton;
+    [SerializeField] private CharacterSelectMenuElement rogueButton;
+    [SerializeField] private CharacterSelectMenuElement druidButton;
+    [SerializeField] private CharacterSelectMenuElement wizardButton;
+
+
 
     HeroType heroOne;
     HeroType heroTwo;

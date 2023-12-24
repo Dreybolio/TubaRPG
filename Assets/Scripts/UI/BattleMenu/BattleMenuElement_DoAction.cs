@@ -9,7 +9,6 @@ public class BattleMenuElement_DoAction : BattleMenuElement
     [SerializeField] private HeroAction action;
 
     [Header("Selection")]    
-    public bool canBeSelected = true;
     [SerializeField] private Image bgImage;
     [SerializeField] private Image npImage;
 
@@ -22,14 +21,14 @@ public class BattleMenuElement_DoAction : BattleMenuElement
     [SerializeField] private BattleMenuElement_EnemySelector[] enemyElements;
     private readonly Color COLOR_ACTIVE = new(1, 1, 1);
     private readonly Color COLOR_INACTIVE = new(0.5f, 0.5f, 0.5f);
-    public new BattleMenuElement OnConfirm()
+    public new MenuElement OnConfirm()
     {
-        if(!canBeSelected)
+        if(!validSelection)
         {
             soundManager.PlaySound(sndInvalid);
             return this;
         }
-        BattleMenuElement firstElem;
+        MenuElement firstElem;
         if (elementOnConfirm == null)
         {
             battleManager.RelayActionToHero(action);
@@ -104,13 +103,13 @@ public class BattleMenuElement_DoAction : BattleMenuElement
     {
         if(selectable)
         {
-            canBeSelected = true;
+            validSelection = true;
             bgImage.color = COLOR_ACTIVE;
             npImage.color = COLOR_ACTIVE;
         }
         else
         {
-            canBeSelected = false;
+            validSelection = false;
             bgImage.color = COLOR_INACTIVE;
             npImage.color = COLOR_INACTIVE;
         }

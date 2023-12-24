@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEngine.GraphicsBuffer;
 
 public class Minigame_HoldReleaseA : MinigameBase
 {
@@ -13,6 +12,7 @@ public class Minigame_HoldReleaseA : MinigameBase
 
     [SerializeField] private RectTransform barReleasePoint;
     [SerializeField] private Image barReleasePointImage;
+    [SerializeField] private Image btnAIndicator;
 
     [SerializeField] private Image barFill;
 
@@ -26,6 +26,7 @@ public class Minigame_HoldReleaseA : MinigameBase
     {
         base.Awake();
         barFill.fillAmount = 0f;
+        btnAIndicator.sprite = sprA;
     }
     public override void StartMinigame()
     {

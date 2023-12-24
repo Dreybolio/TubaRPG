@@ -115,7 +115,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6257603415797739549}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1371758596902692607
 SpriteRenderer:
@@ -604,7 +604,7 @@ Transform:
   m_Children:
   - {fileID: 4667024036296923994}
   m_Father: {fileID: 6257603415797739549}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5925071347874757409
 GameObject:
@@ -1006,6 +1006,7 @@ Transform:
   - {fileID: 539024490672973131}
   - {fileID: 7266122765650790122}
   - {fileID: 4493377146171764927}
+  - {fileID: 5177895129206241217}
   - {fileID: 2679337908922252337}
   - {fileID: 4864639818835578586}
   m_Father: {fileID: 0}
@@ -1031,8 +1032,10 @@ MonoBehaviour:
   abilityOne: {fileID: 11400000, guid: 2d75b269909b0c04f83352f7805bb57d, type: 2}
   abilityTwo: {fileID: 11400000, guid: ef5239bd26deea44c8b64409a60bb98a, type: 2}
   material: {fileID: 2100000, guid: 6d23b3ac7d4ef6d41a583a8e5d8c28cf, type: 2}
+  projectileSpawnPos: {fileID: 0}
   postitionAtFront: {fileID: 7266122765650790122}
   postitionAtTop: {fileID: 4493377146171764927}
+  positionAtCenter: {fileID: 5177895129206241217}
   sndHurt: {fileID: 8300000, guid: 29b9ef6d6b4f1eb4286d0e36d0bdfd53, type: 3}
 --- !u!95 &1950973650364166610
 Animator:
@@ -1564,6 +1567,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &8335021776021383731
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5177895129206241217}
+  m_Layer: 0
+  m_Name: PositionAtCenter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5177895129206241217
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8335021776021383731}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.14, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6257603415797739549}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8567011121952876447
 GameObject:
   m_ObjectHideFlags: 0

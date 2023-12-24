@@ -3,46 +3,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BattleMenuElement : MonoBehaviour
+public abstract class MenuElement : MonoBehaviour
 {
-    [SerializeField] protected BattleMenuElement elementOnUp;
-    [SerializeField] protected BattleMenuElement elementOnDown;
-    [SerializeField] protected BattleMenuElement elementOnLeft;
-    [SerializeField] protected BattleMenuElement elementOnRight;
-    public BattleMenuElement elementOnConfirm; // Public, since this is dynamic when in submenus
-    public BattleMenuElement elementOnCancel; // Public, since this is dynamic when in submenus
+    [Header("Navigation")]
+    public MenuElement elementOnUp;
+    public MenuElement elementOnDown;
+    public MenuElement elementOnLeft;
+    public MenuElement elementOnRight;
+    public MenuElement elementOnConfirm;
+    public MenuElement elementOnCancel;
 
     public bool validSelection = true;
-    protected string descriptionBoxTextOnSelected = string.Empty;
-    protected string enemyNameBoxTextOnSelected = string.Empty;
-
-    [Header("UI Visibility When Selected")]
-    [SerializeField] private bool VIS_MAIN;
-    [SerializeField] private bool VIS_SUBMENU_ABILITY;
-    [SerializeField] private bool VIS_SUBMENU_ITEM;
-    [SerializeField] private bool VIS_SUBMENU_OTHER;
-    [SerializeField] private bool VIS_DESCBOX;
-    [SerializeField] private bool VIS_ENBOX;
 
     [Header("SFX")]
     [SerializeField] protected AudioClip sndNavigate;
     [SerializeField] protected AudioClip sndConfirm;
+    [SerializeField] protected AudioClip sndCancel;
     [SerializeField] protected AudioClip sndInvalid;
 
     protected Animator animator;
-    protected BattleMenuManager bmManager;
-    protected BattleManager battleManager;
     protected SoundManager soundManager;
+
     protected void Awake()
     {
         animator = GetComponent<Animator>();
-        bmManager = FindObjectOfType<BattleMenuManager>();
-        battleManager = FindObjectOfType<BattleManager>();
         soundManager = SoundManager.Instance;
     }
-    public BattleMenuElement Navigate(Vector2 dir, int numIterationsTried = 0)
+    /**
+     * Moves selector to the next element in line. Returns that element.
+     * Abstract so subclasses can easily navigate, but this base method is always called from within.
+     */
+    public abstract MenuElement Navigate(Vector2 dir, int numIterationsTried = 0);
+    protected MenuElement BaseNavigate(Vector2 dir, int numIterationsTried = 0)
     {
-        if(dir.x == -1 && elementOnLeft != null)
+        if (dir.x == -1 && elementOnLeft != null)
         {
             OnDeselect();
             if (elementOnLeft.OnSelected())
@@ -54,13 +48,13 @@ public class BattleMenuElement : MonoBehaviour
             else
             {
                 // The sytem can try to keep going ten times before I'm cutting it off. This prevents a crash.
-                if(numIterationsTried > 10)
+                if (numIterationsTried > 10)
                 {
                     Debug.LogError("WARNING: BattleMenuElement iterated through Navigate() 10 times, and cannot find a target.");
                     throw new Exception();
                 }
                 // Need to reach further to get the next available element in this direction.
-                BattleMenuElement nextElemInLine = elementOnLeft.Navigate(dir, numIterationsTried + 1);
+                MenuElement nextElemInLine = elementOnLeft.Navigate(dir, numIterationsTried + 1);
                 return nextElemInLine;
             }
         }
@@ -81,7 +75,7 @@ public class BattleMenuElement : MonoBehaviour
                     throw new Exception();
                 }
                 // Need to reach further to get the next available element in this direction.
-                BattleMenuElement nextElemInLine = elementOnRight.Navigate(dir, numIterationsTried + 1);
+                MenuElement nextElemInLine = elementOnRight.Navigate(dir, numIterationsTried + 1);
                 return nextElemInLine;
             }
         }
@@ -102,7 +96,7 @@ public class BattleMenuElement : MonoBehaviour
                     throw new Exception();
                 }
                 // Need to reach further to get the next available element in this direction.
-                BattleMenuElement nextElemInLine = elementOnUp.Navigate(dir, numIterationsTried + 1);
+                MenuElement nextElemInLine = elementOnUp.Navigate(dir, numIterationsTried + 1);
                 return nextElemInLine;
             }
         }
@@ -123,14 +117,25 @@ public class BattleMenuElement : MonoBehaviour
                     throw new Exception();
                 }
                 // Need to reach further to get the next available element in this direction.
-                BattleMenuElement nextElemInLine = elementOnDown.Navigate(dir, numIterationsTried + 1);
+                MenuElement nextElemInLine = elementOnDown.Navigate(dir, numIterationsTried + 1);
                 return nextElemInLine;
             }
         }
         return this;
     }
-    public BattleMenuElement OnConfirm()
+    /**
+    * Moves selector to the elementOnConfirm. Returns that element.
+    * Can be easily overwritten to provide more specific funcitonality
+    * Abstract so subclasses can easily navigate, but this base method is always called from within.
+    */
+    public abstract MenuElement OnConfirm();
+    protected MenuElement BaseOnConfirm()
     {
+        if (!validSelection)
+        {
+            soundManager.PlaySound(sndInvalid);
+            return this;
+        }
         if (elementOnConfirm != null)
         {
             OnDeselect();
@@ -146,55 +151,48 @@ public class BattleMenuElement : MonoBehaviour
 
                 // Need to reach further to get the next available element in this direction.
                 // Default to looking further right, since this is desired behaviour for enemy selection
-                BattleMenuElement nextElemInLine = elementOnConfirm.Navigate(Vector2.right);
+                MenuElement nextElemInLine = elementOnConfirm.Navigate(Vector2.right);
                 return nextElemInLine;
             }
         }
         return this;
     }
-    public BattleMenuElement OnCancel()
+    /**
+    * Returns selector to elementOnCancel. Returns that element.
+    * Abstract so subclasses can easily navigate, but this base method is always called from within.
+    */
+    public abstract MenuElement OnCancel();
+    protected MenuElement BaseOnCancel()
     {
         if (elementOnCancel != null)
         {
             OnDeselect();
             elementOnCancel.OnSelected();
+            soundManager.PlaySound(sndCancel);
             return elementOnCancel;
         }
         return this;
     }
-    public bool OnSelected()
+    /**
+     *  Method call for when this element is selected
+     *  Abstract so subclasses can easily navigate, but this base method is always called from within.
+     */
+    public abstract bool OnSelected();
+    public bool BaseOnSelected()
     {
-        // returns based on this is valid or not. If it's not, it'll send back to its selector and try to pass right from this one.
-        if (validSelection)
+        if(validSelection)
         {
             animator.SetBool("Selected", true);
-            bmManager.SetUIVisibility(VIS_MAIN, VIS_SUBMENU_ABILITY, VIS_SUBMENU_ITEM, VIS_SUBMENU_OTHER, VIS_DESCBOX, VIS_ENBOX);
-            if(descriptionBoxTextOnSelected != string.Empty)
-            {
-                bmManager.SetDescriptionBoxText(descriptionBoxTextOnSelected);
-            }
-            if(enemyNameBoxTextOnSelected!= string.Empty)
-            {
-                bmManager.SetEnemyNameBoxText(enemyNameBoxTextOnSelected);
-            }
-            return true;
         }
-        else
-        {
-            print("Passing selection");
-            return false;
-        }
+        return validSelection;
     }
-    public void OnDeselect()
+    /**
+    *  Method call for when this element is deselected
+    *  Abstract so subclasses can easily navigate, but this base method is always called from within.
+    */
+    public abstract void OnDeselect();
+    public void BaseOnDeselect()
     {
         animator.SetBool("Selected", false);
-    }
-    public void SetDescriptionBoxTextOnSelected(string description)
-    {
-        descriptionBoxTextOnSelected = description;
-    }
-    public void SetEnemyNameBoxTextOnSelected(string description)
-    {
-        enemyNameBoxTextOnSelected = description;
     }
 }

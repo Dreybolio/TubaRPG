@@ -206,11 +206,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imgIcon: {fileID: 4589331651799868970}
   imgNum: {fileID: 5867574849515021617}
-  sprAttackUp: {fileID: -982599039, guid: 65624b4bfa3016d4a880b5221cb655e6, type: 3}
-  sprDefenceUp: {fileID: -982599039, guid: 65624b4bfa3016d4a880b5221cb655e6, type: 3}
+  sprAttackUp: {fileID: -627771195, guid: 65624b4bfa3016d4a880b5221cb655e6, type: 3}
+  sprAttackUpPlus: {fileID: 2134898396, guid: 65624b4bfa3016d4a880b5221cb655e6, type: 3}
+  sprDefenceUp: {fileID: -9359078, guid: 65624b4bfa3016d4a880b5221cb655e6, type: 3}
+  sprDefenceUpPlus: {fileID: 1542707106, guid: 65624b4bfa3016d4a880b5221cb655e6, type: 3}
   sprAsleep: {fileID: -982599039, guid: 65624b4bfa3016d4a880b5221cb655e6, type: 3}
   sprDecrescendo: {fileID: -188510144, guid: 65624b4bfa3016d4a880b5221cb655e6, type: 3}
   sprFermata: {fileID: 809868175, guid: 65624b4bfa3016d4a880b5221cb655e6, type: 3}
+  sprDizzy: {fileID: -1744492209, guid: 65624b4bfa3016d4a880b5221cb655e6, type: 3}
   numSprites:
   - {fileID: 2139226929, guid: 8ed540b860dc0a246bb2f7931e480882, type: 3}
   - {fileID: 1191236963, guid: 8ed540b860dc0a246bb2f7931e480882, type: 3}

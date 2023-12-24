@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Beautiful Tune
   className: D_BeautifulTune
-  description: Gives the party +2 DEF for 1 turn.<br>Press the specified button when
-    the indicator reaches the circle on each bar.
+  description: Gives the party +1 defence for 1 turn.<br>Press the specified button
+    when the indicator reaches the circle on each bar.
   npCost: 2
   requiresHeroSelection: 0
   requiresEnemySelection: 0

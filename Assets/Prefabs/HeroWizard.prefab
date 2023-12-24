@@ -370,7 +370,7 @@ Transform:
   - {fileID: 9202692400767145905}
   - {fileID: 3297025638817367770}
   m_Father: {fileID: 6257603415797739549}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2926371081433690574
 GameObject:
@@ -405,6 +405,37 @@ Transform:
   - {fileID: 5152371406106060248}
   m_Father: {fileID: 9202692400767145905}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3100904703950643671
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 417113308448313488}
+  m_Layer: 0
+  m_Name: PositionAtCenter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &417113308448313488
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3100904703950643671}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.249, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6257603415797739549}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3249212831193121339
 GameObject:
@@ -1296,6 +1327,7 @@ Transform:
   - {fileID: 539024490672973131}
   - {fileID: 3271240928776688803}
   - {fileID: 5518663241897945009}
+  - {fileID: 417113308448313488}
   - {fileID: 3295837683592498652}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1320,8 +1352,10 @@ MonoBehaviour:
   abilityOne: {fileID: 11400000, guid: d3ee5ebc7505b8b4394ae103f5905658, type: 2}
   abilityTwo: {fileID: 11400000, guid: 2e464d3f097e58e479424a58f8f2c680, type: 2}
   material: {fileID: 2100000, guid: cdf934a8584653d42ac251e0073f5457, type: 2}
+  projectileSpawnPos: {fileID: 0}
   postitionAtFront: {fileID: 3271240928776688803}
   postitionAtTop: {fileID: 5518663241897945009}
+  positionAtCenter: {fileID: 417113308448313488}
   sndHurt: {fileID: 8300000, guid: 29b9ef6d6b4f1eb4286d0e36d0bdfd53, type: 3}
 --- !u!95 &5001577047149659329
 Animator:

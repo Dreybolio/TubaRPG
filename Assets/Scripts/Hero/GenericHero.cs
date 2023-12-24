@@ -28,8 +28,10 @@ public abstract class GenericHero : MonoBehaviour
     [NonSerialized] public Transform minigameParent; // This will get set in BattleManager through SetMinigameParent();
 
     [Header("Positional Data")]
-    [SerializeField] private Transform postitionAtFront;
-    [SerializeField] private Transform postitionAtTop;
+    [SerializeField] protected Transform projectileSpawnPos;
+    [SerializeField] protected Transform postitionAtFront;
+    [SerializeField] protected Transform postitionAtTop;
+    [SerializeField] protected Transform positionAtCenter;
 
     [Header("Sounds")]
     [SerializeField] protected AudioClip sndHurt;
@@ -56,7 +58,8 @@ public abstract class GenericHero : MonoBehaviour
 
     // Anim
     private int _animIdle_T, _animDie_T, _animBlock_T, _animWalking_B;
-
+    // Animation Toggled Vars
+    protected bool _deathAnimFinished;
 
     private void Start()
     {
@@ -94,7 +97,7 @@ public abstract class GenericHero : MonoBehaviour
     {
         if(allowBlocking)
         {
-            allowBlocking = true; // Disable functionality after doing this once.
+            allowBlocking = false; // Disable functionality after doing this once.
             isBlocking = true;
             animator.SetTrigger(_animBlock_T);
             yield return new WaitForSeconds(BLOCK_TIME);
@@ -154,18 +157,12 @@ public abstract class GenericHero : MonoBehaviour
     }
     public void Kill()
     {
-        StartCoroutine(C_Kill());
-    }
-    private IEnumerator C_Kill()
-    {
         _hp = 0;
         bmManager.SetHeroHP(heroIndex, 0);
         isAlive = false;
         canBeSelected = false;
         canBeTargeted = false;
         animator.SetTrigger(_animDie_T);
-        yield return new WaitForSeconds(2);
-        // After animation is done
     }
     public void SetActionsRemaining(int amount)
     {
@@ -198,6 +195,18 @@ public abstract class GenericHero : MonoBehaviour
     public Transform GetPositionAtFront()
     {
         return postitionAtFront;
+    }
+    public Transform GetPositionAtCenter()
+    {
+        return positionAtCenter;
+    }
+    public void DeathAnimationOver()
+    {
+        _deathAnimFinished = true;
+    }
+    public bool GetDeathAnimationOver()
+    {
+        return _deathAnimFinished;
     }
     public void AddStatusEffect(StatusEffect statusEffect, int turns)
     {

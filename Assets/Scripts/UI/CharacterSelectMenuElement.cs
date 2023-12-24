@@ -9,7 +9,7 @@ public enum CharacterSelectButtonStatus
     SELECTED_AS_SECOND,
     UNSELECTED
 }
-public class CharacterSelectButton : MonoBehaviour
+public class CharacterSelectMenuElement : MonoBehaviour
 {
     [SerializeField] private Image statusSprite;
     [SerializeField] private Sprite sprSelectedAsFirst;

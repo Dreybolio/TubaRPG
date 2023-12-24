@@ -9,7 +9,7 @@ public class BattleMenuElement_EnemySelector : BattleMenuElement
     {
         base.Awake();
     }
-    public new BattleMenuElement OnConfirm()
+    public new MenuElement OnConfirm()
     {
         // Tell the battlemanager that its current hero shall
         // undergo the selection purpose action against 
@@ -22,7 +22,7 @@ public class BattleMenuElement_EnemySelector : BattleMenuElement
     {
         selectionPurpose = purpose;
     }
-    public void SetElementOnCancel(BattleMenuElement elem)
+    public void SetElementOnCancel(MenuElement elem)
     {
         elementOnCancel = elem;
     }

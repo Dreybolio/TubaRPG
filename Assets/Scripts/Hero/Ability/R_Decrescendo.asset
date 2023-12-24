@@ -14,10 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Decrescendo
   className: R_Decrescendo
-  description: Noir's next attack does 3x damage. Cannot be targeted this turn.<br>Press
+  description: The next regular attack does 3x damage. Cannot be targeted this turn.<br>Press
     the shown combination of <A> <B> <X> <Y>
   npCost: 1
   requiresHeroSelection: 0
   requiresEnemySelection: 0
   minigame: {fileID: 78066196323939719, guid: 2220bf32e1b1346439cad3e0bd3846c0, type: 3}
-  abilityScript: {fileID: 0}

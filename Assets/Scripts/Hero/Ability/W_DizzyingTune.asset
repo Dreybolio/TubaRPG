@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Dizzying Tune
   className: W_DizzyingTune
-  description: Forces an enemy to another enemy this turn. <br>Spin around with <UP>
-    <RIGHT> <DOWN> <LEFT>
+  description: Forces an enemy to attack another enemy this turn. <br>Spin around
+    with <UP> <RIGHT> <DOWN> <LEFT>
   npCost: 3
   requiresHeroSelection: 0
   requiresEnemySelection: 1

@@ -20,7 +20,7 @@ public class PlayerControllerBattle : MonoBehaviour
 
     // Vars
     private bool menuNavCooldown = true;
-    private BattleMenuElement selectedMenuElement;
+    private MenuElement selectedMenuElement;
 
     private void Start()
     {
@@ -35,7 +35,7 @@ public class PlayerControllerBattle : MonoBehaviour
         {
             // Set default element to the fight button
             // This is inefficient... Too bad!
-            selectedMenuElement = GameObject.Find("BMElem_Fight").GetComponent<BattleMenuElement>();
+            selectedMenuElement = GameObject.Find("BMElem_Fight").GetComponent<MenuElement>();
             selectedMenuElement.OnSelected();
         }
         else if (controlType == ControlType.None)
@@ -75,7 +75,7 @@ public class PlayerControllerBattle : MonoBehaviour
     }
     private void Navigate(Vector2 dir)
     {
-        BattleMenuElement newElem = selectedMenuElement.Navigate(dir);
+        MenuElement newElem = selectedMenuElement.Navigate(dir);
         if (newElem != null && newElem != selectedMenuElement) 
         {
             selectedMenuElement = newElem;
@@ -83,7 +83,7 @@ public class PlayerControllerBattle : MonoBehaviour
     }
     private void Confirm()
     {
-        BattleMenuElement newElem;
+        MenuElement newElem;
 
         // Iterate through all the things this element might be. Done so we can call the function of the superclass.
         if(selectedMenuElement is BattleMenuElement_DoAction actionElem) { newElem = actionElem.OnConfirm(); }
@@ -97,7 +97,7 @@ public class PlayerControllerBattle : MonoBehaviour
     }
     private void Cancel()
     {
-        BattleMenuElement newElem = selectedMenuElement.OnCancel();
+        MenuElement newElem = selectedMenuElement.OnCancel();
         if (newElem != null && newElem != selectedMenuElement)
         {
             selectedMenuElement = newElem;

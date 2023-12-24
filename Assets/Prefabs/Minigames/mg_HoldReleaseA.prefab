@@ -286,6 +286,7 @@ MonoBehaviour:
   xPosMax: 420
   barReleasePoint: {fileID: 78066196105396112}
   barReleasePointImage: {fileID: 78066196105396113}
+  btnAIndicator: {fileID: 78066196721269972}
   barFill: {fileID: 78066196693296518}
 --- !u!1 &78066196458137019
 GameObject:

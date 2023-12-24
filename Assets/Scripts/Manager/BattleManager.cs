@@ -29,7 +29,9 @@ public enum PostTurnEvent
 public enum StatusEffect
 {
     ATTACKUP,
+    ATTACKUP_PLUS,
     DEFENCEUP,
+    DEFENCEUP_PLUS,
     DECRESCENDO,
     ASLEEP,
     FERMATA,
@@ -198,7 +200,9 @@ public class BattleManager : MonoBehaviour
         }
 
         // Roll for random events (If any)
-        yield return new WaitForSeconds(0.1f);
+
+        // Process Post-Turn events
+        yield return C_ProcessPostTurnEvents();
         NextStage();
     }
     private IEnumerator C_PlayerTurn()
@@ -224,6 +228,9 @@ public class BattleManager : MonoBehaviour
             playerController.SetControlType(ControlType.Menu);
             yield return new WaitUntil(() => _turnProcessed);
             _turnProcessed = false;
+
+            // Process Post-Turn events (Once per active hero)
+            yield return C_ProcessPostTurnEvents();
         }
         playerController.SetControlType(ControlType.None);
         NextStage();
@@ -241,6 +248,9 @@ public class BattleManager : MonoBehaviour
             enemyList[i].BroadcastMessage("ProcessTurn");
             yield return new WaitUntil(() => _turnProcessed);
             _turnProcessed = false;
+
+            // Process Post-Turn events (Once per active enemy)
+            yield return C_ProcessPostTurnEvents();
         }
         print("End enemy turn");
         yield return new WaitForSeconds(1);
@@ -252,23 +262,23 @@ public class BattleManager : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         NextStage();
     }
-
-    public void TurnProcessed()
+    public IEnumerator C_ProcessPostTurnEvents()
     {
         // Process everything that's happened so far.
-        foreach(Tuple<PostTurnEvent, int> tuplePair in postTurnEvents)
+        foreach (Tuple<PostTurnEvent, int> tuplePair in postTurnEvents)
         {
             switch (tuplePair.Item1)
             {
                 case PostTurnEvent.HERO_DIED:
                     print("Processing a Hero's Death");
                     heroList[tuplePair.Item2].Kill();
+                    yield return new WaitUntil(() => heroList[tuplePair.Item2].GetDeathAnimationOver());
                     if (OnHeroKilled())
                     {
                         // This returning true means the game has ended.
                         StopAllCoroutines();
                         StartCoroutine(EndBattleLose());
-                        return;
+                        yield break;
                     }
                     break;
                 case PostTurnEvent.HERO_OUT_OF_ACTIONS:
@@ -278,18 +288,23 @@ public class BattleManager : MonoBehaviour
                 case PostTurnEvent.ENEMY_DIED:
                     print("Processing an Enemy's Death");
                     enemyList[tuplePair.Item2].Kill();
+                    // Wait until the death animation has finished until we move on
+                    yield return new WaitUntil(() => enemyList[tuplePair.Item2].GetDeathAnimationOver());
                     if (OnEnemyKilled(tuplePair.Item2))
                     {
                         // This returning true means the game has ended.
                         StopAllCoroutines();
                         StartCoroutine(EndBattleWin());
-                        return;
+                        yield break;
                     }
                     break;
             }
         }
         // If we make it to this point, it means the game goes on!
         postTurnEvents.Clear();
+    }
+    public void TurnProcessed()
+    {
         _turnProcessed = true;
     }
     public void SwapHero()
@@ -315,7 +330,10 @@ public class BattleManager : MonoBehaviour
     public void AllowHeroBlocking(GenericHero hero)
     {
         playerController.SetControlType(ControlType.Blocking);
-        heroesSetForBlocking.Add(hero);
+        if (!heroesSetForBlocking.Contains(hero))
+        {
+            heroesSetForBlocking.Add(hero);
+        }
         hero.allowBlocking = true;
     }
     public void DisallowHeroBlocking()
@@ -474,6 +492,10 @@ public class BattleManager : MonoBehaviour
         bmManager.SetEnemyHPBarValue(index, 0, false);
         bmManager.SetEnemySelectorValidity(index, false);
         bmManager.SetEnemyStatusEffects(index, null);
+        if (!enemyList[index].dontDestroyAfterDeath)
+        {
+            enemyList[index].Destroy();
+        }
         enemyList[index] = null;
         bool battleWon = true;
         foreach (GenericEnemy e in enemyList)
@@ -543,8 +565,8 @@ public class BattleManager : MonoBehaviour
             }
         }
         print("You Won The Battle!");
-        soundManager.FadeOutMusic(4);
-        yield return new WaitForSeconds(6f);
+        soundManager.FadeOutMusic(1);
+        yield return new WaitForSeconds(2f);
         playerController.SetControlType(ControlType.None);
         levelManager.LoadScene("TitleScreen");
     }
@@ -565,7 +587,7 @@ public class BattleManager : MonoBehaviour
             }
         }
         print("You Lost The Battle!");
-        soundManager.FadeOutMusic(4);
+        soundManager.FadeOutMusic(1);
         yield return new WaitForSeconds(2f);
         playerController.SetControlType(ControlType.None);
         levelManager.LoadScene("TitleScreen");

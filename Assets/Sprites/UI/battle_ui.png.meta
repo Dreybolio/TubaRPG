@@ -355,8 +355,8 @@ TextureImporter:
         y: 339
         width: 210
         height: 180
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.4109834, y: 0.50916344}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -376,8 +376,8 @@ TextureImporter:
         y: 161
         width: 210
         height: 180
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.4973819, y: 0.6038527}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -515,6 +515,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: battle_ui_7
+      rect:
+        serializedVersion: 2
+        x: 1015
+        y: 490
+        width: 148
+        height: 234
+      alignment: 9
+      pivot: {x: 0.29294896, y: 0.5732458}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10a7028c67706ae45ac15c9652a54902
+      internalID: -1039972873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: battle_ui_8
+      rect:
+        serializedVersion: 2
+        x: 1195
+        y: 490
+        width: 149
+        height: 234
+      alignment: 9
+      pivot: {x: 0.70217466, y: 0.4533887}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce047ad389e3b23408d2054778f5946a
+      internalID: 1705527043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -534,6 +576,7 @@ TextureImporter:
       battle_ui_bagpipe: -602079944
       battle_ui_0: 229767372
       battle_ui_other: -185246595
+      battle_ui_7: -1039972873
       battle_ui_clarinet: 880620770
       damage_indicator: -654388172
       battle_ui_saxophone: -1071511027
@@ -542,6 +585,7 @@ TextureImporter:
       battle_ui_6: 904739877
       battle_ui_ability: -278714897
       battle_ui_fight: -1429841124
+      battle_ui_8: 1705527043
       battle_ui_flute: 910725088
       battle_ui_3: 1258099921
       battle_ui_2: 1636180473

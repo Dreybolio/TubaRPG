@@ -146,7 +146,7 @@ TextureImporter:
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -167,7 +167,7 @@ TextureImporter:
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -188,7 +188,7 @@ TextureImporter:
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -196,6 +196,111 @@ TextureImporter:
       bones: []
       spriteID: 46afd2195dce00044935eea64056fec4
       internalID: -982599039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: status_effects_dizzy
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 302
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c4721877f35a894c9c447c25b6db0fb
+      internalID: -1744492209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: status_effects_atkup
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 300
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9244a49d6bb99148be6dbe49420fe4d
+      internalID: -627771195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: status_effects_atkupplus
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 300
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 019aea2512aeba54286c0c86f69c6ebc
+      internalID: 2134898396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: status_effects_defup
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 303
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b81d88e18c9bf3f4db52d3ca47a7edd9
+      internalID: -9359078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: status_effects_defupplus
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 192
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a817c2771536ea54492f282dd0e43e3d
+      internalID: 1542707106
       vertices: []
       indices: 
       edges: []
@@ -215,10 +320,14 @@ TextureImporter:
       status_effects_6: -1724995127
       status_effects_5: 922686171
       status_effects_8: 702133223
+      status_effects_atkupplus: 2134898396
+      status_effects_defupplus: 1542707106
       status_effect_bg: 1203107773
+      status_effects_dizzy: -1744492209
+      status_effects_atkup: -627771195
       status_effects_decrescendo: -188510144
-      status_effects_4: 1542707106
       status_effects_7: -1789351968
+      status_effects_defup: -9359078
       status_effects_fermata: 809868175
       status_effects_9: -1649765867
   spritePackingTag: 

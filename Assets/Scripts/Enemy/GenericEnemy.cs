@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 public enum EnemyOverrideStatus
 {
@@ -17,17 +18,18 @@ public abstract class GenericEnemy : MonoBehaviour
     public int hp;
     [NonSerialized] public Dictionary<StatusEffect, int> statusEffects = new();
     protected int enemyIndex;
-    [SerializeField] protected bool dontDestroyAfterDeath;
+    public bool dontDestroyAfterDeath;
 
     [Header("Attacking Data")]
-    public int numAttackOptions;
     public float[] attackOptionChances;
     protected GenericHero[] targets;
     protected GenericHero target;
 
     [Header("Positional Data")]
-    [SerializeField] private Transform postitionAtFront;
-    [SerializeField] private Transform postitionAtTop;
+    [SerializeField] protected Transform projectileSpawnPos;
+    [SerializeField] protected Transform postitionAtFront;
+    [SerializeField] protected Transform postitionAtTop;
+    [SerializeField] protected Transform positionAtCenter;
 
     [Header("Sounds")]
     [SerializeField] protected AudioClip sndHurt;
@@ -46,6 +48,7 @@ public abstract class GenericEnemy : MonoBehaviour
     protected int _animIdle_T, _animDie_T, _animWalking_B;
     // Animation Toggled Vars
     protected bool _damageFramePassed;
+    protected bool _projectileSpawnFramePassed;
     protected bool _deathAnimFinished;
 
 
@@ -68,7 +71,7 @@ public abstract class GenericEnemy : MonoBehaviour
         return EnemyOverrideStatus.NO_OVERRIDE;
     }
     public abstract void ProcessTurn();
-    protected abstract IEnumerator AttackOtherEnemy();
+    protected abstract IEnumerator C_AttackOtherEnemy();
     protected void FinishTurn()
     {
         battleManager.TurnProcessed();
@@ -100,16 +103,9 @@ public abstract class GenericEnemy : MonoBehaviour
     }
     public void Kill()
     {
-        StartCoroutine(C_Kill());
-    }
-    private IEnumerator C_Kill()
-    {
         animator.SetTrigger(_animDie_T);
-        yield return new WaitUntil(() => _deathAnimFinished);
-        if (!dontDestroyAfterDeath)
-        {
-            Destroy(gameObject);
-        }
+        // This animation is called by the BattleManager to delete (if appropriate)
+        // The BattleManager then reads _deathAnimFinished to know to delete this object
     }
     private void SetPossibleTargets()
     {
@@ -124,7 +120,7 @@ public abstract class GenericEnemy : MonoBehaviour
     {
         float f = UnityEngine.Random.Range(0f, 100f);
         float chanceCounter = 0;
-        for (int i = 0; i < numAttackOptions; i++)
+        for (int i = 0; i < attackOptionChances.Length; i++)
         {
             chanceCounter += attackOptionChances[i];
             if (f <= chanceCounter)
@@ -179,9 +175,21 @@ public abstract class GenericEnemy : MonoBehaviour
     {
         _damageFramePassed = true;
     }
+    public void ProjectileSpawnFramePassed()
+    {
+        _projectileSpawnFramePassed = true;
+    }
     public void DeathAnimationOver()
     {
         _deathAnimFinished = true;
+    }
+    public bool GetDeathAnimationOver()
+    {
+        return _deathAnimFinished;
+    }
+    public void Destroy()
+    {
+        Destroy(gameObject);
     }
     protected void AssignAnimationIDs()
     {

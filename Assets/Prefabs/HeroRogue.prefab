@@ -1081,6 +1081,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &5938285844792183556
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4295317730986520629}
+  m_Layer: 0
+  m_Name: PositionAtCenter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4295317730986520629
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5938285844792183556}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.115, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6257603415797739549}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5955483083711783071
 GameObject:
   m_ObjectHideFlags: 0
@@ -1283,6 +1314,7 @@ Transform:
   - {fileID: 539024490672973131}
   - {fileID: 7121255324795272613}
   - {fileID: 4775064988115342523}
+  - {fileID: 4295317730986520629}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1306,8 +1338,10 @@ MonoBehaviour:
   abilityOne: {fileID: 11400000, guid: ede116345294633469f710cdd4b6c9cf, type: 2}
   abilityTwo: {fileID: 11400000, guid: 9afc67e769291bd459a54d6b79360205, type: 2}
   material: {fileID: 2100000, guid: 24c75bd00d512394db72ae9772f7adb9, type: 2}
+  projectileSpawnPos: {fileID: 0}
   postitionAtFront: {fileID: 7121255324795272613}
   postitionAtTop: {fileID: 4775064988115342523}
+  positionAtCenter: {fileID: 4295317730986520629}
   sndHurt: {fileID: 8300000, guid: 29b9ef6d6b4f1eb4286d0e36d0bdfd53, type: 3}
 --- !u!95 &5835140768831680001
 Animator:
