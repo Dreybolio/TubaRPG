@@ -35,6 +35,7 @@ public abstract class GenericHero : MonoBehaviour
 
     [Header("Sounds")]
     [SerializeField] protected AudioClip sndHurt;
+    [SerializeField] protected AudioClip sndBlocked;
 
     // Pointers
     protected BattleManager battleManager;
@@ -153,7 +154,14 @@ public abstract class GenericHero : MonoBehaviour
 
         // Spawn a damage indicator
         bmManager.SpawnDamageIndicator(Camera.main.WorldToScreenPoint(postitionAtTop.position), DamageIndicatorType.HERO, totalInflicted);
-        soundManager.PlaySound(sndHurt, 1, true);
+        if (isBlocking || totalInflicted == 0)
+        {
+            soundManager.PlaySound(sndBlocked, 1, true);
+        }
+        else
+        {
+            soundManager.PlaySound(sndHurt, 1, true);
+        }
     }
     public void Kill()
     {

@@ -568,7 +568,7 @@ public class BattleManager : MonoBehaviour
         soundManager.FadeOutMusic(1);
         yield return new WaitForSeconds(2f);
         playerController.SetControlType(ControlType.None);
-        levelManager.LoadScene("TitleScreen");
+        levelManager.LoadScene("CharacterSelect");
     }
     private IEnumerator EndBattleLose()
     {
@@ -590,6 +590,6 @@ public class BattleManager : MonoBehaviour
         soundManager.FadeOutMusic(1);
         yield return new WaitForSeconds(2f);
         playerController.SetControlType(ControlType.None);
-        levelManager.LoadScene("TitleScreen");
+        levelManager.LoadScene("CharacterSelect");
     }
 }

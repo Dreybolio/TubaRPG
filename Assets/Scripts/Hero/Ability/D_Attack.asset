@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Attack
   className: D_Attack
-  description: A regular attack.<br>Alternate <LEFT> and <RIGHT> to fill up the bar.
+  description: A regular attack.<br>Quickly alternate <LEFT> and <RIGHT> to fill
+    up the bar.
   npCost: 0
   requiresHeroSelection: 0
   requiresEnemySelection: 1

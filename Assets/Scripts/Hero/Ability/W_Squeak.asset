@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Squeak
   className: W_Squeak
   description: Deal 3 damage to all enemies. <br>Wait until the indicator pops up,
-    then press one of <A> <B> <X> <Y>
+    then press shown button, which may be any of <A> <B> <X> <Y>
   npCost: 2
   requiresHeroSelection: 0
   requiresEnemySelection: 0

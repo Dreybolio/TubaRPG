@@ -20,7 +20,7 @@ public class Minigame_HoldReleaseA : MinigameBase
     private float barCurrent;
 
     private float barDesiredRelease;
-    private readonly float leniency = 3.5f;
+    private readonly float leniency = 4.0f;
 
     private new void Awake()
     {

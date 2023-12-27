@@ -291,7 +291,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 50144577}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.75, y: 0, z: 0}
+  m_LocalPosition: {x: 2.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -792,7 +792,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 674, y: -325}
+  m_AnchoredPosition: {x: 767, y: -325}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &214762676
@@ -1289,7 +1289,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -410, y: 110}
+  m_AnchoredPosition: {x: -261, y: 110}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &371722111
@@ -1386,7 +1386,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 650, y: 180}
+  m_AnchoredPosition: {x: 759, y: 180}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &401862131
@@ -1399,7 +1399,7 @@ Animator:
   m_GameObject: {fileID: 401862129}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 767567f35477905429a3894733e7862d, type: 2}
+  m_Controller: {fileID: 22100000, guid: 42868a54429646f4f93669b3f73e7d07, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1436,15 +1436,16 @@ MonoBehaviour:
   elementOnConfirm: {fileID: 0}
   elementOnCancel: {fileID: 0}
   validSelection: 1
+  sndNavigate: {fileID: 8300000, guid: 3762e2ddf56316c4fb46e51b70835d63, type: 3}
+  sndConfirm: {fileID: 8300000, guid: 2fb592586dd6a1d48bd45e817f84a903, type: 3}
+  sndCancel: {fileID: 8300000, guid: d1124d8ce9229c34284e310703910fec, type: 3}
+  sndInvalid: {fileID: 8300000, guid: d1124d8ce9229c34284e310703910fec, type: 3}
   VIS_MAIN: 0
   VIS_SUBMENU_ABILITY: 0
   VIS_SUBMENU_ITEM: 0
   VIS_SUBMENU_OTHER: 0
   VIS_DESCBOX: 1
   VIS_ENBOX: 1
-  sndNavigate: {fileID: 8300000, guid: 3762e2ddf56316c4fb46e51b70835d63, type: 3}
-  sndConfirm: {fileID: 8300000, guid: 2fb592586dd6a1d48bd45e817f84a903, type: 3}
-  sndInvalid: {fileID: 8300000, guid: d1124d8ce9229c34284e310703910fec, type: 3}
   targetIndex: 2
 --- !u!1 &432545134
 GameObject:
@@ -1470,7 +1471,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 432545134}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3, y: 0, z: 0}
+  m_LocalPosition: {x: 3.75, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1515,7 +1516,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 116.8, y: -325}
+  m_AnchoredPosition: {x: 257, y: -325}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &447013724
@@ -1591,7 +1592,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 650, y: 110}
+  m_AnchoredPosition: {x: 782, y: 110}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &494667056
@@ -1628,7 +1629,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 370, y: 110}
+  m_AnchoredPosition: {x: 518, y: 110}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &494667058
@@ -1929,7 +1930,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -265, y: -70}
+  m_AnchoredPosition: {x: -160, y: -70}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &581797133
@@ -2102,8 +2103,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 475.35385, y: 116.54635}
-  m_SizeDelta: {x: 896.069, y: 207.0077}
+  m_AnchoredPosition: {x: 475.35385, y: 131.89267}
+  m_SizeDelta: {x: 896.069, y: 176.3151}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &587479915
 MonoBehaviour:
@@ -2702,7 +2703,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -585, y: -70}
+  m_AnchoredPosition: {x: -480, y: -70}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &665260578
@@ -3458,7 +3459,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 824475648}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.5, y: 0, z: -0.5}
+  m_LocalPosition: {x: -3, y: 0, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3594,7 +3595,7 @@ Animator:
   m_GameObject: {fileID: 827074755}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1f80361ce15c3134995ec4d38367002c, type: 2}
+  m_Controller: {fileID: 22100000, guid: 598e8d808e703d344a81ebf505055d1d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3631,15 +3632,16 @@ MonoBehaviour:
   elementOnConfirm: {fileID: 6856516844247842125}
   elementOnCancel: {fileID: 0}
   validSelection: 1
+  sndNavigate: {fileID: 8300000, guid: 3762e2ddf56316c4fb46e51b70835d63, type: 3}
+  sndConfirm: {fileID: 8300000, guid: 2fb592586dd6a1d48bd45e817f84a903, type: 3}
+  sndCancel: {fileID: 0}
+  sndInvalid: {fileID: 8300000, guid: d1124d8ce9229c34284e310703910fec, type: 3}
   VIS_MAIN: 1
   VIS_SUBMENU_ABILITY: 0
   VIS_SUBMENU_ITEM: 0
   VIS_SUBMENU_OTHER: 0
   VIS_DESCBOX: 0
   VIS_ENBOX: 0
-  sndNavigate: {fileID: 8300000, guid: 3762e2ddf56316c4fb46e51b70835d63, type: 3}
-  sndConfirm: {fileID: 8300000, guid: 2fb592586dd6a1d48bd45e817f84a903, type: 3}
-  sndInvalid: {fileID: 8300000, guid: d1124d8ce9229c34284e310703910fec, type: 3}
 --- !u!1 &832314746
 GameObject:
   m_ObjectHideFlags: 0
@@ -3674,7 +3676,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -700, y: 110}
+  m_AnchoredPosition: {x: -551, y: 110}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &832314748
@@ -4196,7 +4198,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 0}
+  m_BackGroundColor: {r: 0.55, g: 0.55, b: 0.55, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -4479,7 +4481,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 370, y: 180}
+  m_AnchoredPosition: {x: 487, y: 180}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1068405216
@@ -4492,7 +4494,7 @@ Animator:
   m_GameObject: {fileID: 1068405214}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 767567f35477905429a3894733e7862d, type: 2}
+  m_Controller: {fileID: 22100000, guid: 42868a54429646f4f93669b3f73e7d07, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4529,15 +4531,16 @@ MonoBehaviour:
   elementOnConfirm: {fileID: 0}
   elementOnCancel: {fileID: 0}
   validSelection: 1
+  sndNavigate: {fileID: 8300000, guid: 3762e2ddf56316c4fb46e51b70835d63, type: 3}
+  sndConfirm: {fileID: 8300000, guid: 2fb592586dd6a1d48bd45e817f84a903, type: 3}
+  sndCancel: {fileID: 8300000, guid: d1124d8ce9229c34284e310703910fec, type: 3}
+  sndInvalid: {fileID: 8300000, guid: d1124d8ce9229c34284e310703910fec, type: 3}
   VIS_MAIN: 0
   VIS_SUBMENU_ABILITY: 0
   VIS_SUBMENU_ITEM: 0
   VIS_SUBMENU_OTHER: 0
   VIS_DESCBOX: 1
   VIS_ENBOX: 1
-  sndNavigate: {fileID: 8300000, guid: 3762e2ddf56316c4fb46e51b70835d63, type: 3}
-  sndConfirm: {fileID: 8300000, guid: 2fb592586dd6a1d48bd45e817f84a903, type: 3}
-  sndInvalid: {fileID: 8300000, guid: d1124d8ce9229c34284e310703910fec, type: 3}
   targetIndex: 0
 --- !u!1 &1117212933
 GameObject:
@@ -5639,7 +5642,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 100, y: 110}
+  m_AnchoredPosition: {x: 257, y: 110}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1389210467
@@ -5679,7 +5682,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1448179169}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0, z: 0}
+  m_LocalPosition: {x: 1.25, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6481,7 +6484,7 @@ Animator:
   m_GameObject: {fileID: 1671907346}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1f80361ce15c3134995ec4d38367002c, type: 2}
+  m_Controller: {fileID: 22100000, guid: 598e8d808e703d344a81ebf505055d1d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -6518,17 +6521,17 @@ MonoBehaviour:
   elementOnConfirm: {fileID: 1972937618}
   elementOnCancel: {fileID: 0}
   validSelection: 1
+  sndNavigate: {fileID: 8300000, guid: 3762e2ddf56316c4fb46e51b70835d63, type: 3}
+  sndConfirm: {fileID: 8300000, guid: 2fb592586dd6a1d48bd45e817f84a903, type: 3}
+  sndCancel: {fileID: 0}
+  sndInvalid: {fileID: 8300000, guid: d1124d8ce9229c34284e310703910fec, type: 3}
   VIS_MAIN: 1
   VIS_SUBMENU_ABILITY: 0
   VIS_SUBMENU_ITEM: 0
   VIS_SUBMENU_OTHER: 0
   VIS_DESCBOX: 0
   VIS_ENBOX: 0
-  sndNavigate: {fileID: 8300000, guid: 3762e2ddf56316c4fb46e51b70835d63, type: 3}
-  sndConfirm: {fileID: 8300000, guid: 2fb592586dd6a1d48bd45e817f84a903, type: 3}
-  sndInvalid: {fileID: 8300000, guid: d1124d8ce9229c34284e310703910fec, type: 3}
   action: 0
-  canBeSelected: 1
   bgImage: {fileID: 872248480}
   npImage: {fileID: 1174953381}
   needsHeroSelection: 0
@@ -7042,7 +7045,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1751044872}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.25, y: 0, z: 0.5}
+  m_LocalPosition: {x: -1.75, y: 0, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7177,7 +7180,7 @@ Animator:
   m_GameObject: {fileID: 1798329926}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1f80361ce15c3134995ec4d38367002c, type: 2}
+  m_Controller: {fileID: 22100000, guid: 598e8d808e703d344a81ebf505055d1d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -7206,15 +7209,16 @@ MonoBehaviour:
   elementOnConfirm: {fileID: 0}
   elementOnCancel: {fileID: 0}
   validSelection: 1
+  sndNavigate: {fileID: 8300000, guid: 3762e2ddf56316c4fb46e51b70835d63, type: 3}
+  sndConfirm: {fileID: 8300000, guid: 2fb592586dd6a1d48bd45e817f84a903, type: 3}
+  sndCancel: {fileID: 0}
+  sndInvalid: {fileID: 8300000, guid: d1124d8ce9229c34284e310703910fec, type: 3}
   VIS_MAIN: 1
   VIS_SUBMENU_ABILITY: 0
   VIS_SUBMENU_ITEM: 0
   VIS_SUBMENU_OTHER: 0
   VIS_DESCBOX: 0
   VIS_ENBOX: 0
-  sndNavigate: {fileID: 8300000, guid: 3762e2ddf56316c4fb46e51b70835d63, type: 3}
-  sndConfirm: {fileID: 8300000, guid: 2fb592586dd6a1d48bd45e817f84a903, type: 3}
-  sndInvalid: {fileID: 8300000, guid: d1124d8ce9229c34284e310703910fec, type: 3}
 --- !u!222 &1798329931
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7702,7 +7706,7 @@ Animator:
   m_GameObject: {fileID: 1879123065}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1f80361ce15c3134995ec4d38367002c, type: 2}
+  m_Controller: {fileID: 22100000, guid: 598e8d808e703d344a81ebf505055d1d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -7731,15 +7735,16 @@ MonoBehaviour:
   elementOnConfirm: {fileID: 0}
   elementOnCancel: {fileID: 0}
   validSelection: 1
+  sndNavigate: {fileID: 8300000, guid: 3762e2ddf56316c4fb46e51b70835d63, type: 3}
+  sndConfirm: {fileID: 8300000, guid: 2fb592586dd6a1d48bd45e817f84a903, type: 3}
+  sndCancel: {fileID: 0}
+  sndInvalid: {fileID: 8300000, guid: d1124d8ce9229c34284e310703910fec, type: 3}
   VIS_MAIN: 1
   VIS_SUBMENU_ABILITY: 0
   VIS_SUBMENU_ITEM: 0
   VIS_SUBMENU_OTHER: 0
   VIS_DESCBOX: 0
   VIS_ENBOX: 0
-  sndNavigate: {fileID: 8300000, guid: 3762e2ddf56316c4fb46e51b70835d63, type: 3}
-  sndConfirm: {fileID: 8300000, guid: 2fb592586dd6a1d48bd45e817f84a903, type: 3}
-  sndInvalid: {fileID: 8300000, guid: d1124d8ce9229c34284e310703910fec, type: 3}
 --- !u!222 &1879123069
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7786,15 +7791,16 @@ MonoBehaviour:
   elementOnConfirm: {fileID: 0}
   elementOnCancel: {fileID: 0}
   validSelection: 1
+  sndNavigate: {fileID: 8300000, guid: 3762e2ddf56316c4fb46e51b70835d63, type: 3}
+  sndConfirm: {fileID: 8300000, guid: 2fb592586dd6a1d48bd45e817f84a903, type: 3}
+  sndCancel: {fileID: 8300000, guid: d1124d8ce9229c34284e310703910fec, type: 3}
+  sndInvalid: {fileID: 8300000, guid: d1124d8ce9229c34284e310703910fec, type: 3}
   VIS_MAIN: 0
   VIS_SUBMENU_ABILITY: 0
   VIS_SUBMENU_ITEM: 0
   VIS_SUBMENU_OTHER: 0
   VIS_DESCBOX: 0
   VIS_ENBOX: 0
-  sndNavigate: {fileID: 8300000, guid: 3762e2ddf56316c4fb46e51b70835d63, type: 3}
-  sndConfirm: {fileID: 8300000, guid: 2fb592586dd6a1d48bd45e817f84a903, type: 3}
-  sndInvalid: {fileID: 8300000, guid: d1124d8ce9229c34284e310703910fec, type: 3}
   targetIndex: 1
 --- !u!95 &1893035745
 Animator:
@@ -7806,7 +7812,7 @@ Animator:
   m_GameObject: {fileID: 1893035743}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 767567f35477905429a3894733e7862d, type: 2}
+  m_Controller: {fileID: 22100000, guid: 42868a54429646f4f93669b3f73e7d07, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -7960,7 +7966,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -280, y: -70}
+  m_AnchoredPosition: {x: -159.1, y: -70}
   m_SizeDelta: {x: 269.92188, y: 56.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1951639748
@@ -8164,7 +8170,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 100, y: 180}
+  m_AnchoredPosition: {x: 250, y: 180}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1972937616
@@ -8185,7 +8191,7 @@ Animator:
   m_GameObject: {fileID: 1972937613}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 767567f35477905429a3894733e7862d, type: 2}
+  m_Controller: {fileID: 22100000, guid: 42868a54429646f4f93669b3f73e7d07, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -8214,15 +8220,16 @@ MonoBehaviour:
   elementOnConfirm: {fileID: 0}
   elementOnCancel: {fileID: 0}
   validSelection: 1
+  sndNavigate: {fileID: 8300000, guid: 3762e2ddf56316c4fb46e51b70835d63, type: 3}
+  sndConfirm: {fileID: 8300000, guid: 2fb592586dd6a1d48bd45e817f84a903, type: 3}
+  sndCancel: {fileID: 8300000, guid: d1124d8ce9229c34284e310703910fec, type: 3}
+  sndInvalid: {fileID: 8300000, guid: d1124d8ce9229c34284e310703910fec, type: 3}
   VIS_MAIN: 0
   VIS_SUBMENU_ABILITY: 0
   VIS_SUBMENU_ITEM: 0
   VIS_SUBMENU_OTHER: 0
   VIS_DESCBOX: 1
   VIS_ENBOX: 1
-  sndNavigate: {fileID: 8300000, guid: 3762e2ddf56316c4fb46e51b70835d63, type: 3}
-  sndConfirm: {fileID: 8300000, guid: 2fb592586dd6a1d48bd45e817f84a903, type: 3}
-  sndInvalid: {fileID: 8300000, guid: d1124d8ce9229c34284e310703910fec, type: 3}
   targetIndex: 1
 --- !u!1 &1982925804
 GameObject:
@@ -8414,7 +8421,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 395, y: -325}
+  m_AnchoredPosition: {x: 515, y: -325}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &2008080213
@@ -8570,7 +8577,7 @@ Animator:
   m_GameObject: {fileID: 2023841555}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 767567f35477905429a3894733e7862d, type: 2}
+  m_Controller: {fileID: 22100000, guid: 42868a54429646f4f93669b3f73e7d07, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -8607,15 +8614,16 @@ MonoBehaviour:
   elementOnConfirm: {fileID: 0}
   elementOnCancel: {fileID: 0}
   validSelection: 1
+  sndNavigate: {fileID: 8300000, guid: 3762e2ddf56316c4fb46e51b70835d63, type: 3}
+  sndConfirm: {fileID: 8300000, guid: 2fb592586dd6a1d48bd45e817f84a903, type: 3}
+  sndCancel: {fileID: 8300000, guid: d1124d8ce9229c34284e310703910fec, type: 3}
+  sndInvalid: {fileID: 8300000, guid: d1124d8ce9229c34284e310703910fec, type: 3}
   VIS_MAIN: 0
   VIS_SUBMENU_ABILITY: 0
   VIS_SUBMENU_ITEM: 0
   VIS_SUBMENU_OTHER: 0
   VIS_DESCBOX: 0
   VIS_ENBOX: 0
-  sndNavigate: {fileID: 8300000, guid: 3762e2ddf56316c4fb46e51b70835d63, type: 3}
-  sndConfirm: {fileID: 8300000, guid: 2fb592586dd6a1d48bd45e817f84a903, type: 3}
-  sndInvalid: {fileID: 8300000, guid: d1124d8ce9229c34284e310703910fec, type: 3}
   targetIndex: 0
 --- !u!1 &2025981686
 GameObject:
@@ -9731,7 +9739,7 @@ Animator:
   m_GameObject: {fileID: 6931714529437333267}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 923abc7ba4222554f8f01026cc9c2364, type: 2}
+  m_Controller: {fileID: 22100000, guid: 0dd1b4d7117a90342af01d1a519f6d1e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -9779,7 +9787,7 @@ Animator:
   m_GameObject: {fileID: 6931714531269265394}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 923abc7ba4222554f8f01026cc9c2364, type: 2}
+  m_Controller: {fileID: 22100000, guid: 0dd1b4d7117a90342af01d1a519f6d1e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -9864,17 +9872,17 @@ MonoBehaviour:
   elementOnConfirm: {fileID: 1972937618}
   elementOnCancel: {fileID: 827074760}
   validSelection: 1
+  sndNavigate: {fileID: 8300000, guid: 3762e2ddf56316c4fb46e51b70835d63, type: 3}
+  sndConfirm: {fileID: 8300000, guid: 2fb592586dd6a1d48bd45e817f84a903, type: 3}
+  sndCancel: {fileID: 8300000, guid: d1124d8ce9229c34284e310703910fec, type: 3}
+  sndInvalid: {fileID: 8300000, guid: d1124d8ce9229c34284e310703910fec, type: 3}
   VIS_MAIN: 1
   VIS_SUBMENU_ABILITY: 1
   VIS_SUBMENU_ITEM: 0
   VIS_SUBMENU_OTHER: 0
   VIS_DESCBOX: 1
   VIS_ENBOX: 0
-  sndNavigate: {fileID: 8300000, guid: 3762e2ddf56316c4fb46e51b70835d63, type: 3}
-  sndConfirm: {fileID: 8300000, guid: 2fb592586dd6a1d48bd45e817f84a903, type: 3}
-  sndInvalid: {fileID: 8300000, guid: d1124d8ce9229c34284e310703910fec, type: 3}
   action: 1
-  canBeSelected: 1
   bgImage: {fileID: 6931714529867518011}
   npImage: {fileID: 6931714530918368864}
   needsHeroSelection: 0
@@ -10666,17 +10674,17 @@ MonoBehaviour:
   elementOnConfirm: {fileID: 1972937618}
   elementOnCancel: {fileID: 827074760}
   validSelection: 1
+  sndNavigate: {fileID: 8300000, guid: 3762e2ddf56316c4fb46e51b70835d63, type: 3}
+  sndConfirm: {fileID: 8300000, guid: 2fb592586dd6a1d48bd45e817f84a903, type: 3}
+  sndCancel: {fileID: 8300000, guid: d1124d8ce9229c34284e310703910fec, type: 3}
+  sndInvalid: {fileID: 8300000, guid: d1124d8ce9229c34284e310703910fec, type: 3}
   VIS_MAIN: 1
   VIS_SUBMENU_ABILITY: 1
   VIS_SUBMENU_ITEM: 0
   VIS_SUBMENU_OTHER: 0
   VIS_DESCBOX: 1
   VIS_ENBOX: 0
-  sndNavigate: {fileID: 8300000, guid: 3762e2ddf56316c4fb46e51b70835d63, type: 3}
-  sndConfirm: {fileID: 8300000, guid: 2fb592586dd6a1d48bd45e817f84a903, type: 3}
-  sndInvalid: {fileID: 8300000, guid: d1124d8ce9229c34284e310703910fec, type: 3}
   action: 2
-  canBeSelected: 1
   bgImage: {fileID: 6931714529855362160}
   npImage: {fileID: 6931714530803331737}
   needsHeroSelection: 0

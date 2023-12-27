@@ -23,7 +23,7 @@ public class Minigame_TripleBar : MinigameBase
 
     // Three bars with different points
     private float[] barPressPoints = new float[3];
-    private readonly float leniency = 3.5f;
+    private readonly float leniency = 4.0f;
 
     // This might be used? I don't know.
     //private bool barRoutineDone = false; 

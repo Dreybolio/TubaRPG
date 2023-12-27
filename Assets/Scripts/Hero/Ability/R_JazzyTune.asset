@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Jazzy Tune
   className: R_JazzyTune
-  description: Puts an enemy to sleep.<br>Press the shown <A> <B> <X> <Y> <UP> <DOWN>
-    <LEFT> <RIGHT> combination on time with the beat.
+  description: Puts an enemy to sleep for 2 turns.<br>Using the buttons <A> <B> <X>
+    <Y> <UP> <DOWN> <LEFT> <RIGHT>, press the 5-button combination on time with the
+    beat.
   npCost: 3
   requiresHeroSelection: 0
   requiresEnemySelection: 1
   minigame: {fileID: 78066196323939719, guid: 1a98880c49052b248890186a3a576b3e, type: 3}
-  abilityScript: {fileID: 0}

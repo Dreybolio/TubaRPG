@@ -33,7 +33,7 @@ public class D_Fermata : AbilityBase
         }
 
         // Do Post-Anim
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(1.50f);
         mgScript.Destroy();
         hero.ActionFinished();
     }

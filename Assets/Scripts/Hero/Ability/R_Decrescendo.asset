@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Decrescendo
   className: R_Decrescendo
-  description: The next regular attack does 3x damage. Cannot be targeted this turn.<br>Press
-    the shown combination of <A> <B> <X> <Y>
+  description: The next regular attack does 3x damage. Cannot be targeted this turn.<br>Using
+    the buttons <A> <B> <X> <Y>, press the shown combination.
   npCost: 1
   requiresHeroSelection: 0
   requiresEnemySelection: 0

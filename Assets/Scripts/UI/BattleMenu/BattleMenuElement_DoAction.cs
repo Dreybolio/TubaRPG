@@ -11,6 +11,7 @@ public class BattleMenuElement_DoAction : BattleMenuElement
     [Header("Selection")]    
     [SerializeField] private Image bgImage;
     [SerializeField] private Image npImage;
+    private bool _confirmable = true;
 
     [Header("Behaviour States")]
     [SerializeField] private bool needsHeroSelection;
@@ -23,7 +24,7 @@ public class BattleMenuElement_DoAction : BattleMenuElement
     private readonly Color COLOR_INACTIVE = new(0.5f, 0.5f, 0.5f);
     public new MenuElement OnConfirm()
     {
-        if(!validSelection)
+        if(!_confirmable)
         {
             soundManager.PlaySound(sndInvalid);
             return this;
@@ -80,7 +81,9 @@ public class BattleMenuElement_DoAction : BattleMenuElement
             }
         }
     }
-    // This will always be called before any action is taken, so it is safe to assume the correct behaviour will be done.
+    /**
+     * This will always be called before any action is taken, so it is safe to assume the correct behaviour will be done.
+     */
     public void SetConfirmBehaviour(bool heroSelection, bool enemySelection)
     {
         needsHeroSelection = heroSelection;
@@ -99,17 +102,21 @@ public class BattleMenuElement_DoAction : BattleMenuElement
             elementOnConfirm = null;
         }
     }
-    public void SetSelectable(bool selectable)
+    /**
+     *  This sets whether this action *may be confirmed on*, NOT whether it can be hovered over.
+     *  Change validSelection to change whether it can be hovered over or not
+     */
+    public void SetConfirmable(bool confirmable)
     {
-        if(selectable)
+        if(confirmable)
         {
-            validSelection = true;
+            _confirmable = true;
             bgImage.color = COLOR_ACTIVE;
             npImage.color = COLOR_ACTIVE;
         }
         else
         {
-            validSelection = false;
+            _confirmable = false;
             bgImage.color = COLOR_INACTIVE;
             npImage.color = COLOR_INACTIVE;
         }

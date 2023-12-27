@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterSelect : MonoBehaviour
+public class CharacterSelectController : MonoBehaviour
 {
     [SerializeField] private BattleData firstScene;
 
@@ -19,23 +19,61 @@ public class CharacterSelect : MonoBehaviour
 
     int _firstSelectionCounter = 0;
     bool _selectionToggle = true;
+    private bool _menuNavCooldown = true;
+    private MenuElement _selectedMenuElement;
 
     private GameData gameData;
     private LevelManager levelManager;
+    private InputManager inputManager;
     private void Start()
     {
         gameData = GameData.Instance;
         levelManager = LevelManager.Instance;
+        inputManager = InputManager.Instance;
+
+        _selectedMenuElement = barbarianButton;
+        barbarianButton.OnSelected();
+    }
+    private void Update()
+    {
+        // Navigate if coming from zero navigation. Otherwise, make the player reset the button
+        if (_menuNavCooldown && inputManager.GetMenuNavigation() != Vector2.zero)
+        {
+            Navigate(inputManager.GetMenuNavigation());
+            _menuNavCooldown = false;
+        }
+        else if (inputManager.GetMenuNavigation() == Vector2.zero) { _menuNavCooldown = true; }
+
+        // Confirm
+        if (inputManager.GetConfirm()) { Confirm(); }
+    }
+    private void Navigate(Vector2 dir)
+    {
+        MenuElement newElem = _selectedMenuElement.Navigate(dir);
+        if (newElem != null && newElem != _selectedMenuElement)
+        {
+            _selectedMenuElement = newElem;
+        }
+    }
+    private void Confirm()
+    {
+        MenuElement newElem;
+
+        // Iterate through all the things this element might be. Done so we can call the function of the subclass.
+        if (_selectedMenuElement is CharacterSelectMenuElement menuElem) { newElem = menuElem.OnConfirm(); }
+        else if (_selectedMenuElement is CharacterSelectMenuElement_Confirm confirmElem) { newElem = confirmElem.OnConfirm(); }
+        else { newElem = _selectedMenuElement.OnConfirm(); }
+
+        if (newElem != null && newElem != _selectedMenuElement)
+        {
+            _selectedMenuElement = newElem;
+        }
     }
     /**
      *  When the UI Button is pressed, type is HeroType
      */
-    public void OnButtonPressed(string type)
+    public void OnButtonPressed(HeroType btnType)
     {
-        if(!Enum.TryParse(type, out HeroType btnType))
-        {
-            throw new Exception("Could not parse HeroType from string");
-        }
         // The first two selections must always be made before anything else
         if(_firstSelectionCounter < 2)
         {

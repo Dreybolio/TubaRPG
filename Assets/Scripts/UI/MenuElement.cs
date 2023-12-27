@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public abstract class MenuElement : MonoBehaviour
 {
     [Header("Navigation")]
@@ -178,7 +179,7 @@ public abstract class MenuElement : MonoBehaviour
      *  Abstract so subclasses can easily navigate, but this base method is always called from within.
      */
     public abstract bool OnSelected();
-    public bool BaseOnSelected()
+    protected bool BaseOnSelected()
     {
         if(validSelection)
         {
@@ -191,7 +192,7 @@ public abstract class MenuElement : MonoBehaviour
     *  Abstract so subclasses can easily navigate, but this base method is always called from within.
     */
     public abstract void OnDeselect();
-    public void BaseOnDeselect()
+    protected void BaseOnDeselect()
     {
         animator.SetBool("Selected", false);
     }

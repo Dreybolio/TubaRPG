@@ -92,13 +92,13 @@ public class BattleMenuManager : MonoBehaviour
         abilityOneText.text = hero.abilityOne.name;
         abilityOneNPCost.text = hero.abilityOne.npCost.ToString();
         abilityOneScript.SetConfirmBehaviour(hero.abilityOne.requiresHeroSelection, hero.abilityOne.requiresEnemySelection);
-        abilityOneScript.SetSelectable(hero.GetNP() >= hero.abilityOne.npCost);
+        abilityOneScript.SetConfirmable(hero.GetNP() >= hero.abilityOne.npCost);
         abilityOneScript.SetDescriptionBoxTextOnSelected(hero.abilityOne.description);
 
         abilityTwoText.text = hero.abilityTwo.name;
         abilityTwoNPCost.text = hero.abilityTwo.npCost.ToString();
         abilityTwoScript.SetConfirmBehaviour(hero.abilityTwo.requiresHeroSelection, hero.abilityTwo.requiresEnemySelection);
-        abilityTwoScript.SetSelectable(hero.GetNP() >= hero.abilityTwo.npCost);
+        abilityTwoScript.SetConfirmable(hero.GetNP() >= hero.abilityTwo.npCost);
         abilityTwoScript.SetDescriptionBoxTextOnSelected(hero.abilityTwo.description);
 
         // Any manual exceptions are handled here
@@ -109,7 +109,7 @@ public class BattleMenuManager : MonoBehaviour
             GenericHero otherHero = battleManager.GetHeroIndex(hero) == 0 ? battleManager.GetHero(1) : battleManager.GetHero(0);
             if (!otherHero.isAlive)
             {
-                abilityTwoScript.SetSelectable(false);
+                abilityTwoScript.SetConfirmable(false);
             }
         }
 
@@ -118,7 +118,7 @@ public class BattleMenuManager : MonoBehaviour
         {
             if (hero.statusEffects.ContainsKey(StatusEffect.DECRESCENDO))
             {
-                abilityOneScript.SetSelectable(false);
+                abilityOneScript.SetConfirmable(false);
             }
         }
     }

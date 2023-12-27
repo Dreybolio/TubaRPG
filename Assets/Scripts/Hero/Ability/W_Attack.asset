@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Attack
   className: W_Attack
-  description: A regular attack. <br>Hold <A> until the the reaches the indicator.
+  description: A regular attack. <br>Hold <A> until the bar the reaches the circle
+    indicator, then release.
   npCost: 0
   requiresHeroSelection: 0
   requiresEnemySelection: 1

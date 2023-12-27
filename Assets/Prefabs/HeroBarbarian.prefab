@@ -1686,6 +1686,7 @@ MonoBehaviour:
   postitionAtTop: {fileID: 1400570029918692455}
   positionAtCenter: {fileID: 5019686999299217933}
   sndHurt: {fileID: 8300000, guid: 29b9ef6d6b4f1eb4286d0e36d0bdfd53, type: 3}
+  sndBlocked: {fileID: 8300000, guid: 5b079baf8551e914e90866f6dc2d7fa2, type: 3}
 --- !u!95 &8342694607309949597
 Animator:
   serializedVersion: 4

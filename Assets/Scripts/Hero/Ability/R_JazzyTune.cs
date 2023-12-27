@@ -20,7 +20,7 @@ public class R_JazzyTune : AbilityBase
 
         if (mgScript.successLevel == 1)
         {
-            target.AddStatusEffect(StatusEffect.ASLEEP, 1);
+            target.AddStatusEffect(StatusEffect.ASLEEP, 2);
         }
 
         yield return new WaitForSeconds(1f);

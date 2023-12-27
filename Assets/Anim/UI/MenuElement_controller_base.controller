@@ -32,7 +32,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BM_MainIcon_UnSelected
+  m_Name: Unselected
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -46,7 +46,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: ee09e7e7839d6db478365d8cb8e18639, type: 2}
+  m_Motion: {fileID: 7400000, guid: efa8ce0c2e7d9be4580a868edd145679, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -59,7 +59,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BM_MainIcon_Selected
+  m_Name: Selected
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -73,7 +73,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: b2285c62d3769414c93fc24b67bf6a5f, type: 2}
+  m_Motion: {fileID: 7400000, guid: 783da6f0215473a4ca0ec268e75936dd, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -85,7 +85,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BattleMenuElem_MainIcon
+  m_Name: MenuElement_controller_base
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Selected
@@ -93,7 +93,7 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer

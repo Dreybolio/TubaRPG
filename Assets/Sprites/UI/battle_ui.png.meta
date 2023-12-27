@@ -51,7 +51,7 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
@@ -351,8 +351,8 @@ TextureImporter:
       name: battle_ui_saxophone
       rect:
         serializedVersion: 2
-        x: 635
-        y: 339
+        x: 636
+        y: 343
         width: 210
         height: 180
       alignment: 9
@@ -399,7 +399,7 @@ TextureImporter:
         height: 145
       alignment: 4
       pivot: {x: 0, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 239, y: 0, z: 238, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0

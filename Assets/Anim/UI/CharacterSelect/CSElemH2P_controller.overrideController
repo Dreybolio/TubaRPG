@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: CSElemH2P_controller
+  m_Controller: {fileID: 9100000, guid: a02407682bf44c74f82fa1ba8d93545d, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 783da6f0215473a4ca0ec268e75936dd, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c77a09fcfab70d047bbb8fe210717cd5, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: efa8ce0c2e7d9be4580a868edd145679, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 16da922d00375914fbe080fd44517f32, type: 2}
