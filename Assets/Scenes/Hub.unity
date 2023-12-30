@@ -213,7 +213,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 728922572}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -350,6 +350,68 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1004370874
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1004370875}
+  m_Layer: 7
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1004370875
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004370874}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1759584537}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1092201744
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1092201745}
+  m_Layer: 7
+  m_Name: FollowPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1092201745
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092201744}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.25, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1512214108}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1186686844
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,7 +424,7 @@ GameObject:
   - component: {fileID: 1186686846}
   - component: {fileID: 1186686845}
   - component: {fileID: 1186686848}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -479,7 +541,7 @@ GameObject:
   - component: {fileID: 1303554954}
   - component: {fileID: 1303554956}
   - component: {fileID: 1303554955}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ShadowCaster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -499,7 +561,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1759584537}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1303554955
 MeshRenderer:
@@ -562,7 +624,7 @@ GameObject:
   - component: {fileID: 1512214108}
   - component: {fileID: 1512214110}
   - component: {fileID: 1512214111}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: OverworldHeroLeader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -584,6 +646,7 @@ Transform:
   - {fileID: 1050629642059935770}
   - {fileID: 728922572}
   - {fileID: 1186686847}
+  - {fileID: 1092201745}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -609,6 +672,7 @@ MonoBehaviour:
   groundLayers:
     serializedVersion: 2
     m_Bits: 64
+  followPoint: {fileID: 1092201745}
 --- !u!143 &1512214111
 CharacterController:
   m_ObjectHideFlags: 0
@@ -832,7 +896,7 @@ GameObject:
   - component: {fileID: 1759584537}
   - component: {fileID: 1759584538}
   - component: {fileID: 1759584539}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: OverworldHeroFollower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -851,6 +915,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1004370875}
   - {fileID: 1303554954}
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -867,7 +932,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 570c783646451044bb856d997cc2f15c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 3
+  sprintSpeed: 5
+  acceleration: 20
+  jumpHeight: 0.6
+  gravityScale: -15
+  groundCheckPos: {fileID: 1004370875}
+  groundCheckRadius: 0.28
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 64
   heroToFollow: {fileID: 1512214110}
+  distanceUntilFollow: 1.5
+  distanceForRecalculation: 0.25
 --- !u!143 &1759584539
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1138,7 +1215,7 @@ GameObject:
   - component: {fileID: 1050629642059935770}
   - component: {fileID: 4044133294155264508}
   - component: {fileID: 9026411149245929658}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ShadowCaster
   m_TagString: Untagged
   m_Icon: {fileID: 0}

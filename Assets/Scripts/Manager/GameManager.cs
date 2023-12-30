@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         gameData = GameData.Instance;
+        Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Hero"), LayerMask.NameToLayer("Hero"));
     }
     public void Save()
     {

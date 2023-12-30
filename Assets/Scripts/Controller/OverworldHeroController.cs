@@ -25,7 +25,6 @@ public class OverworldHeroController : OverworldHero
     // Pointers
     private InputManager inputManager;
     private Animator animator;
-    private Transform t;
     private CharacterController controller;
 
     // Vars
@@ -42,7 +41,6 @@ public class OverworldHeroController : OverworldHero
     {
         inputManager = InputManager.Instance;
         animator = GetComponentInChildren<Animator>();
-        t = transform;
         controller = GetComponent<CharacterController>();
 
         AssignAnimationIDs();
@@ -99,7 +97,7 @@ public class OverworldHeroController : OverworldHero
         // Set target to 0 if not trying to move.
         float targetSpeed = inputManager.GetOverworldSprint() ? sprintSpeed : speed;
         Vector2 targetVector = moveInput.normalized * targetSpeed;
-        Vector2 currentVector = new Vector2(controller.velocity.x, controller.velocity.z);
+        Vector2 currentVector = new(controller.velocity.x, controller.velocity.z);
 
 
         float inputMagnitude = inputManager.GetControlScheme() != "Keyboard" ?
@@ -116,6 +114,11 @@ public class OverworldHeroController : OverworldHero
         else
         {
             _speed = targetVector;
+        }
+        // Move the follow point to be behind this
+        if(moveInput != Vector2.zero)
+        {
+            followPoint.localPosition = new Vector3(-moveInput.normalized.x, 0, -moveInput.normalized.y);
         }
 
         //Animation
