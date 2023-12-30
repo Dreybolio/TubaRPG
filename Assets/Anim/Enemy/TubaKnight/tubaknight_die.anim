@@ -9640,7 +9640,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 5.65
-    functionName: DeathAnimationOver
+    functionName: TriggerEvent01
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

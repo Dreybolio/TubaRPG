@@ -42,6 +42,7 @@ public abstract class GenericHero : MonoBehaviour
     protected BattleMenuManager bmManager;
     protected GameData gameData;
     protected Animator animator;
+    protected AnimatorListener animListener;
     protected BattleLocationReferencer locationReferencer;
     protected SoundManager soundManager;
 
@@ -66,14 +67,19 @@ public abstract class GenericHero : MonoBehaviour
     {
         battleManager = FindObjectOfType<BattleManager>();
         bmManager = FindObjectOfType<BattleMenuManager>();
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
+        animListener = GetComponentInChildren<AnimatorListener>();
         locationReferencer = FindObjectOfType<BattleLocationReferencer>();
         soundManager =SoundManager.Instance;
         heroIndex = battleManager.GetHeroIndex(this);
+        GetComponentInChildren<CharacterModel>().SetAsBattleModel();
         _hp = maxHP; _np = maxNP;
         CreateAbilityObjects();
+
         AssignAnimationIDs();
+        AssignAnimationEvents();
     }
+
     public abstract void DoAttack(GenericEnemy target);
     public abstract void DoAbilityOne(GenericEnemy target);
     public abstract void DoAbilityTwo(GenericEnemy target);
@@ -208,14 +214,6 @@ public abstract class GenericHero : MonoBehaviour
     {
         return positionAtCenter;
     }
-    public void DeathAnimationOver()
-    {
-        _deathAnimFinished = true;
-    }
-    public bool GetDeathAnimationOver()
-    {
-        return _deathAnimFinished;
-    }
     public void AddStatusEffect(StatusEffect statusEffect, int turns)
     {
         if (!statusEffects.ContainsKey(statusEffect))
@@ -271,5 +269,17 @@ public abstract class GenericHero : MonoBehaviour
         _animDie_T = Animator.StringToHash("Die");
         _animBlock_T = Animator.StringToHash("Block");
         _animWalking_B = Animator.StringToHash("Walking");
+    }
+    private void AssignAnimationEvents()
+    {
+        animListener.OnEvent01 += Anim_DeathAnimationOver;
+    }
+    private void Anim_DeathAnimationOver()
+    {
+        _deathAnimFinished = true;
+    }
+    public bool GetDeathAnimationOver()
+    {
+        return _deathAnimFinished;
     }
 }

@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
     }
     public void Save()
     {
-        SaveData data = new SaveData()
+        SaveData data = new()
         {
             heroOneType = (int)gameData.heroOne_HeroType,
             heroOneLevel = gameData.heroOne_Level,
@@ -57,14 +57,14 @@ public class GameManager : MonoBehaviour
         string json = File.ReadAllText(Application.dataPath + "/Resources/savefile.json");
         SaveData data = JsonUtility.FromJson<SaveData>(json);
         gameData.heroOne_HeroType = (HeroType)data.heroOneType;
-        gameData.heroOne_Object = heroObjectRefs[data.heroOneType];
+        gameData.heroOne_BattleObject = heroObjectRefs[data.heroOneType];
         gameData.heroOne_Icon = heroIconRefs[data.heroOneType];
         gameData.heroOne_Level = data.heroOneLevel;
         gameData.heroOne_HPAllocations = data.heroOneHPAllocations;
         gameData.heroOne_NPAllocations = data.heroOneNPAllocations;
 
         gameData.heroTwo_HeroType = (HeroType)data.heroTwoType;
-        gameData.heroTwo_Object = heroObjectRefs[data.heroTwoType];
+        gameData.heroTwo_BattleObject = heroObjectRefs[data.heroTwoType];
         gameData.heroTwo_Icon = heroIconRefs[data.heroTwoType];
         gameData.heroTwo_Level = data.heroTwoLevel;
         gameData.heroTwo_HPAllocations = data.heroTwoHPAllocations;

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CharacterSelectController : MonoBehaviour
 {
-    [SerializeField] private BattleData firstScene;
+    //[SerializeField] private BattleData firstScene;
 
     [SerializeField] private CharacterSelectMenuElement barbarianButton;
     [SerializeField] private CharacterSelectMenuElement rogueButton;
@@ -130,7 +130,7 @@ public class CharacterSelectController : MonoBehaviour
             // Only proceed if we've selected two heroes
             gameData.SetHeroOne(heroOne);
             gameData.SetHeroTwo(heroTwo);
-            levelManager.LoadBattle(firstScene);
+            levelManager.LoadScene("Hub");
         }
     }
     /**

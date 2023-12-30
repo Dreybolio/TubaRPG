@@ -6,7 +6,7 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: barbarian_controller
+  m_Name: barbarian_battle
   m_Controller: {fileID: 9100000, guid: ca0bd3e9e76bedd4b8e676f41cd726c1, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: b9036dc79d5b1a2448726c567b39eeb0, type: 2}

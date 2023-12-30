@@ -9,7 +9,7 @@ public enum ControlType
     Minigame,
     Blocking
 }
-public class PlayerControllerBattle : MonoBehaviour
+public class BattleController : MonoBehaviour
 {
     // Data
     private ControlType controlType;

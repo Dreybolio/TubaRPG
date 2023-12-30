@@ -38,6 +38,7 @@ public abstract class GenericEnemy : MonoBehaviour
     protected BattleManager battleManager;
     protected BattleMenuManager bmManager;
     protected Animator animator;
+    protected AnimatorListener animListener;
     protected BattleLocationReferencer locationReferencer;
     protected SoundManager soundManager;
 
@@ -56,11 +57,14 @@ public abstract class GenericEnemy : MonoBehaviour
     {
         battleManager = FindObjectOfType<BattleManager>();
         bmManager = FindObjectOfType<BattleMenuManager>();
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
+        animListener = GetComponentInChildren<AnimatorListener>();
         locationReferencer = FindObjectOfType<BattleLocationReferencer>();
         soundManager = SoundManager.Instance;
         enemyIndex = battleManager.GetEnemyIndex(this);
         SetPossibleTargets();
+        AssignAnimationEvents();
+
     }
     public EnemyOverrideStatus CheckForOverrides()
     {
@@ -171,22 +175,6 @@ public abstract class GenericEnemy : MonoBehaviour
         statusEffects.Remove(statusEffect);
         bmManager.SetEnemyStatusEffects(enemyIndex, statusEffects);
     }
-    public void DamageFramePassed()
-    {
-        _damageFramePassed = true;
-    }
-    public void ProjectileSpawnFramePassed()
-    {
-        _projectileSpawnFramePassed = true;
-    }
-    public void DeathAnimationOver()
-    {
-        _deathAnimFinished = true;
-    }
-    public bool GetDeathAnimationOver()
-    {
-        return _deathAnimFinished;
-    }
     public void Destroy()
     {
         Destroy(gameObject);
@@ -196,5 +184,27 @@ public abstract class GenericEnemy : MonoBehaviour
         _animIdle_T = Animator.StringToHash("Idle");
         _animDie_T = Animator.StringToHash("Die");
         _animWalking_B = Animator.StringToHash("Walking");
+    }
+    private void AssignAnimationEvents()
+    {
+        animListener.OnEvent01 += Anim_DeathAnimationOver;
+        animListener.OnEvent02 += Anim_DamageFramePassed;
+        animListener.OnEvent03 += Anim_ProjectileSpawnFramePassed;
+    }
+    private void Anim_DeathAnimationOver()
+    {
+        _deathAnimFinished = true;
+    }
+    public bool GetDeathAnimationOver()
+    {
+        return _deathAnimFinished;
+    }
+    private void Anim_DamageFramePassed()
+    {
+        _damageFramePassed = true;
+    }
+    private void Anim_ProjectileSpawnFramePassed()
+    {
+        _projectileSpawnFramePassed = true;
     }
 }

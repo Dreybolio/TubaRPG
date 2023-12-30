@@ -46,7 +46,7 @@ public class BattleManager : MonoBehaviour
     [SerializeField] private Transform minigameHolder;
 
     // Pointers
-    private PlayerControllerBattle playerController;
+    private BattleController battleController;
     private GameData gameData;
     private BattleMenuManager bmManager;
     private LevelManager levelManager;
@@ -60,7 +60,7 @@ public class BattleManager : MonoBehaviour
     private readonly List<GenericHero> heroesSetForBlocking = new();
     private void Start()
     {
-        playerController = FindObjectOfType<PlayerControllerBattle>();
+        battleController = FindObjectOfType<BattleController>();
         gameData = GameData.Instance;
         levelManager = LevelManager.Instance;
         soundManager = SoundManager.Instance;
@@ -70,12 +70,12 @@ public class BattleManager : MonoBehaviour
     public void SetBattleData(BattleData bd)
     {
         // Place each hero 1 and assign their values
-        GameObject hero1 = Instantiate(gameData.heroOne_Object);
+        GameObject hero1 = Instantiate(gameData.heroOne_BattleObject);
         hero1.transform.position = locationReferencer.heroSpawns[0].position;
         heroList[0] = hero1.GetComponent<GenericHero>();
 
         // Place each hero 2 and assign their values
-        GameObject hero2 = Instantiate(gameData.heroTwo_Object);
+        GameObject hero2 = Instantiate(gameData.heroTwo_BattleObject);
         hero2.transform.position = locationReferencer.heroSpawns[1].position;
         heroList[1] = hero2.GetComponent<GenericHero>();
 
@@ -225,14 +225,14 @@ public class BattleManager : MonoBehaviour
         {
             // The menu must be buffered every time
             bmManager.SetMenuData(activeHero);
-            playerController.SetControlType(ControlType.Menu);
+            battleController.SetControlType(ControlType.Menu);
             yield return new WaitUntil(() => _turnProcessed);
             _turnProcessed = false;
 
             // Process Post-Turn events (Once per active hero)
             yield return C_ProcessPostTurnEvents();
         }
-        playerController.SetControlType(ControlType.None);
+        battleController.SetControlType(ControlType.None);
         NextStage();
     }
     private IEnumerator C_EnemyTurn()
@@ -329,7 +329,7 @@ public class BattleManager : MonoBehaviour
     }
     public void AllowHeroBlocking(GenericHero hero)
     {
-        playerController.SetControlType(ControlType.Blocking);
+        battleController.SetControlType(ControlType.Blocking);
         if (!heroesSetForBlocking.Contains(hero))
         {
             heroesSetForBlocking.Add(hero);
@@ -338,7 +338,7 @@ public class BattleManager : MonoBehaviour
     }
     public void DisallowHeroBlocking()
     {
-        playerController.SetControlType(ControlType.None);
+        battleController.SetControlType(ControlType.None);
         heroesSetForBlocking.Clear();
         heroesSetForBlocking.TrimExcess();
     }
@@ -359,7 +359,7 @@ public class BattleManager : MonoBehaviour
     public void RelayActionToHero(HeroAction action, int targetIndex = -1, int optItemIndex = 0)
     {
         // A target index of -1 implies that the target is not relevant, and the effect is general.
-        playerController.SetControlType(ControlType.None);
+        battleController.SetControlType(ControlType.None);
         bmManager.SetUIVisibility(false, false, false, false, false, false); // Disable the whole UI
         GenericEnemy target;
         if(targetIndex == -1) { target = null; } 
@@ -567,7 +567,7 @@ public class BattleManager : MonoBehaviour
         print("You Won The Battle!");
         soundManager.FadeOutMusic(1);
         yield return new WaitForSeconds(2f);
-        playerController.SetControlType(ControlType.None);
+        battleController.SetControlType(ControlType.None);
         levelManager.LoadScene("CharacterSelect");
     }
     private IEnumerator EndBattleLose()
@@ -589,7 +589,7 @@ public class BattleManager : MonoBehaviour
         print("You Lost The Battle!");
         soundManager.FadeOutMusic(1);
         yield return new WaitForSeconds(2f);
-        playerController.SetControlType(ControlType.None);
+        battleController.SetControlType(ControlType.None);
         levelManager.LoadScene("CharacterSelect");
     }
 }

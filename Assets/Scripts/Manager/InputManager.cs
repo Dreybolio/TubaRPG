@@ -127,7 +127,9 @@ public class InputManager : MonoBehaviour
         return controls.Enemy.Block.triggered;
     }
 
-    // Console
+    //******************//
+    //*CONSOLE CONTROLS*//
+    //******************//
     public bool GetConsoleToggled()
     {
         return controls.Console.ToggleConsole.triggered;
@@ -136,7 +138,33 @@ public class InputManager : MonoBehaviour
     {
         return controls.Console.Submit.triggered;
     }
+    //********************//
+    //*OVERWORLD CONTROLS*//
+    //********************//
+    public Vector2 GetOverworldMovement()
+    {
+        return controls.Overworld.Movement.ReadValue<Vector2>();
+    }
+    public bool GetOverworldJump()
+    {
+        return controls.Overworld.Jump.triggered;
+    }
+    public bool GetOverworldInteract()
+    {
+        return controls.Overworld.Interact.triggered;
+    }
+    public bool GetOverworldSprint()
+    {
+        return controls.Overworld.Sprint.IsPressed();
+    }
 
+    //***************//
+    //**INPUT TYPES**//
+    //***************//
+    public string GetControlScheme()
+    {
+        return input.currentControlScheme;
+    }
     public Sprite[] GetInputSprites()
     {
         switch (input.currentControlScheme)
