@@ -35,7 +35,13 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         gameData = GameData.Instance;
-        Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Hero"), LayerMask.NameToLayer("Hero"));
+        LayerMask[] layersToIgnoreEachOther = new LayerMask[]
+        {
+            LayerMask.NameToLayer("HeroLeader"),
+            LayerMask.NameToLayer("HeroFollower"),
+            LayerMask.NameToLayer("Enemy")
+        };
+        UnityExtentions.IgnoreAllPhysicsBetweenLayers(layersToIgnoreEachOther);
     }
     public void Save()
     {

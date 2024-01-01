@@ -103,10 +103,8 @@ public abstract class OverworldHero : MonoBehaviour
         _grounded = Physics.CheckSphere(groundCheckPos.position, groundCheckRadius, groundLayers, QueryTriggerInteraction.Ignore);
         animator.SetBool(_animGrounded_B, _grounded);
     }
-    protected void Move(Vector2 moveInput, bool isSprinting)
+    protected void Move(Vector2 moveInput, float targetSpeed)
     {
-        // Set target to 0 if not trying to move.
-        float targetSpeed = isSprinting ? sprintSpeed : speed;
         Vector2 targetVector = moveInput * targetSpeed;
         Vector2 currentVector = new(controller.velocity.x, controller.velocity.z);
 
@@ -163,7 +161,4 @@ public abstract class OverworldHero : MonoBehaviour
         _animFreefall_B = Animator.StringToHash("Freefall");
         _animGrounded_B = Animator.StringToHash("Grounded");
     }
-    /**
-     *  Ensures both the model and the animator have been properly set after SetCharacterModel()
-     */
 }

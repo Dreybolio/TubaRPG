@@ -12,13 +12,13 @@ TagManager:
   - Water
   - UI
   - Ground
-  - Hero
   - 
+  - HeroFollower
+  - HeroLeader
+  - HeroTriggerLayer
   - 
-  - 
-  - 
-  - 
-  - 
+  - Enemy
+  - EnemyTriggerLayer
   - 
   - 
   - 

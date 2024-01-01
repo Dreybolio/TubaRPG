@@ -42,6 +42,7 @@ public class OverworldHeroController : OverworldHero
             followPoint.localPosition = new Vector3(-moveInput.x * followPointDistance, 0, -moveInput.y * followPointDistance / 2);
         }
         bool isSprinting = inputManager.GetOverworldSprint();
-        Move(moveInput, isSprinting);
+        float targetSpeed = isSprinting ? sprintSpeed : speed;
+        Move(moveInput, targetSpeed);
     }
 }
