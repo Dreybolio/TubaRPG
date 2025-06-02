@@ -452,6 +452,258 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: flutedruid_16
+      rect:
+        serializedVersion: 2
+        x: 2957
+        y: 1469
+        width: 164
+        height: 172
+      alignment: 9
+      pivot: {x: 0.5190653, y: 0.06378174}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6473e7cea496215428ac17004a27ba11
+      internalID: 126917466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flutedruid_17
+      rect:
+        serializedVersion: 2
+        x: 2937
+        y: 1301
+        width: 144
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a19bab6aea474a4b8f3ef4d0b227c0b
+      internalID: -937188640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flutedruid_18
+      rect:
+        serializedVersion: 2
+        x: 2931
+        y: 1179
+        width: 234
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ff90b2176741a84eadf40c2f7e75bd2
+      internalID: -57150838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flutedruid_19
+      rect:
+        serializedVersion: 2
+        x: 2467
+        y: 1009
+        width: 96
+        height: 178
+      alignment: 9
+      pivot: {x: 0.7274119, y: 0.8975515}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bf9bcd2a008e2f45853780228c8e5b9
+      internalID: 1692918703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flutedruid_20
+      rect:
+        serializedVersion: 2
+        x: 3477
+        y: 1049
+        width: 138
+        height: 174
+      alignment: 9
+      pivot: {x: 0.16723633, y: 0.8071808}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9b6d44508340794cb6017a838296716
+      internalID: 1671762118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flutedruid_21
+      rect:
+        serializedVersion: 2
+        x: 2423
+        y: 767
+        width: 148
+        height: 136
+      alignment: 9
+      pivot: {x: 0.05238301, y: 0.87086934}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d17750849f464940af6eb56d12b0507
+      internalID: 100997452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flutedruid_22
+      rect:
+        serializedVersion: 2
+        x: 2941
+        y: 665
+        width: 248
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1cda182ec723cd4d838511872facc5b
+      internalID: -1054225846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flutedruid_23
+      rect:
+        serializedVersion: 2
+        x: 3509
+        y: 765
+        width: 146
+        height: 178
+      alignment: 9
+      pivot: {x: 0.96406114, y: 0.7749027}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8e64cb997ac5a448be33ef092953bc9
+      internalID: -1921667598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flutedruid_24
+      rect:
+        serializedVersion: 2
+        x: 2679
+        y: 139
+        width: 176
+        height: 378
+      alignment: 9
+      pivot: {x: 0.956905, y: 0.9782082}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 381ad3fbfddb34a46aa4a649bf4b9db6
+      internalID: 38804445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flutedruid_25
+      rect:
+        serializedVersion: 2
+        x: 2891
+        y: 135
+        width: 216
+        height: 380
+      alignment: 9
+      pivot: {x: 0.760923, y: 0.9901609}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96d8cce1448a6304395a15a0c0cb7e55
+      internalID: 1058369274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flutedruid_26
+      rect:
+        serializedVersion: 2
+        x: 3119
+        y: 143
+        width: 184
+        height: 378
+      alignment: 9
+      pivot: {x: 0.021870488, y: 0.9836631}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f69250cc6ea4c7c428c9fa58bf58b788
+      internalID: -827148964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flutedruid_27
+      rect:
+        serializedVersion: 2
+        x: 3309
+        y: 139
+        width: 170
+        height: 382
+      alignment: 9
+      pivot: {x: 0.035054285, y: 0.97859854}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f45dd9a40cf0ade41af92898cb1255f9
+      internalID: -387038926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -463,22 +715,34 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      flutedruid_1: -155664581
+      flutedruid_4: -936728235
       flutedruid_7: -1081415659
       flutedruid_8: -1596594031
       flutedruid_2: -507317658
+      flutedruid_23: -1921667598
       flutedruid_5: 646053723
+      flutedruid_24: 38804445
       flutedruid_15: 1656200642
+      flutedruid_19: 1692918703
+      flutedruid_16: 126917466
+      flutedruid_22: -1054225846
+      flutedruid_25: 1058369274
       flutedruid_9: 892774585
       flutedruid_10: 1471664074
       flutedruid_11: -508908498
       flutedruid_3: -1162862926
       flutedruid_14: 897796029
+      flutedruid_27: -387038926
+      flutedruid_20: 1671762118
+      flutedruid_18: -57150838
       flutedruid_6: -1791331741
+      flutedruid_17: -937188640
+      flutedruid_21: 100997452
       flutedruid_0: -835670585
       flutedruid_12: -1536232318
       flutedruid_13: -1638334041
-      flutedruid_4: -936728235
+      flutedruid_26: -827148964
+      flutedruid_1: -155664581
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

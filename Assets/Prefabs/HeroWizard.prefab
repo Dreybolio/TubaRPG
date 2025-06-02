@@ -201,7 +201,7 @@ MonoBehaviour:
   attack: {fileID: 11400000, guid: 0a19fb8e29bd21c41a979a08aa81c527, type: 2}
   abilityOne: {fileID: 11400000, guid: d3ee5ebc7505b8b4394ae103f5905658, type: 2}
   abilityTwo: {fileID: 11400000, guid: 2e464d3f097e58e479424a58f8f2c680, type: 2}
-  material: {fileID: 2100000, guid: cdf934a8584653d42ac251e0073f5457, type: 2}
+  check: {fileID: 11400000, guid: b3980da45cc2f2743afbb9e2dea3df8e, type: 2}
   projectileSpawnPos: {fileID: 0}
   postitionAtFront: {fileID: 3271240928776688803}
   postitionAtTop: {fileID: 5518663241897945009}

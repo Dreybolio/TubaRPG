@@ -67,7 +67,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -246,10 +246,10 @@ TextureImporter:
       name: bagpipebarbarian_6
       rect:
         serializedVersion: 2
-        x: 1693
-        y: 1087
-        width: 141
-        height: 189
+        x: 1566
+        y: 1092
+        width: 142
+        height: 193
       alignment: 9
       pivot: {x: 0.218879, y: 0.78537005}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -267,10 +267,10 @@ TextureImporter:
       name: bagpipebarbarian_7
       rect:
         serializedVersion: 2
-        x: 1727
-        y: 978
-        width: 90
-        height: 79
+        x: 1608
+        y: 917
+        width: 89
+        height: 100
       alignment: 9
       pivot: {x: 0.48505452, y: 0.82349867}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -309,8 +309,8 @@ TextureImporter:
       name: bagpipebarbarian_9
       rect:
         serializedVersion: 2
-        x: 1720
-        y: 852
+        x: 1598
+        y: 754
         width: 96
         height: 91
       alignment: 9
@@ -372,10 +372,10 @@ TextureImporter:
       name: bagpipebarbarian_12
       rect:
         serializedVersion: 2
-        x: 1721
-        y: 630
-        width: 105
-        height: 183
+        x: 1887
+        y: 1113
+        width: 107
+        height: 185
       alignment: 9
       pivot: {x: 0.38470867, y: 0.91160774}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -498,8 +498,8 @@ TextureImporter:
       name: bagpipebarbarian_18
       rect:
         serializedVersion: 2
-        x: 1728
-        y: 501
+        x: 1894
+        y: 922
         width: 92
         height: 82
       alignment: 9
@@ -599,6 +599,489 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: bagpipebarbarian_23
+      rect:
+        serializedVersion: 2
+        x: 2933
+        y: 1910
+        width: 136
+        height: 22
+      alignment: 9
+      pivot: {x: 0.9699922, y: 0.8409479}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 792287949e32bfd4983abf9bf5895641
+      internalID: 711066102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bagpipebarbarian_24
+      rect:
+        serializedVersion: 2
+        x: 3102
+        y: 1817
+        width: 66
+        height: 175
+      alignment: 9
+      pivot: {x: 0.5049457, y: 0.095618725}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02a37c757a5375c4f8fc767d6a836b25
+      internalID: -1353480734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bagpipebarbarian_25
+      rect:
+        serializedVersion: 2
+        x: 2936
+        y: 1613
+        width: 331
+        height: 195
+      alignment: 9
+      pivot: {x: 0.43595994, y: 0.053474307}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f0d52e0470902a409394a8de1439067
+      internalID: 1423992352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bagpipebarbarian_26
+      rect:
+        serializedVersion: 2
+        x: 3362
+        y: 1575
+        width: 56
+        height: 204
+      alignment: 9
+      pivot: {x: 0.26996285, y: 0.9280096}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de803e1061796424995093677a04dba4
+      internalID: -358128091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bagpipebarbarian_27
+      rect:
+        serializedVersion: 2
+        x: 2358
+        y: 1166
+        width: 142
+        height: 192
+      alignment: 9
+      pivot: {x: 0.8603687, y: 0.9762446}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdb9e997e2d4a3a45b571044d02275e7
+      internalID: 974013477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bagpipebarbarian_28
+      rect:
+        serializedVersion: 2
+        x: 2962
+        y: 950
+        width: 235
+        height: 342
+      alignment: 9
+      pivot: {x: 0.5099225, y: 0.02609378}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4d34c20b2763c34c84e9638e672eda4
+      internalID: 1304790362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bagpipebarbarian_29
+      rect:
+        serializedVersion: 2
+        x: 3592
+        y: 1222
+        width: 143
+        height: 234
+      alignment: 9
+      pivot: {x: 0.19971386, y: 0.98120326}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db117ed55be5a104197e3d40ff358869
+      internalID: -1028050634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bagpipebarbarian_30
+      rect:
+        serializedVersion: 2
+        x: 2364
+        y: 849
+        width: 169
+        height: 105
+      alignment: 9
+      pivot: {x: 0.028435882, y: 0.5159796}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d37e7ae0b21adff4bbb3222be704d7ae
+      internalID: -557433597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bagpipebarbarian_31
+      rect:
+        serializedVersion: 2
+        x: 3571
+        y: 884
+        width: 191
+        height: 93
+      alignment: 9
+      pivot: {x: 0.9546461, y: 0.80269235}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d4db37d96cd0a445b2cebfdeb7ad23d
+      internalID: -876807285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bagpipebarbarian_32
+      rect:
+        serializedVersion: 2
+        x: 2956
+        y: 799
+        width: 225
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10a550bdb593a6240ba63cf4fb8e3beb
+      internalID: 1957752105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bagpipebarbarian_33
+      rect:
+        serializedVersion: 2
+        x: 2731
+        y: 507
+        width: 80
+        height: 246
+      alignment: 9
+      pivot: {x: 0.9521759, y: 0.9859011}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f4f227a28e4eb84fb4cc2b2ca006ee8
+      internalID: -22561042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bagpipebarbarian_34
+      rect:
+        serializedVersion: 2
+        x: 2848
+        y: 501
+        width: 78
+        height: 252
+      alignment: 9
+      pivot: {x: 0.9284825, y: 0.9836939}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2c64393473777844bef47110e65eb9d
+      internalID: -362919345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bagpipebarbarian_35
+      rect:
+        serializedVersion: 2
+        x: 2991
+        y: 501
+        width: 113
+        height: 258
+      alignment: 9
+      pivot: {x: 0.583509, y: 0.9876853}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f2f73e85e70e3d498e5cc6ca3d837c1
+      internalID: 1468460260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bagpipebarbarian_36
+      rect:
+        serializedVersion: 2
+        x: 3149
+        y: 505
+        width: 60
+        height: 252
+      alignment: 9
+      pivot: {x: 0.0936971, y: 0.9805731}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66accea265c6dff41ad3d651c0352b6d
+      internalID: 643555049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bagpipebarbarian_37
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 505
+        width: 82
+        height: 252
+      alignment: 9
+      pivot: {x: 0.06364627, y: 0.9836939}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56f190bdb914f244b9e3707ece8df101
+      internalID: 83748665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bagpipebarbarian_38
+      rect:
+        serializedVersion: 2
+        x: 3344
+        y: 514
+        width: 79
+        height: 242
+      alignment: 9
+      pivot: {x: 0.066984154, y: 0.9874333}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 960b50b96f274434880990e77e936a34
+      internalID: -1734560028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bagpipebarbarian_39
+      rect:
+        serializedVersion: 2
+        x: 2390
+        y: 530
+        width: 89
+        height: 95
+      alignment: 9
+      pivot: {x: 0.14442976, y: 0.27183968}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47161535789d7b64889d308e58641166
+      internalID: -1320119098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bagpipebarbarian_40
+      rect:
+        serializedVersion: 2
+        x: 3564
+        y: 549
+        width: 83
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0300a3cdff35e83439cadefa520ce9ad
+      internalID: -1199377867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bagpipebarbarian_41
+      rect:
+        serializedVersion: 2
+        x: 3684
+        y: 539
+        width: 90
+        height: 98
+      alignment: 9
+      pivot: {x: 0.9453179, y: 0.35394162}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad429b8297b95f14da64c04a1a97edcf
+      internalID: 1558611963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bagpipebarbarian_42
+      rect:
+        serializedVersion: 2
+        x: 2900
+        y: 191
+        width: 96
+        height: 214
+      alignment: 9
+      pivot: {x: 0.65751904, y: 0.97403896}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5002f1462cbee444abeda93edaf508cd
+      internalID: 2045316436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bagpipebarbarian_43
+      rect:
+        serializedVersion: 2
+        x: 3117
+        y: 194
+        width: 107
+        height: 208
+      alignment: 9
+      pivot: {x: 0.44111192, y: 0.96953744}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc9a9b089ea50f34f9ad694c160c245f
+      internalID: -281989704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bagpipebarbarian_44
+      rect:
+        serializedVersion: 2
+        x: 2881
+        y: 52
+        width: 110
+        height: 55
+      alignment: 9
+      pivot: {x: 0.060746625, y: 0.09914426}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e992c5a186b85d4488a54d483d32cd3
+      internalID: -392976983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bagpipebarbarian_45
+      rect:
+        serializedVersion: 2
+        x: 3125
+        y: 54
+        width: 108
+        height: 55
+      alignment: 9
+      pivot: {x: 0.059701424, y: 0.12451935}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d33d4fd15ebf5f241a82329da8b39418
+      internalID: 1973939715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -610,29 +1093,51 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      bagpipebarbarian_37: 83748665
       bagpipebarbarian_4: -377136004
+      bagpipebarbarian_44: -392976983
       bagpipebarbarian_5: -425869327
+      bagpipebarbarian_43: -281989704
+      bagpipebarbarian_6: -1006804771
+      bagpipebarbarian_1: 927246692
+      bagpipebarbarian_19: -145940407
+      bagpipebarbarian_3: -2106310870
+      bagpipebarbarian_22: -1410994756
+      bagpipebarbarian_16: 1694595965
+      bagpipebarbarian_7: 1526416696
+      bagpipebarbarian_25: 1423992352
+      bagpipebarbarian_31: -876807285
+      bagpipebarbarian_29: -1028050634
+      bagpipebarbarian_28: 1304790362
+      bagpipebarbarian_13: 2059608825
+      bagpipebarbarian_12: 1920922571
       bagpipebarbarian_9: 883281347
       bagpipebarbarian_21: 202179108
       bagpipebarbarian_23: 711066102
+      bagpipebarbarian_26: -358128091
+      bagpipebarbarian_34: -362919345
+      bagpipebarbarian_24: -1353480734
       bagpipebarbarian_2: -480876820
-      bagpipebarbarian_6: -1006804771
       bagpipebarbarian_8: 45410673
-      bagpipebarbarian_1: 927246692
       bagpipebarbarian_11: 687441361
-      bagpipebarbarian_3: -2106310870
-      bagpipebarbarian_0: 2103143925
       bagpipebarbarian_18: 603192267
-      bagpipebarbarian_22: -1410994756
-      bagpipebarbarian_19: -145940407
+      bagpipebarbarian_0: 2103143925
+      bagpipebarbarian_35: 1468460260
+      bagpipebarbarian_33: -22561042
+      bagpipebarbarian_42: 2045316436
+      bagpipebarbarian_27: 974013477
+      bagpipebarbarian_32: 1957752105
       bagpipebarbarian_14: 405232487
-      bagpipebarbarian_7: 1526416696
-      bagpipebarbarian_16: 1694595965
       bagpipebarbarian_20: 1384359420
+      bagpipebarbarian_40: -1199377867
       bagpipebarbarian_10: 675798469
-      bagpipebarbarian_13: 2059608825
+      bagpipebarbarian_39: -1320119098
+      bagpipebarbarian_30: -557433597
+      bagpipebarbarian_41: 1558611963
+      bagpipebarbarian_36: 643555049
       bagpipebarbarian_15: 2066996908
-      bagpipebarbarian_12: 1920922571
+      bagpipebarbarian_45: 1973939715
+      bagpipebarbarian_38: -1734560028
       bagpipebarbarian_17: -1499465067
   spritePackingTag: 
   pSDRemoveMatte: 0

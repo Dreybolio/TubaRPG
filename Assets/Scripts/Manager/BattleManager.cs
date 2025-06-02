@@ -18,7 +18,8 @@ public enum HeroAction
     ABILITYONE,
     ABILITYTWO,
     ITEM,
-    CHECK
+    CHECK,
+    DONOTHING
 }
 public enum PostTurnEvent
 {
@@ -365,11 +366,33 @@ public class BattleManager : MonoBehaviour
         if(targetIndex == -1) { target = null; } 
         else{ target = enemyList[targetIndex]; }
 
-        // Below is regioned code for sending the appropriate action to the hero based on its class.
-        // Sectioned off because it is VERY ugly.
+        switch (action)
+        {
+            case HeroAction.FIGHT:
+                activeHero.DoAttack(target);
+                break;
+            case HeroAction.ABILITYONE:
+                activeHero.DoAbilityOne(target);
+                break;
+            case HeroAction.ABILITYTWO:
+                activeHero.DoAbilityTwo(target);
+                break;
+            case HeroAction.CHECK:
+                activeHero.CheckEnemy(target);
+                break;
+            case HeroAction.ITEM:
+                activeHero.UseItem(optItemIndex, target);
+                break;
+            case HeroAction.DONOTHING:
+                activeHero.DoNothing();
+                break;
+        }
+
+        // Below is legacy code for sending the appropriate action to the hero based on its class.
+        #region
+        /*
         if(activeHero is HeroBarbarian heroBarbarian)
         {
-            #region
             switch (action)
             {
                 case HeroAction.FIGHT:
@@ -457,8 +480,9 @@ public class BattleManager : MonoBehaviour
                     heroWizard.UseItem(optItemIndex, target);
                     break;
             }
-            #endregion
         }
+        */
+        #endregion
     }
     public void AddPostTurnEvent(PostTurnEvent pte, GenericHero hero)
     {

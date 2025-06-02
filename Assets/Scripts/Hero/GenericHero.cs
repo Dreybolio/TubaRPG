@@ -19,8 +19,8 @@ public abstract class GenericHero : MonoBehaviour
     protected AbilityBase abilityOneScript;
     public HeroAbility abilityTwo;
     protected AbilityBase abilityTwoScript;
-
-    [SerializeField] protected Material material;
+    public HeroAbility check;
+    protected AbilityBase checkScript;
 
     [NonSerialized] public Dictionary<StatusEffect, int> statusEffects = new();
 
@@ -45,6 +45,7 @@ public abstract class GenericHero : MonoBehaviour
     protected AnimatorListener animListener;
     protected BattleLocationReferencer locationReferencer;
     protected SoundManager soundManager;
+    protected Renderer[] renderers;
 
     // Vars
     [NonSerialized] public bool canBeSelected = true;
@@ -70,6 +71,7 @@ public abstract class GenericHero : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         animListener = GetComponentInChildren<AnimatorListener>();
         locationReferencer = FindObjectOfType<BattleLocationReferencer>();
+        renderers = GetComponentsInChildren<Renderer>();
         soundManager =SoundManager.Instance;
         heroIndex = battleManager.GetHeroIndex(this);
         GetComponentInChildren<CharacterModel>().SetAsBattleModel();
@@ -83,7 +85,10 @@ public abstract class GenericHero : MonoBehaviour
     public abstract void DoAttack(GenericEnemy target);
     public abstract void DoAbilityOne(GenericEnemy target);
     public abstract void DoAbilityTwo(GenericEnemy target);
-    public abstract void CheckEnemy(GenericEnemy target);
+    public void CheckEnemy(GenericEnemy target)
+    {
+        checkScript.DoAbility(target);
+    }
     public void UseItem(int itemIndex, GenericEnemy target)
     {
         ActionFinished();
@@ -237,13 +242,9 @@ public abstract class GenericHero : MonoBehaviour
      */
     public void SetGreyOut(bool b)
     {
-        if (b)
+        foreach (Renderer r in renderers) 
         {
-            material.SetColor("_Base_Color", Color.grey);
-        }
-        else
-        {
-            material.SetColor("_Base_Color", Color.white);
+            r.material.SetColor("_Base_Color", b ? Color.grey : Color.white);
         }
     }
     public void SetMinigameParent(Transform mgp)
@@ -262,6 +263,8 @@ public abstract class GenericHero : MonoBehaviour
         abilityOneScript.Initialize(this, abilityOne.minigame, abilityOne.npCost, locationReferencer, battleManager);
         abilityTwoScript = (AbilityBase)gameObject.AddComponent(Type.GetType(abilityTwo.className, true));
         abilityTwoScript.Initialize(this, abilityTwo.minigame, abilityTwo.npCost, locationReferencer, battleManager);
+        checkScript = (AbilityBase)gameObject.AddComponent(Type.GetType(check.className, true));
+        checkScript.Initialize(this, check.minigame, check.npCost, locationReferencer, battleManager);
     }
     private void AssignAnimationIDs()
     {

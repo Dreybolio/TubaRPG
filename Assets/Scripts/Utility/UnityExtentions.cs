@@ -18,4 +18,18 @@ public static class UnityExtentions
             }
         }
     }
+    public static bool RectOverlaps(this RectTransform a, RectTransform b)
+    {
+        return a.TransformToWorldRect().Overlaps(b.TransformToWorldRect(), true);
+    }
+
+    public static Rect TransformToWorldRect(this RectTransform rectTransform)
+    {
+        Vector2 sizeDelta = rectTransform.sizeDelta;
+        float rectTransformWidth = sizeDelta.x * rectTransform.lossyScale.x;
+        float rectTransformHeight = sizeDelta.y * rectTransform.lossyScale.y;
+
+        Vector3 position = rectTransform.position;
+        return new Rect(position.x - rectTransformWidth / 2f, position.y - rectTransformHeight / 2f, rectTransformWidth, rectTransformHeight);
+    }
 }

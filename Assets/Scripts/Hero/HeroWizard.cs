@@ -18,9 +18,4 @@ public class HeroWizard : GenericHero
     {
         abilityTwoScript.DoAbility(target);
     }
-    public override void CheckEnemy(GenericEnemy target)
-    {
-        throw new System.NotImplementedException();
-    }
-
 }

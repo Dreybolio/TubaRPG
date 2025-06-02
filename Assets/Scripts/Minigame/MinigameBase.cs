@@ -104,6 +104,21 @@ public abstract class MinigameBase : MonoBehaviour
         else if (inputManager.GetMinigameButtonRightPressed()) { return MinigameButton.RIGHT; }
         else { return MinigameButton.NONE; }
     }
+    protected bool CheckButtonIsPressed(MinigameButton btn)
+    {
+        return btn switch
+        {
+            MinigameButton.A => inputManager.GetMinigameButtonAPressed(),
+            MinigameButton.B => inputManager.GetMinigameButtonBPressed(),
+            MinigameButton.X => inputManager.GetMinigameButtonXPressed(),
+            MinigameButton.Y => inputManager.GetMinigameButtonYPressed(),
+            MinigameButton.UP => inputManager.GetMinigameButtonUpPressed(),
+            MinigameButton.DOWN => inputManager.GetMinigameButtonDownPressed(),
+            MinigameButton.LEFT => inputManager.GetMinigameButtonLeftPressed(),
+            MinigameButton.RIGHT => inputManager.GetMinigameButtonRightPressed(),
+            _ => throw new NotImplementedException()
+        };
+    }
     protected bool CheckButtonIsHeld(MinigameButton btn)
     {
         return btn switch

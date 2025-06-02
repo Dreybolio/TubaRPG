@@ -67,7 +67,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -599,6 +599,90 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: saxophonerogue_0
+      rect:
+        serializedVersion: 2
+        x: 2473
+        y: 1469
+        width: 282
+        height: 289
+      alignment: 9
+      pivot: {x: 0.43486294, y: 0.015734822}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b3ed349ebfe5be4aba5a9529a5c9494
+      internalID: 412356880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: saxophonerogue_1
+      rect:
+        serializedVersion: 2
+        x: 2345
+        y: 655
+        width: 464
+        height: 646
+      alignment: 9
+      pivot: {x: 0.53214604, y: 0.98185885}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a9a4ebd6e10dd545a02581c78b21fc9
+      internalID: -50318737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: saxophonerogue_2
+      rect:
+        serializedVersion: 2
+        x: 2449
+        y: 288
+        width: 81
+        height: 43
+      alignment: 9
+      pivot: {x: 0.31135768, y: 0.8366501}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ce22af13e0e9e440a328157f14515fb
+      internalID: 1371664353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: saxophonerogue_3
+      rect:
+        serializedVersion: 2
+        x: 2659
+        y: 287
+        width: 83
+        height: 42
+      alignment: 9
+      pivot: {x: 0.31631505, y: 0.80715215}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6fba23c0a467334e81c5a30292f2c5c
+      internalID: -1092390451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -612,8 +696,10 @@ TextureImporter:
     nameFileIdTable:
       SaxophoneRogue_22: -914953030
       SaxophoneRogue_8: -119176415
+      saxophonerogue_1: -50318737
       SaxophoneRogue_13: 653831043
       SaxophoneRogue_19: -758378085
+      saxophonerogue_3: -1092390451
       SaxophoneRogue_5: -701002313
       SaxophoneRogue_14: 1017629647
       SaxophoneRogue_18: -1096810816
@@ -623,11 +709,13 @@ TextureImporter:
       SaxophoneRogue_4: 15855645
       SaxophoneRogue_11: -1883475510
       SaxophoneRogue_21: -736744473
+      saxophonerogue_0: 412356880
       SaxophoneRogue_7: -1389718992
       SaxophoneRogue_6: 1473968570
       SaxophoneRogue_23: 713199662
       SaxophoneRogue_20: -1766757615
       SaxophoneRogue_0: 1933651003
+      saxophonerogue_2: 1371664353
       SaxophoneRogue_10: 869650901
       SaxophoneRogue_17: 1050463975
       SaxophoneRogue_3: 1735945415

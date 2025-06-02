@@ -62,6 +62,7 @@ public abstract class GenericEnemy : MonoBehaviour
         locationReferencer = FindObjectOfType<BattleLocationReferencer>();
         soundManager = SoundManager.Instance;
         enemyIndex = battleManager.GetEnemyIndex(this);
+        GetComponentInChildren<CharacterModel>().SetAsBattleModel();
         SetPossibleTargets();
         AssignAnimationEvents();
 

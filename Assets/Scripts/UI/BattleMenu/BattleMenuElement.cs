@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class BattleMenuElement : MenuElement
 {
-    protected string descriptionBoxTextOnSelected = string.Empty;
-    protected string enemyNameBoxTextOnSelected = string.Empty;
+    [Header("Text - Leave Blank for Empty")]
+    [SerializeField] protected string descriptionBoxTextOnSelected = string.Empty;
+    [SerializeField] protected string enemyNameBoxTextOnSelected = string.Empty;
 
     [Header("UI Visibility When Selected")]
     [SerializeField] private bool VIS_MAIN;

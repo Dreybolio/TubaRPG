@@ -17,8 +17,4 @@ public class HeroRogue : GenericHero
     {
         abilityTwoScript.DoAbility(target);
     }
-    public override void CheckEnemy(GenericEnemy target)
-    {
-        throw new System.NotImplementedException();
-    }
 }
